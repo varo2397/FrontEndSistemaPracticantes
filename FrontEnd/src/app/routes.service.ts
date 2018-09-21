@@ -36,6 +36,7 @@ import {StudentEventsComponent} from './students/student-events/student-events.c
 import {EvaluateCompanyComponent} from './students/evaluations/evaluate-company/evaluate-company.component';
 import {EvaluateInternshipProcessComponent} from './students/evaluations/evaluate-internship-process/evaluate-internship-process.component';
 import {EvaluateTeacherComponent} from './students/evaluations/evaluate-teacher/evaluate-teacher.component';
+import {CompanyDocumentsComponent} from './companies/company-documents/company-documents.component';
 
 
 const routes: Routes = [
@@ -47,18 +48,15 @@ const routes: Routes = [
     ]},
   { path: 'administrador', component: AdministratorComponent, children:[
       { path: '', redirectTo: 'admins', pathMatch: 'full'},
-
       { path: 'admins', children:[
           { path: '', component: AdminComponent},
           { path: 'crearAdministrador', component: CreateAdminComponent}
         ]},
-
       { path: 'carrer', children:[
           { path: '', component: CarrerComponent},
           { path: 'crearCarrera', component: CreateCarrerComponent},
           { path: 'editarCarrera', component: EditCarrerComponent}
         ]},
-
       { path: 'coordinador', children:[
           { path: '', component: AdminCoordinatorComponent},
           { path: 'crearCoordinador', component: CreateCoordinatorComponent}
@@ -74,7 +72,8 @@ const routes: Routes = [
     ]},
   { path: 'empresa', component: CompaniesComponent, children:[
       { path: '', redirectTo: 'eventos', pathMatch: 'full'},
-      { path: 'eventos', component: CompanyEventsComponent}
+      { path: 'eventos', component: CompanyEventsComponent},
+      { path: 'documentos', component: CompanyDocumentsComponent}
     ] },
   { path: 'coordinador', component: CoordinatorComponent, children:[
       { path: '', redirectTo: 'empresas' , pathMatch: 'full'},
@@ -100,9 +99,7 @@ const routes: Routes = [
           { path: 'crearProfesorPractica', component: CreateTeacherComponent}
         ]},
       { path: 'estadisticas', component: StatisticsComponent}
-
     ]},
-
   { path: 'estudiantes', component: StudentsComponent , children:[
       { path: '', redirectTo: 'eventos', pathMatch: 'full'},
       { path: 'eventos', component: StudentEventsComponent},
@@ -112,8 +109,6 @@ const routes: Routes = [
           { path: 'profesorPractica', component: EvaluateTeacherComponent}
         ] }
     ]}
-
-
 ];
 
 

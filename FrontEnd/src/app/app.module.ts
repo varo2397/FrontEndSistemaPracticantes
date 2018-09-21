@@ -53,6 +53,7 @@ import { CreateStudentComponent } from './general/create-student/create-student.
 import { CreatePersonComponent } from './general/create-person/create-person.component';
 import { CreateUserComponent } from './general/create-user/create-user.component';
 import { PersonalInformationComponent } from './general/personal-information/personal-information.component';
+import { CompanyDocumentsComponent } from './companies/company-documents/company-documents.component';
 
 
 @NgModule({
@@ -98,7 +99,8 @@ import { PersonalInformationComponent } from './general/personal-information/per
     CreateStudentComponent,
     CreatePersonComponent,
     CreateUserComponent,
-    PersonalInformationComponent
+    PersonalInformationComponent,
+    CompanyDocumentsComponent
   ],
   imports: [
     BrowserModule,
