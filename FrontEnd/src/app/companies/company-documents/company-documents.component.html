@@ -1,5 +1,4 @@
 <div class="col-md-12" >
-  <a class="btn btn-primary" routerLink="crearDocumento">Crear Documento</a>
   <div class="card ">
     <div class="card-header card-header-primary" data-background-color="purple" >
       <h4 class="title ">documentos de practica</h4>
@@ -28,7 +27,6 @@
           <td>Fecha</td>
           <td>Descripción</td>
           <td><a [href]="limpiardocumento(documento.archivo)" download>documento</a></td>
-          <td><button class="btn btn-primary" (click)="eliminardocumento(documento.iddocumento)">eliminar</button></td>
         </tr>
         </tbody>
       </table>
