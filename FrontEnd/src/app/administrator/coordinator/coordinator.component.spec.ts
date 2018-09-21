@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CoordinatorComponent } from './coordinator.component';
+import { AdminCoordinatorComponent } from './admin-coordinator.component';
 
-describe('CoordinatorComponent', () => {
-  let component: CoordinatorComponent;
-  let fixture: ComponentFixture<CoordinatorComponent>;
+describe('AdminCoordinatorComponent', () => {
+  let component: AdminCoordinatorComponent;
+  let fixture: ComponentFixture<AdminCoordinatorComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CoordinatorComponent ]
+      declarations: [ AdminCoordinatorComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CoordinatorComponent);
+    fixture = TestBed.createComponent(AdminCoordinatorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

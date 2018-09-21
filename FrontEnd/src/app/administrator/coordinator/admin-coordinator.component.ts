@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-coordinator',
+  selector: 'app-admin-coordinator',
   templateUrl: './coordinator.component.html',
   styleUrls: ['./coordinator.component.css']
 })
-export class CoordinatorComponent implements OnInit {
+export class AdminCoordinatorComponent implements OnInit {
 
   constructor() { }
 

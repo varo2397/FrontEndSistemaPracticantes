@@ -6,9 +6,9 @@ import { AppComponent } from './app.component';
 //students components
 import { StudentsComponent } from './students/students.component';
 import { StudentEventsComponent } from './students/student-events/student-events.component';
-import { EvaluateInternshipProcessComponent } from './students/evaluate-internship-process/evaluate-internship-process.component';
-import { EvaluateCompanyComponent } from './students/evaluate-company/evaluate-company.component';
-import { EvaluateTeacherComponent } from './students/evaluate-teacher/evaluate-teacher.component';
+import { EvaluateInternshipProcessComponent } from './students/evaluations/evaluate-internship-process/evaluate-internship-process.component';
+import { EvaluateCompanyComponent } from './students/evaluations/evaluate-company/evaluate-company.component';
+import { EvaluateTeacherComponent } from './students/evaluations/evaluate-teacher/evaluate-teacher.component';
 
 //companies components
 import { CompaniesComponent } from './companies/companies.component';
@@ -38,6 +38,17 @@ import { routesService } from './routes.service';
 import { LoginComponent } from './login/login.component';
 import { StudentRegisterComponent } from './login/student-register/student-register.component';
 import { CompanyRegisterComponent } from './login/company-register/company-register.component';
+import {CreateSiteComponent} from './administrator/site/create-site/create-site.component';
+import {AdminCoordinatorComponent} from './administrator/coordinator/admin-coordinator.component';
+import { AproveCompaniesComponent } from './coordinator/coordinator-companies/aprove-companies/aprove-companies.component';
+import { ShowCompaniesComponent } from './coordinator/coordinator-companies/show-companies/show-companies.component';
+import { AproveIntershipStudentComponent } from './coordinator/internship-students/aprove-intership-student/aprove-intership-student.component';
+import {CreateDocumentComponent} from './coordinator/coordinator-documents/create-document/create-document.component';
+import {EditDocumentComponent} from './coordinator/coordinator-documents/edit-document/edit-document.component';
+import {CreateEventComponent} from './coordinator/coordinator-events/create-event/create-event.component';
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -69,11 +80,22 @@ import { CompanyRegisterComponent } from './login/company-register/company-regis
     CreateSemesterComponent,
     LoginComponent,
     StudentRegisterComponent,
-    CompanyRegisterComponent
+    CompanyRegisterComponent,
+    CreateSiteComponent,
+    AdminCoordinatorComponent,
+    AproveCompaniesComponent,
+    ShowCompaniesComponent,
+    AproveIntershipStudentComponent,
+    CreateDocumentComponent,
+    EditDocumentComponent,
+    CreateEventComponent
   ],
   imports: [
     BrowserModule,
-    routesService
+    routesService,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
