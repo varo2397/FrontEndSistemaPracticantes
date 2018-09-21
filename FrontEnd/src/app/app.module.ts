@@ -48,6 +48,11 @@ import {EditDocumentComponent} from './coordinator/coordinator-documents/edit-do
 import {CreateEventComponent} from './coordinator/coordinator-events/create-event/create-event.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { CreateCompanyComponent } from './general/create-company/create-company.component';
+import { CreateStudentComponent } from './general/create-student/create-student.component';
+import { CreatePersonComponent } from './general/create-person/create-person.component';
+import { CreateUserComponent } from './general/create-user/create-user.component';
+import { PersonalInformationComponent } from './general/personal-information/personal-information.component';
 
 
 @NgModule({
@@ -88,7 +93,12 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     AproveIntershipStudentComponent,
     CreateDocumentComponent,
     EditDocumentComponent,
-    CreateEventComponent
+    CreateEventComponent,
+    CreateCompanyComponent,
+    CreateStudentComponent,
+    CreatePersonComponent,
+    CreateUserComponent,
+    PersonalInformationComponent
   ],
   imports: [
     BrowserModule,
