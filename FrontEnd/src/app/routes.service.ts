@@ -75,7 +75,7 @@ const routes: Routes = [
   { path: 'empresa', component: CompaniesComponent, children:[
       { path: '', redirectTo: 'eventos', pathMatch: 'full'},
       { path: 'eventos', component: CompanyEventsComponent},
-      { path: 'documentos', component: CompanyDocumentsComponent}
+      { path: 'documentos', component: CompanyDocumentsComponent},
       { path: 'carreras', component: CareersComponent}
     ] },
   { path: 'coordinador', component: CoordinatorComponent, children:[

@@ -19,4 +19,6 @@ export class CreateCompanyComponent implements OnInit {
       'nombreEmpresa' : new FormControl(null,Validators.required)
     })
 
+
+  }
 }

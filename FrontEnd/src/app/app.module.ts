@@ -103,7 +103,7 @@ import { EvaluationsComponent } from './students/evaluations/evaluations.compone
     CreateUserComponent,
     PersonalInformationComponent,
     CompanyDocumentsComponent,
-    CareersComponent
+    CareersComponent,
     EvaluationsComponent
   ],
   imports: [
