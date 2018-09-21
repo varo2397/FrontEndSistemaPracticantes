@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
+import {Router} from '@angular/router';
 
+declare const $: any;
 @Component({
   selector: 'app-students',
   templateUrl: './students.component.html',
@@ -7,9 +9,43 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentsComponent implements OnInit {
 
-  constructor() { }
+  private sidebarVisible: boolean;
+  private toggleButton: any;
+
+  constructor(private element: ElementRef, private router:Router) { }
 
   ngOnInit() {
+    const navbar: HTMLElement = this.element.nativeElement;
+    this.toggleButton = navbar.getElementsByClassName('navbar-toggle')[0];
+    $.material.init();
+    const elemMainPanel = <HTMLElement>document.querySelector('.main-panel');
+    const elemSidebar = <HTMLElement>document.querySelector('.sidebar .sidebar-wrapper');
   }
+
+  sidebarOpen() {
+    const toggleButton = this.toggleButton;
+    const body = document.getElementsByTagName('body')[0];
+    setTimeout(function(){
+      toggleButton.classList.add('toggled');
+    }, 500);
+    body.classList.add('nav-open');
+
+    this.sidebarVisible = true;
+  };
+  sidebarClose() {
+    const body = document.getElementsByTagName('body')[0];
+    this.toggleButton.classList.remove('toggled');
+    this.sidebarVisible = false;
+    body.classList.remove('nav-open');
+  };
+  sidebarToggle() {
+    // const toggleButton = this.toggleButton;
+    // const body = document.getElementsByTagName('body')[0];
+    if (this.sidebarVisible === false) {
+      this.sidebarOpen();
+    } else {
+      this.sidebarClose();
+    }
+  };
 
 }
