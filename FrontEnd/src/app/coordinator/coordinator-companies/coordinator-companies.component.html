@@ -8,9 +8,9 @@
   </div>
 </div>
 
-<div>
+<div *ngIf="aprobarEmpresas">
   <app-aprove-companies></app-aprove-companies>
 </div>
-<div>
+<div *ngIf="empresasAprobadas">
   <app-show-companies></app-show-companies>
 </div>
