@@ -54,6 +54,7 @@ import { CreatePersonComponent } from './general/create-person/create-person.com
 import { CreateUserComponent } from './general/create-user/create-user.component';
 import { PersonalInformationComponent } from './general/personal-information/personal-information.component';
 import { CompanyDocumentsComponent } from './companies/company-documents/company-documents.component';
+import { CareersComponent } from './companies/careers/careers.component';
 
 
 @NgModule({
@@ -100,7 +101,8 @@ import { CompanyDocumentsComponent } from './companies/company-documents/company
     CreatePersonComponent,
     CreateUserComponent,
     PersonalInformationComponent,
-    CompanyDocumentsComponent
+    CompanyDocumentsComponent,
+    CareersComponent
   ],
   imports: [
     BrowserModule,

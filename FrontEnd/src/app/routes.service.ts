@@ -37,6 +37,7 @@ import {EvaluateCompanyComponent} from './students/evaluations/evaluate-company/
 import {EvaluateInternshipProcessComponent} from './students/evaluations/evaluate-internship-process/evaluate-internship-process.component';
 import {EvaluateTeacherComponent} from './students/evaluations/evaluate-teacher/evaluate-teacher.component';
 import {CompanyDocumentsComponent} from './companies/company-documents/company-documents.component';
+import {CareersComponent} from './companies/careers/careers.component';
 
 
 const routes: Routes = [
@@ -74,6 +75,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'eventos', pathMatch: 'full'},
       { path: 'eventos', component: CompanyEventsComponent},
       { path: 'documentos', component: CompanyDocumentsComponent}
+      { path: 'carreras', component: CareersComponent}
     ] },
   { path: 'coordinador', component: CoordinatorComponent, children:[
       { path: '', redirectTo: 'empresas' , pathMatch: 'full'},
