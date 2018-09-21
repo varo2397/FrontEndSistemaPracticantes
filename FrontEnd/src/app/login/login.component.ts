@@ -11,13 +11,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LoginComponent implements OnInit {
 
-  formularioLogin: FormGroup;
+  formLogin: FormGroup;
   error: string;
 
   constructor(private router: Router,private http: HttpClient) { }
 
   ngOnInit() {
-    this.formularioLogin = new FormGroup({
+    this.formLogin = new FormGroup({
       'nombreUsuario': new FormControl(null, [Validators.required]),
       'contrasena': new FormControl(null, Validators.required)
     });
