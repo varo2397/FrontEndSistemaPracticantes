@@ -6,10 +6,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./coordinator-companies.component.css']
 })
 export class CoordinatorCompaniesComponent implements OnInit {
+  //booleanos para saber cual componente cargar
+  aprobarempresas: boolean;
+  empresasaprobadas: boolean;
 
-  constructor() { }
+  constructor() {
+    this.aprobarempresas = false;
+    this.empresasaprobadas = true;
+  }
 
-  ngOnInit() {
+  ngoninit() {
+  }
+
+  componenteempresasaprobadas(){
+    this.aprobarempresas = false;
+    this.empresasaprobadas = true;
+  }
+
+  componenteaprobarempresas() {
+    this.aprobarempresas = true;
+    this.empresasaprobadas = false;
   }
 
 }
