@@ -13,11 +13,11 @@
                 <input type="text"
                        class="form-control"
                        id="nombreDeUsuario"
-                       formControlName="nombreDeUsuario"
+                       formControlName="userName"
                 >
-                <span *ngIf="!formUser.get('nombreDeUsuario').valid && formUser.get('nombreDeUsuario').touched">
+                <span *ngIf="!formUser.get('userName').valid && formUser.get('userName').touched">
 
-                  <div *ngIf="formUser.get('nombreDeUsuario').errors['required']" class="text-danger"> Este campo es necesario</div>
+                  <div *ngIf="formUser.get('userName').errors['required']" class="text-danger"> Este campo es necesario</div>
                 </span>
               </div>
             </div>
@@ -27,11 +27,11 @@
                 <input type="password"
                        class="form-control"
                        id="contraseña"
-                       formControlName="contraseña"
+                       formControlName="password"
                 >
-                <span *ngIf="!formUser.get('contraseña').valid && formUser.get('contraseña').touched">
+                <span *ngIf="!formUser.get('password').valid && formUser.get('password').touched">
 
-                  <div *ngIf="formUser.get('contraseña').errors['required']" class="text-danger"> Este campo es necesario</div>
+                  <div *ngIf="formUser.get('password').errors['required']" class="text-danger"> Este campo es necesario</div>
                 </span>
               </div>
             </div>
@@ -41,12 +41,12 @@
                 <input type="password"
                        class="form-control"
                        id="confirmarContraseña"
-                       formControlName="confirmarContraseña"
+                       formControlName="confirmPassword"
                 >
-                <span *ngIf="!formUser.get('confirmarContraseña').valid && formUser.get('confirmarContraseña').touched">
+                <span *ngIf="!formUser.get('confirmPassword').valid && formUser.get('confirmPassword').touched">
 
-                  <div *ngIf="formUser.get('confirmarContraseña').errors['required']" class="text-danger"> Este campo es necesario</div>
-                  <div *ngIf="formUser.get('confirmarContraseña').errors['contraseñaNoIgual']" class="text-danger"> Las contraseñas no coinciden</div>
+                  <div *ngIf="formUser.get('confirmPassword').errors['required']" class="text-danger"> Este campo es necesario</div>
+                  <div *ngIf="formUser.get('confirmPassword').errors['contraseñaNoIgual']" class="text-danger"> Las contraseñas no coinciden</div>
                 </span>
               </div>
             </div>

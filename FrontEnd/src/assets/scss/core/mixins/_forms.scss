@@ -25,7 +25,7 @@
 
     &,
     .is-focused & {
-      // form-group focus could change multiple checkboxes/radios, disable that change by using the same color as non-form-group is-focused
+      // form-group focus could change multiple checkboxes/radios, disable that change by using the same color userName non-form-group is-focused
       color: $bmd-label-color;
 
       // correct the above focus color for disabled items
@@ -269,7 +269,7 @@
   // floating/placeholder default (no focus)
   .bmd-label-floating,
   .bmd-label-placeholder {
-    //@debug "top: #{$label-as-placeholder-top}";
+    //@debug "top: #{$label-userName-placeholder-top}";
     top: $label-placeholder-top - 1.7; // place the floating label to look like a placeholder with input padding
   }
 

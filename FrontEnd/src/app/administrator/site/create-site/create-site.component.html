@@ -1,3 +1,55 @@
-<p>
-  create-site works!
-</p>
+<div class="row">
+  <div class="col-md-10 offset-1">
+    <div class="card">
+      <div class="card-header card-header-primary" >
+        <h4 class="card-title">Creacion de sede</h4>
+      </div>
+      <div class="card-body">
+        <form [formGroup] = "formSite">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group label-floating is-empty">
+                <label class="bmd-label-floating">Nombre de la sede</label>
+                <input type="text"
+                       class="form-control"
+                       id="nombreDeUsuario"
+                       formControlName="siteName"
+                >
+                <span *ngIf="!formSite.get('siteName').valid && formSite.get('siteName').touched">
+
+                  <div *ngIf="formSite.get('siteName').errors['required']" class="text-danger"> Este campo es necesario</div>
+                </span>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="bmd-label-floating">Ubicación</label>
+                <textarea class="form-control"
+                        id="universidades"
+                        formControlName="location">
+
+                </textarea>
+                <span *ngIf="!formSite.get('location').valid && formSite.get('location').touched">
+
+                  <div *ngIf="formSite.get('location').errors['required']" class="text-danger"> Este campo es necesario</div>
+                </span>
+              </div>
+
+            </div>
+
+            <div class="col-md-12">
+              <button class="btn btn-primary">Crear sede</button>
+              <a routerLink=".." class="btn btn-danger">Cancelar</a>
+            </div>
+
+
+
+          </div>
+
+          <div class="clearfix"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>

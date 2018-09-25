@@ -55,6 +55,8 @@ import { CreateUserComponent } from './general/create-user/create-user.component
 import { PersonalInformationComponent } from './general/personal-information/personal-information.component';
 import { CompanyDocumentsComponent } from './companies/company-documents/company-documents.component';
 import { EvaluationsComponent } from './students/evaluations/evaluations.component';
+import { SchoolComponent } from './administrator/school/school.component';
+import { CreateSchoolComponent } from './administrator/school/create-school/create-school.component';
 
 
 @NgModule({
@@ -102,7 +104,9 @@ import { EvaluationsComponent } from './students/evaluations/evaluations.compone
     CreateUserComponent,
     PersonalInformationComponent,
     CompanyDocumentsComponent,
-    EvaluationsComponent
+    EvaluationsComponent,
+    SchoolComponent,
+    CreateSchoolComponent
   ],
   imports: [
     BrowserModule,

@@ -14,9 +14,10 @@ export class CreateCompanyComponent implements OnInit {
 
   ngOnInit() {
     this.formCompany = new FormGroup({
-      'cedulaJuridica' : new FormControl(null, [Validators.min(10000000),
+      'cedulaJuridica': new FormControl(null, [Validators.min(10000000),
         Validators.max(9999999999), Validators.required]),
-      'nombreEmpresa' : new FormControl(null,Validators.required)
+      'nombreEmpresa': new FormControl(null, Validators.required)
     })
+  }
 
 }

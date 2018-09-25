@@ -38,6 +38,8 @@ import {EvaluateInternshipProcessComponent} from './students/evaluations/evaluat
 import {EvaluateTeacherComponent} from './students/evaluations/evaluate-teacher/evaluate-teacher.component';
 import {CompanyDocumentsComponent} from './companies/company-documents/company-documents.component';
 import {EvaluationsComponent} from './students/evaluations/evaluations.component';
+import {SchoolComponent} from './administrator/school/school.component';
+import {CreateSchoolComponent} from './administrator/school/create-school/create-school.component';
 
 
 const routes: Routes = [
@@ -53,22 +55,26 @@ const routes: Routes = [
           { path: '', component: AdminComponent},
           { path: 'crearAdministrador', component: CreateAdminComponent}
         ]},
-      { path: 'carrer', children:[
+      { path: 'carreras', children:[
           { path: '', component: CarrerComponent},
           { path: 'crearCarrera', component: CreateCarrerComponent},
           { path: 'editarCarrera', component: EditCarrerComponent}
         ]},
-      { path: 'coordinador', children:[
+      { path: 'coordinadores', children:[
           { path: '', component: AdminCoordinatorComponent},
           { path: 'crearCoordinador', component: CreateCoordinatorComponent}
         ]},
-      { path: 'semester', children:[
+      { path: 'semestres', children:[
           { path: '', component: SemesterComponent},
           { path: 'crearSemestre', component: CreateSemesterComponent}
         ]},
-      { path: 'site', children:[
+      { path: 'sedes', children:[
           { path: '', component: SiteComponent},
           { path: 'crearSede', component: CreateSiteComponent}
+        ]},
+      { path: 'escuelas', children:[
+          { path: '', component:SchoolComponent},
+          { path: 'crearEscuela', component: CreateSchoolComponent}
         ]}
     ]},
   { path: 'empresa', component: CompaniesComponent, children:[

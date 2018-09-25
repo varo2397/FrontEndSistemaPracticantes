@@ -14,18 +14,18 @@ export class CreateUserComponent implements OnInit {
 
   ngOnInit() {
     this.formUser = new FormGroup({
-      'nombreDeUsuario': new FormControl(null, [Validators.required]),
-      'contraseña': new FormControl(null, Validators.required),
-      'confirmarContraseña': new FormControl(null, [Validators.required,
+      'userName': new FormControl(null, [Validators.required]),
+      'password': new FormControl(null, Validators.required),
+      'confirmPassword': new FormControl(null, [Validators.required,
         this.validatePassword.bind(this)])
     });
   }
 
   validatePassword(control : FormControl) {
     if(this.formUser !== undefined){
-      const contraseña = this.formUser.get('contraseña').value;
-      const confirmarContraseña = control.value;
-      if(contraseña !== confirmarContraseña){
+      const password = this.formUser.get('password').value;
+      const confirmPassword = control.value;
+      if(password !== confirmPassword){
         return { 'contraseñaNoIgual': true };
       }
       return null;
