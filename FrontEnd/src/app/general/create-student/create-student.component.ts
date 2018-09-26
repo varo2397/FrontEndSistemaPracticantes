@@ -31,7 +31,7 @@ export class CreateStudentComponent implements OnInit {
       'numeroCarne': new FormControl(null, [Validators.min(10000000),
         Validators.max(9999999999),
         Validators.required]),
-      'foto': new FormControl(null),
+      'photo': new FormControl(null),
       'universidad': new FormControl(null),
       'sede': new FormControl(null),
       'carrera' : new FormControl(null)
@@ -39,7 +39,7 @@ export class CreateStudentComponent implements OnInit {
   }
 
   changeInFile(event) {
-    //funcion para verificar que se ingreso algo en el campo foto y ademas verificar el tipo de dato
+    //funcion para verificar que se ingreso algo en el campo photo y ademas verificar el tipo de dato
     //del mismo archivo
 
     this.fileIn = true;
@@ -48,7 +48,7 @@ export class CreateStudentComponent implements OnInit {
     let fileFormat = this.fileName.split('.')[1].toLowerCase();
     if( this.validFormats.indexOf(fileFormat) === -1 ){
       this.fileFormatValid = false;
-      this.formStudent.get('foto').setValue(this.selectedFile);
+      this.formStudent.get('photo').setValue(this.selectedFile);
     }
     else {
       this.fileFormatValid = true;

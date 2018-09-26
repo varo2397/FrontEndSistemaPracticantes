@@ -1,33 +1,35 @@
 <div class="col-md-12">
-  <a class="btn btn-primary" routerLink="aprobarEstudiantes" >Aprobar estudiantes</a>
+  <a class="btn btn-primary" routerLink="enviarSolicitud" >Enviar solicitud</a>
   <div class="card">
     <div class="card-header card-header-primary" data-background-color="purple">
-      <h4 class="title ">Estudiantes en práctica</h4>
+      <h4 class="title ">Carreras asociadas</h4>
     </div>
     <div class="card-body table-responsive">
       <table class="table table-hover">
         <thead class=" text-primary">
         <th>
-          Nombre
+          Estado
         </th>
         <th>
-          Correo
+          Universidad
         </th>
         <th>
-          Teléfono
+          Sede
         </th>
         <th>
-          Carné
+          Ubicación
         </th>
-
+        <th>
+          Carrera
+        </th>
         </thead>
         <tbody>
         <tr>
-          <td>Nombre</td>
-          <td>Correos</td>
-          <td>Número</td>
-          <td>Carné</td>
-          <td><button class="btn btn-primary" (click)="seleccionarEstudiante(estudiante.Cedula)">Seleccionar</button></td>
+          <td>Estado</td>
+          <td>Universidad</td>
+          <td>Sede</td>
+          <td>Ubicación</td>
+          <td>Nombre Carrera</td>
         </tr>
         </tbody>
       </table>

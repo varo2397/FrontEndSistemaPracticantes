@@ -1,10 +1,10 @@
 <div class="row">
-  <div class="col-md-10 col-md-offset-1">
+  <div class="col-md-10 offset-md-1">
     <div class="card">
       <div class="card-header card-header-primary" data-background-color="purple">
         <h4 class="title">Crear documento</h4>
       </div>
-      <div class="card-content">
+      <div class="card-body">
         <form [formGroup] = "formularioDocumento">
           <div class="row">
             <div class="col-md-4">
@@ -72,9 +72,9 @@
               </div>
             </div>
           </div>
-          <div class="text-danger">ERROR</div>
+          <!--<div class="text-danger">ERROR</div>-->
           <button class="btn btn-primary btn-round pull-left" (click)="agregarDocumento()">Crear documento</button>
-          <button class="btn btn-danger btn-round pull-left" routerLink="/coordinadores/documentos">Cancelar</button>
+          <button class="btn btn-danger btn-round pull-left" routerLink="..">Cancelar</button>
           <div class="clearfix"></div>
         </form>
       </div>

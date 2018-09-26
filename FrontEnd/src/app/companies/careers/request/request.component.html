@@ -1,0 +1,149 @@
+
+<div class="row">
+  <div class="col-md-6" >
+    <div class="card ">
+      <div class="card-header card-header-primary" >
+        <h4 class="title ">Carreras a solicitar</h4>
+      </div>
+      <div class="card-body table-responsive">
+        <button class="btn btn-primary">Enviar solicitudes</button>
+
+        <div class="card">
+          <div class="card-body">
+            <div class="tab-content">
+              <div class="tab-pane active" id="profile">
+                <table class="table">
+                  <thead class="text-primary">
+                  <th>
+                    Escuela
+                  </th>
+                  <th>
+                    Sede
+                  </th>
+                  <th>
+                    Carrera
+                  </th>
+
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>
+                      Escuela de computación
+                    </td>
+                    <td>
+                      Centro Academico de San Jose
+                    </td>
+                    <td>
+                      Ingeniería en Computación
+                    </td>
+
+                    <td class="td-actions text-right">
+                      <button  type="button"  class="btn btn-danger btn-link btn-sm btn-just-icon">
+                        <i class="material-icons">close</i>
+                      </button>
+                    </td>
+                  </tr>
+
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="col-md-6" >
+    <div class="card ">
+      <div class="card-header card-header-primary" data-background-color="purple" >
+        <h4 class="title ">Escuelas</h4>
+      </div>
+      <div class="card-body table-responsive">
+
+        <div class="row">
+          <div class="col-md-6">
+            <label class="bmd-label-floating"> Escuelas</label>
+            <div class="form-group">
+              <select class="form-control" (change)="obtenerSedes()"
+                      id="universidades"
+                      formControlName="universidad">
+                <option *ngFor="let universidad of universidades | async" [value]="universidad.IdUniversidad" >
+                  {{ universidad.NombreUniversidad }}
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <label class="bmd-label-floating"> Sedes</label>
+            <div class="form-group">
+              <select class="form-control" (change)="obtenerSedes()"
+                      id="universidades"
+                      formControlName="universidad">
+                <option *ngFor="let universidad of universidades | async" [value]="universidad.IdUniversidad" >
+                  {{ universidad.NombreUniversidad }}
+                </option>
+              </select>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <div class="tab-content">
+              <div class="tab-pane active" >
+                <table class="table">
+                  <thead class="text-primary">
+                  <th>
+                    Escuela
+                  </th>
+                  <th>
+                    Sede
+                  </th>
+                  <th>
+                    Carrera
+                  </th>
+
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>
+                      Escuela de computación
+                    </td>
+                    <td>
+                      Centro Academico de San Jose
+                    </td>
+                    <td>
+                      Ingeniería en Computación
+                    </td>
+
+                    <td class="td-actions text-right">
+                      <button  type="button"  class="btn btn-primary btn-link btn-sm btn-just-icon">
+                        <i class="material-icons">check</i>
+                      </button>
+                    </td>
+                  </tr>
+
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+

@@ -3,18 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
-//students components
+
 import { StudentsComponent } from './students/students.component';
 import { StudentEventsComponent } from './students/student-events/student-events.component';
 import { EvaluateInternshipProcessComponent } from './students/evaluations/evaluate-internship-process/evaluate-internship-process.component';
 import { EvaluateCompanyComponent } from './students/evaluations/evaluate-company/evaluate-company.component';
 import { EvaluateTeacherComponent } from './students/evaluations/evaluate-teacher/evaluate-teacher.component';
-
-//companies components
 import { CompaniesComponent } from './companies/companies.component';
 import { CompanyEventsComponent } from './companies/company-events/company-events.component';
-
-//coordinators components
 import { CoordinatorComponent } from './coordinator/coordinator.component';
 import { StatisticsComponent } from './coordinator/statistics/statistics.component';
 import { CoordinatorDocumentsComponent } from './coordinator/coordinator-documents/coordinator-documents.component';
@@ -22,7 +18,6 @@ import { InternshipStudentsComponent } from './coordinator/internship-students/i
 import { CoordinatorEventsComponent } from './coordinator/coordinator-events/coordinator-events.component';
 import { CoordinatorCompaniesComponent } from './coordinator/coordinator-companies/coordinator-companies.component';
 import { InternshipTeachersComponent } from './coordinator/internship-teachers/internship-teachers.component';
-
 import { AdministratorComponent } from './administrator/administrator.component';
 import { CarrerComponent } from './administrator/carrer/carrer.component';
 import { CreateCarrerComponent } from './administrator/carrer/create-carrer/create-carrer.component';
@@ -54,9 +49,11 @@ import { CreatePersonComponent } from './general/create-person/create-person.com
 import { CreateUserComponent } from './general/create-user/create-user.component';
 import { PersonalInformationComponent } from './general/personal-information/personal-information.component';
 import { CompanyDocumentsComponent } from './companies/company-documents/company-documents.component';
+import { CareersComponent } from './companies/careers/careers.component';
 import { EvaluationsComponent } from './students/evaluations/evaluations.component';
 import { SchoolComponent } from './administrator/school/school.component';
 import { CreateSchoolComponent } from './administrator/school/create-school/create-school.component';
+import { RequestComponent} from './companies/careers/request/request.component';
 
 
 @NgModule({
@@ -106,7 +103,9 @@ import { CreateSchoolComponent } from './administrator/school/create-school/crea
     CompanyDocumentsComponent,
     EvaluationsComponent,
     SchoolComponent,
-    CreateSchoolComponent
+    CreateSchoolComponent,
+    CareersComponent,
+    RequestComponent
   ],
   imports: [
     BrowserModule,

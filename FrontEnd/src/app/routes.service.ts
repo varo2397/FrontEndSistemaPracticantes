@@ -37,9 +37,11 @@ import {EvaluateCompanyComponent} from './students/evaluations/evaluate-company/
 import {EvaluateInternshipProcessComponent} from './students/evaluations/evaluate-internship-process/evaluate-internship-process.component';
 import {EvaluateTeacherComponent} from './students/evaluations/evaluate-teacher/evaluate-teacher.component';
 import {CompanyDocumentsComponent} from './companies/company-documents/company-documents.component';
+import {CareersComponent} from './companies/careers/careers.component';
 import {EvaluationsComponent} from './students/evaluations/evaluations.component';
 import {SchoolComponent} from './administrator/school/school.component';
 import {CreateSchoolComponent} from './administrator/school/create-school/create-school.component';
+import {RequestComponent} from './companies/careers/request/request.component';
 
 
 const routes: Routes = [
@@ -80,7 +82,11 @@ const routes: Routes = [
   { path: 'empresa', component: CompaniesComponent, children:[
       { path: '', redirectTo: 'eventos', pathMatch: 'full'},
       { path: 'eventos', component: CompanyEventsComponent},
-      { path: 'documentos', component: CompanyDocumentsComponent}
+      { path: 'documentos', component: CompanyDocumentsComponent},
+      { path: 'carreras', children:[
+          { path: '', component: CareersComponent},
+          { path: 'enviarSolicitud', component: RequestComponent}
+        ]}
     ] },
   { path: 'coordinador', component: CoordinatorComponent, children:[
       { path: '', redirectTo: 'empresas' , pathMatch: 'full'},
