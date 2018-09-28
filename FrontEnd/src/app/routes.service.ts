@@ -42,6 +42,7 @@ import {EvaluationsComponent} from './students/evaluations/evaluations.component
 import {SchoolComponent} from './administrator/school/school.component';
 import {CreateSchoolComponent} from './administrator/school/create-school/create-school.component';
 import {RequestComponent} from './companies/careers/request/request.component';
+import {EditEventComponent} from './coordinator/coordinator-events/edit-event/edit-event.component';
 
 
 const routes: Routes = [
@@ -101,7 +102,8 @@ const routes: Routes = [
         ]},
       { path: 'eventos', children:[
           { path: '', component: CoordinatorEventsComponent},
-          { path: 'crearEvento', component: CreateEventComponent}
+          { path: 'crearEvento', component: CreateEventComponent},
+          { path: 'editarEvento/:id', component: EditEventComponent}
         ] },
       { path: 'estudiantes', children:[
           { path: '', component: InternshipStudentsComponent},
@@ -113,7 +115,7 @@ const routes: Routes = [
         ]},
       { path: 'estadisticas', component: StatisticsComponent}
     ]},
-  { path: 'estudiantes', component: StudentsComponent , children:[
+  { path: 'estudiante', component: StudentsComponent , children:[
       { path: '', redirectTo: 'eventos', pathMatch: 'full'},
       { path: 'eventos', component: StudentEventsComponent},
       { path: 'evaluacion', component:EvaluationsComponent, children:[

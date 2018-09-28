@@ -54,6 +54,8 @@ import { EvaluationsComponent } from './students/evaluations/evaluations.compone
 import { SchoolComponent } from './administrator/school/school.component';
 import { CreateSchoolComponent } from './administrator/school/create-school/create-school.component';
 import { RequestComponent} from './companies/careers/request/request.component';
+import { EditEventComponent} from './coordinator/coordinator-events/edit-event/edit-event.component';
+import { CompaniesInformationComponent } from './coordinator/coordinator-events/edit-event/companies-information/companies-information.component';
 
 
 @NgModule({
@@ -105,7 +107,9 @@ import { RequestComponent} from './companies/careers/request/request.component';
     SchoolComponent,
     CreateSchoolComponent,
     CareersComponent,
-    RequestComponent
+    RequestComponent,
+    EditEventComponent,
+    CompaniesInformationComponent
   ],
   imports: [
     BrowserModule,

@@ -2,13 +2,13 @@
   <div class="col-md-10  offset-1">
     <div class="card">
       <div class="card-header card-header-primary" data-background-color="purple">
-        <h4 class="title">Crear Evento</h4>
+        <h4 class="title">Editar Evento</h4>
       </div>
       <div class="card-body">
         <form [formGroup] = "formEvent">
           <div class="row">
 
-            <div class="col-md-3" >
+            <div class="col-md-6" >
               <div class="form-group">
                 <label class="bmd-label-floating">Nombre del evento</label>
                 <input type="text"
@@ -22,7 +22,7 @@
               </div>
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-6">
               <div class="form-group">
                 <label class="bmd-label-floating">Día del evento</label>
                 <input type="date"
@@ -34,7 +34,7 @@
                 </span>
               </div>
             </div>
-            <div class="col-md-3" >
+            <div class="col-md-6" >
               <div class="form-group">
                 <label class="bmd-label-floating">Hora de inicio del evento</label>
                 <input type="time"
@@ -47,7 +47,7 @@
               </div>
             </div>
 
-            <div class="col-md-3" >
+            <div class="col-md-6" >
               <div class="form-group">
                 <label class="bmd-label-floating">Hora de finalización del evento</label>
                 <input type="time"
@@ -74,7 +74,7 @@
 
           <div class="row">
 
-            <div class="col-md-4">
+            <div class="col-md-6">
               <div class="form-group">
                 <label > Tipos de evento</label>
                 <select class="form-control"
@@ -89,7 +89,7 @@
             </div>
 
 
-            <div class="col-md-4">
+            <div class="col-md-6">
               <label class="bmd-label-floating">Foto</label>
               <input type="file"
                      class="form-control"
@@ -108,40 +108,56 @@
                 </span>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-12">
               <div class="form-group" formArrayName="activitiesTime">
                 <label>Horario de actividades del evento</label>
                 <button class="btn btn-primary btn-round" (click)="addInput()">Agregar</button>
-                <div *ngFor="let actividad of formEvent.get('activitiesTime').controls; let i = index">
 
-                  <label class="bmd-label-floating" *ngIf="i % 2 == 0">Hora inicio</label>
-                  <label class="bmd-label-floating" *ngIf="i % 2 == 1">Hora fin</label>
+                <div class="row">
+                  <div class="col-md-4" *ngFor="let actividad of formEvent.get('activitiesTime').controls; let i = index">
 
-                  <input type="time" class="form-control" [formControlName]="i" >
+                    <label class="bmd-label-floating" *ngIf="i % 3 == 1">Hora inicio</label>
+                    <label class="bmd-label-floating" *ngIf="i % 3 == 2">Hora fin</label>
+                    <label class="bmd-label-floating" *ngIf="i % 3 == 0">Compañia</label>
 
-                  <div *ngIf="!actividad.valid && actividad.touched">
-                    <div *ngIf="actividad.errors['required']" class="text-danger">
-                      Este campo es requerido
-                    </div>
-                    <div *ngIf="actividad.errors['horaInicioActividadErronea'] " class="text-danger">
-                      La hora de inicio de la actividad tiene que ser minimo la hora de inicio del evento
-                    </div>
-                    <div *ngIf="actividad.errors['horaFinActividadErronea'] " class="text-danger">
-                      La hora de finalización de la actividad tiene que ser maximo la hora de finalización del evento
-                    </div>
-                    <div *ngIf="actividad.errors['actividadAnteriorErronea'] " class="text-danger">
-                      La hora tiene que ser mayor a la anterior
+                    <div *ngIf="i % 3 != 0">
+                      <input type="time" class="form-control" [formControlName]="i" >
+
+                      <div *ngIf="!actividad.valid && actividad.touched">
+                        <div *ngIf="actividad.errors['required']" class="text-danger">
+                          Este campo es requerido
+                        </div>
+                        <div *ngIf="actividad.errors['horaInicioActividadErronea'] " class="text-danger">
+                          La hora de inicio de la actividad tiene que ser minimo la hora de inicio del evento
+                        </div>
+                        <div *ngIf="actividad.errors['horaFinActividadErronea'] " class="text-danger">
+                          La hora de finalización de la actividad tiene que ser maximo la hora de finalización del evento
+                        </div>
+                        <div *ngIf="actividad.errors['actividadAnteriorErronea'] " class="text-danger">
+                          La hora tiene que ser mayor a la anterior
+                        </div>
+
+                        <div *ngIf="actividad.errors['horaInicioActividadErroneaFin'] " class="text-danger">
+                          La hora de inicio tiene que estar antes de la hora de finalización del evento
+                        </div>
+
+                      </div>
+
                     </div>
 
-                    <div *ngIf="actividad.errors['horaInicioActividadErroneaFin'] " class="text-danger">
-                      La hora de inicio tiene que estar antes de la hora de finalización del evento
+                    <div *ngIf="i % 3 == 0">
+                      <select class="form-control">
+                        <option>Compañia 1 </option>
+                      </select>
+
                     </div>
+
+                    <button class="btn btn-danger btn-round" (click)="deleteInput(i)" *ngIf="i % 3 == 2">Eliminar</button>
 
                   </div>
 
-
-                  <button class="btn btn-danger btn-round" (click)="deleteInput(i)" *ngIf="i % 2 == 1">Eliminar</button>
                 </div>
+
 
               </div>
             </div>
@@ -156,3 +172,5 @@
     </div>
   </div>
 </div>
+
+<app-companies-information></app-companies-information>

@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Validators, FormControl, FormGroup, FormArray} from '@angular/forms';
+import {FormArray, FormControl, FormGroup, Validators} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-create-event',
-  templateUrl: './create-event.component.html',
-  styleUrls: ['./create-event.component.css']
+  selector: 'app-edit-event',
+  templateUrl: './edit-event.component.html',
+  styleUrls: ['./edit-event.component.scss']
 })
-export class CreateEventComponent implements OnInit {
+export class EditEventComponent implements OnInit {
 
   formEvent: FormGroup;
   fileName: string;
@@ -25,13 +25,13 @@ export class CreateEventComponent implements OnInit {
   ngOnInit() {
 
     this.formEvent = new FormGroup({
-      'eventDay' : new FormControl(null,[Validators.required]),
+      eventDay : new FormControl(null,[Validators.required]),
       'startEventTime': new FormControl(null, Validators.required),
       'photo': new FormControl(null, Validators.required),
       'endEventTime': new FormControl(null, [Validators.required
         ,this.checkEventEndTime.bind(this)]),
       'eventType': new FormControl(null, Validators.required),
-      'activitiesTime': new FormArray([this.constructorStartActivityTime(),this.constructorEndActivityTime()])
+      'activitiesTime': new FormArray([this.constructorCompanies(),this.constructorStartActivityTime(),this.constructorEndActivityTime()])
     });
   }
 
@@ -79,23 +79,31 @@ export class CreateEventComponent implements OnInit {
       this.checkActivitiesEndTimeToEventTimes.bind(this)]);
   }
 
+  constructorCompanies(){
+    return new FormControl(null, [Validators.required])
+  }
+
 
   addInput() {
 
+    const companies = this.constructorCompanies();
     const startTime = this.constructorStartActivityTime();
     const endTime = this.constructorEndActivityTime();
 
+
     const control = (<FormArray>this.formEvent.get('activitiesTime')); //castea el array de controles para modificarlo
+    control.push(companies);
     control.push(startTime);
     control.push(endTime);
   }
 
-  deleteInput(indice : number) {
+  deleteInput(index : number) {
     const control = (<FormArray>this.formEvent.get('activitiesTime'));
 
-    if(control.length > 2){ //en caso de que haya mas de una entrada para el numero de contacto
-      control.removeAt(indice);
-      control.removeAt(indice - 1);
+    if(control.length > 3){ //en caso de que haya mas de una entrada para el numero de contacto
+      control.removeAt(index);
+      control.removeAt(index - 1);
+      control.removeAt(index - 2);
     }
   }
 
