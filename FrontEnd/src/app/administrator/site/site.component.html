@@ -16,9 +16,9 @@
 
         </thead>
         <tbody>
-        <tr >
-          <td>Centro Academico San Jose</td>
-          <td>Al frente del INVU en San Jose centro</td>
+        <tr *ngFor='let sede of sedes | async'>
+          <td>{{sede.NombreSede}}</td>
+          <td>{{sede.Direccion}}</td>
           <td><button class="btn btn-primary" >Seleccionar</button></td>
         </tr>
         </tbody>
