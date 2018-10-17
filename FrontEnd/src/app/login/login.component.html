@@ -14,7 +14,7 @@
           </div>
           <div class="card-body">
 
-            <form [formGroup] = "formLogin" >
+            <form [formGroup] = "formLogin" (ngSubmit)="onSubmit()">
                   <!--(ngSubmit)="enviarFormulario()">-->
               <br>
 

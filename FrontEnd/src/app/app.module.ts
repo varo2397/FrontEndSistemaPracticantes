@@ -56,6 +56,7 @@ import { CreateSchoolComponent } from './administrator/school/create-school/crea
 import { RequestComponent} from './companies/careers/request/request.component';
 import { EditEventComponent} from './coordinator/coordinator-events/edit-event/edit-event.component';
 import { CompaniesInformationComponent } from './coordinator/coordinator-events/edit-event/companies-information/companies-information.component';
+import {UserService} from './services/user.service';
 
 
 @NgModule({

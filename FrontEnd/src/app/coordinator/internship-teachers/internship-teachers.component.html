@@ -12,22 +12,22 @@
           Nombre
         </th>
         <th>
-          Correo
+          Cedula
         </th>
-        <th>
-          Teléfono
-        </th>
+        <!--<th>-->
+          <!--Teléfono-->
+        <!--</th>-->
 
         </thead>
         <tbody>
-        <tr>
-          <td>Nombre</td>
-          <td>Correos</td>
-          <td>Número</td>
+        <tr *ngFor="let professor of professors">
+          <td>{{professor.Nombre + professor.Apellido}}</td>
+          <td>{{professor.Cedula}}</td>
+          <!--<td>Número</td>-->
           <td>
             <div class="btn-group">
-              <button class="btn btn-primary" (click)="seleccionarProfesor(profesor.Cedula)">Seleccionar</button>
-              <button (click)="eliminarProfesor(profesor.Cedula)" class="btn btn-primary ">Eliminar </button>
+              <!--<button class="btn btn-primary" (click)="seleccionarProfesor(profesor.Cedula)">Seleccionar</button>-->
+              <!--<button (click)="eliminarProfesor(profesor.Cedula)" class="btn btn-primary ">Eliminar </button>-->
             </div>
 
           </td>
