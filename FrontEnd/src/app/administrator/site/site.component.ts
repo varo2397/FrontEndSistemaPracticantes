@@ -18,7 +18,7 @@ export class SiteComponent implements OnInit {
   }
 
   obtenerSedes() {
-    this.sedes = this.http.get('http://localhost:3000/administrator/sedes');
+    this.sedes = this.http.get('http://localhost:3000/administrator/sites');
   }
 
 }

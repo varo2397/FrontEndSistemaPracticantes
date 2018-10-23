@@ -9,7 +9,7 @@ import { FormArray, FormControl, FormGroup, Validators} from '@angular/forms';
 export class CreatePersonComponent implements OnInit {
 
   formPerson: FormGroup;
-  generos =  ['Masculino', 'Femenino'];
+  genres =  ['Masculino', 'Femenino'];
 
   constructor() { }
 

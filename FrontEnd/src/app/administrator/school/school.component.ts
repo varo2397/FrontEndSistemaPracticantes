@@ -18,7 +18,7 @@ export class SchoolComponent implements OnInit {
   }
 
   obtenerSchool() {
-    this.schools = this.http.get('http://localhost:3000/administrator/school');
+    this.schools = this.http.get('http://localhost:3000/administrator/schools');
   }
 
 }
