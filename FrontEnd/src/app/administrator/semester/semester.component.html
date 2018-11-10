@@ -16,9 +16,9 @@
 
         </thead>
         <tbody>
-        <tr >
-          <td>2018</td>
-          <td>II</td>
+        <tr *ngFor='let semester of semestres | async'>
+          <td>{{semester.Ano}}</td>
+          <td>{{semester.NumeroSemestre}}</td>
           <td><button class="btn btn-primary" >Seleccionar</button></td>
         </tr>
         </tbody>

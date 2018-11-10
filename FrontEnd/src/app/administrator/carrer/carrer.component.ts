@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-carrer',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarrerComponent implements OnInit {
 
-  constructor() { }
+  carreras: Observable<Object>;
+
+  constructor(private http:HttpClient) { }
 
   ngOnInit() {
+    this.obtenerCarreras();
+  }
+
+  obtenerCarreras() {
+    this.carreras = this.http.get('http://localhost:3000/administrator/careers');
   }
 
 }

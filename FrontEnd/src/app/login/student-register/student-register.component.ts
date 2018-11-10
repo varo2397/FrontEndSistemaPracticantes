@@ -9,7 +9,6 @@ import {CreateStudentComponent} from '../../general/create-student/create-studen
   styleUrls: ['./student-register.component.css']
 })
 export class StudentRegisterComponent implements OnInit {
-
   @ViewChild(CreatePersonComponent) createPerson: CreatePersonComponent;
   @ViewChild(CreateUserComponent) createUser: CreateUserComponent;
   @ViewChild(CreateStudentComponent) createStudent: CreateStudentComponent;

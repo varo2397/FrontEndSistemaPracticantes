@@ -16,7 +16,7 @@
 
         </thead>
         <tbody>
-        <tr >
+        <tr *ngFor='let carrera of carreras | async'>
           <td>Escuela de computación</td>
           <td>Ingenieria en Computación</td>
           <td><button class="btn btn-primary" >Seleccionar</button></td>

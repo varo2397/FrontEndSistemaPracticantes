@@ -16,9 +16,9 @@
 
         </thead>
         <tbody>
-        <tr >
-          <td>Alvaro Castro Venegas</td>
-          <td>116710731</td>
+        <tr *ngFor='let coordinator of coordinators | async'>
+          <td>{{coordinator.Nombre}} {{coordinator.SegundoNombre}} {{coordinator.Apellido}} {{coordinator.SegundoApellido}}</td>
+          <td>{{coordinator.Cedula}}</td>
           <td><button class="btn btn-primary" >Seleccionar</button></td>
         </tr>
         </tbody>
