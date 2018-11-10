@@ -26,26 +26,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
-    if(this.formLogin.valid){
-
-      let userInfo = {
-        userName: this.formLogin.get('nombreUsuario').value,
-        password: this.formLogin.get('contrasena').value
-      };
-
-      this._user.authenticate(userInfo)
-        .subscribe(data => {
-          if(data.valid){
-            this.router.navigate([data.redirect])
-            // console.log(data)
-          }
-          else{
-            this.error = 'Usuario o contraseña incorrecta';
-          }
-        })
-
-      //
-    }
+    
   }
 
 }
