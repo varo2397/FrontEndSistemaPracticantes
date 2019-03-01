@@ -1,0 +1,40 @@
+<section >
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <mat-card class="col-md-4 offset-md-4">
+    <mat-card-title class="text-center">Inicio de sesión</mat-card-title>
+    <mat-card-content class="col-md-12">
+      <form class="text-center"  [formGroup]="loginForm" (ngSubmit) = "submitForm()">
+
+        <div class="col-md-12">
+          <mat-form-field>
+
+            <input type="email" formControlName="email"  matInput placeholder="Your email">
+            <mat-icon matSuffix color="primary">person</mat-icon>
+            <mat-error *ngIf="loginForm.hasError('required', 'email')">This field is required</mat-error>
+            <mat-error *ngIf="loginForm.hasError('email', 'email')">This field must be an email</mat-error>
+
+          </mat-form-field>
+        </div>
+
+        <mat-form-field>
+          <input type="password"  formControlName="password"  matInput placeholder="Your password">
+          <mat-icon matSuffix color="primary">lock</mat-icon>
+          <mat-error *ngIf="loginForm.hasError('required', 'password')">Password is required</mat-error>
+        </mat-form-field>
+        <br>
+        <br>
+
+        <button type="submit" mat-raised-button color="primary" >Submit</button>
+      </form>
+      <br>
+    </mat-card-content>
+  </mat-card>
+
+
+
+</section>
