@@ -1,0 +1,53 @@
+<section>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="col-md-8 offset-md-2">
+    <h2 class="font-primary">
+      Registro de estudiantes
+    </h2>
+    <mat-horizontal-stepper #stepper>
+      <mat-step>
+        <app-create-person></app-create-person>
+        <br>
+        <div fxLayout fxLayoutGap="10px">
+          <button mat-raised-button routerLink=".." color="warn">Cancelar</button>
+          <button
+            [disabled]="!createPerson.personForm.valid || !createPerson.personForm.touched"
+            mat-raised-button
+            matStepperNext
+            color="primary"
+
+          >Siguiente</button>
+        </div>
+      </mat-step>
+      <mat-step>
+          goas
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </mat-step>
+      <mat-step>
+        hola2
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </mat-step>
+      <mat-step>
+        hola2
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </div>
+
+
+
+</section>
+
+
