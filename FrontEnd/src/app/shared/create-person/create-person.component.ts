@@ -62,7 +62,7 @@ export class CreatePersonComponent implements OnInit {
   }
 
   duplicatedValidator( controlType: string, control: FormControl) {
-    if (this.personForm !== undefined && <FormArray>this.personForm.get(controlType).length > 1) {
+    if (this.personForm !== undefined && (<FormArray>this.personForm.get(controlType)).length > 1) {
       const controlArray = <FormArray>this.personForm.get(controlType);
       const controlValue = control.value;
       let duplicatedAmount = 0;

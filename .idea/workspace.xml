@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80f20777-4554-4a3d-a366-b9e180499be3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/shared/shared.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/auth/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/auth/login/login.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/auth/login/login.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/auth/login/login.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/auth/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/auth/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/material/material.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/material/material.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/auth/register-student/register-student.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/auth/register-student/register-student.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/auth/register-student/register-student.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/auth/register-student/register-student.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/shared/create-student/create-student.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/shared/create-student/create-student.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/shared/create-student/create-student.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/shared/create-student/create-student.component.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,73 +21,94 @@
     <session id="-990188340">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.2" value="1" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.open.time.8" value="2" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="14" />
+          <entry key="html" value="17" />
           <entry key="jpg" value="1" />
           <entry key="json" value="5" />
           <entry key="scss" value="13" />
-          <entry key="ts" value="29" />
+          <entry key="ts" value="33" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="14" />
+          <entry key="HTML" value="17" />
           <entry key="Image" value="1" />
           <entry key="JSON" value="5" />
           <entry key="SCSS" value="13" />
-          <entry key="TypeScript" value="29" />
+          <entry key="TypeScript" value="33" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="Angular2LanguageService" value="2" />
-          <entry key="TsLintLanguageService" value="2" />
+          <entry key="Angular2LanguageService" value="3" />
+          <entry key="TsLintLanguageService" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="3842" />
+          <entry key="html" value="4841" />
           <entry key="json" value="25" />
           <entry key="scss" value="232" />
-          <entry key="ts" value="2892" />
+          <entry key="ts" value="3556" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="3842" />
+          <entry key="HTML" value="4841" />
           <entry key="JSON" value="25" />
           <entry key="SCSS" value="232" />
-          <entry key="TypeScript" value="2892" />
+          <entry key="TypeScript" value="3556" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/app/auth/register-student/register-student.component.ts">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/frontend/src/app/shared/create-student/create-student.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="10" column="72" selection-start-line="10" selection-start-column="72" selection-end-line="10" selection-end-column="72" />
+            <state relative-caret-position="217">
+              <caret line="33" column="79" selection-start-line="33" selection-start-column="79" selection-end-line="33" selection-end-column="79" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/app/shared/create-student/create-student.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="448">
+              <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
               <folding>
-                <element signature="e#0#61#0" expanded="true" />
+                <element signature="e#0#50#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/frontend/src/app/auth/register-student/register-student.component.html">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/app/shared/create-person/create-person.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+            <state relative-caret-position="308">
+              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/app/shared/create-person/create-person.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1736">
+              <caret line="64" column="86" selection-start-line="64" selection-start-column="86" selection-end-line="64" selection-end-column="86" />
+              <folding>
+                <element signature="e#0#50#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -126,10 +145,12 @@
         <option value="$PROJECT_DIR$/frontend/src/app/material/material.module.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/auth/login/login.component.scss" />
         <option value="$PROJECT_DIR$/frontend/src/app/shared/create-person/create-person.component.html" />
-        <option value="$PROJECT_DIR$/frontend/src/app/shared/create-person/create-person.component.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/auth/login/login.component.html" />
         <option value="$PROJECT_DIR$/frontend/src/app/auth/register-student/register-student.component.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/auth/register-student/register-student.component.html" />
+        <option value="$PROJECT_DIR$/frontend/src/app/shared/create-person/create-person.component.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/shared/create-student/create-student.component.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/shared/create-student/create-student.component.html" />
       </list>
     </option>
   </component>
@@ -309,18 +330,19 @@
       <option name="presentableId" value="Default" />
       <updated>1551370179483</updated>
       <workItem from="1551370180852" duration="3442000" />
-      <workItem from="1551389769369" duration="37428000" />
+      <workItem from="1551389769369" duration="39349000" />
+      <workItem from="1551533966931" duration="7656000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40870000" />
+    <option name="totallyTimeSpent" value="50447000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24983476" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.24983476" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -351,15 +373,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/my-theme.scss">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/my-theme.scss" />
     <entry file="file://$PROJECT_DIR$/frontend/src/theme.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
@@ -378,9 +395,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="11" column="29" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -413,16 +427,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/shared/shared.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/app/auth/auth.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-56">
@@ -434,9 +438,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -457,9 +458,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="560">
           <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -467,9 +465,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="16" column="78" selection-start-line="16" selection-start-column="78" selection-end-line="16" selection-end-column="78" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -488,23 +483,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/shared/create-person/create-person.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1421">
-          <caret line="69" column="134" selection-start-line="69" selection-start-column="134" selection-end-line="69" selection-end-column="134" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/shared/create-person/create-person.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="64" column="40" selection-start-line="64" selection-start-column="40" selection-end-line="64" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/app/auth/login/login.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -514,18 +492,59 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/app/auth/register-student/register-student.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="10" column="72" selection-start-line="10" selection-start-column="72" selection-end-line="10" selection-end-column="72" />
+        <state relative-caret-position="308">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
           <folding>
             <element signature="e#0#61#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/shared/shared.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="436">
+          <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/app/auth/register-student/register-student.component.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="24" column="30" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/shared/create-person/create-person.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1736">
+          <caret line="64" column="86" selection-start-line="64" selection-start-column="86" selection-end-line="64" selection-end-column="86" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/shared/create-student/create-student.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
-          <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+          <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/shared/create-person/create-person.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/shared/create-student/create-student.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="33" column="79" selection-start-line="33" selection-start-column="79" selection-end-line="33" selection-end-column="79" />
         </state>
       </provider>
     </entry>

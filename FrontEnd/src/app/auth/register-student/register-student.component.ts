@@ -9,7 +9,7 @@ import { CreatePersonComponent } from '../../shared/create-person/create-person.
 export class RegisterStudentComponent implements OnInit {
 
   @ViewChild(CreatePersonComponent) createPerson: CreatePersonComponent;
-  isLinear = false;
+  isLinear = true;
   constructor() { }
 
   ngOnInit() {

@@ -1,3 +1,63 @@
-<p>
-  create-student works!
-</p>
+<section>
+  <div class="row">
+    <div class="col-md-12">
+      <mat-card>
+        <mat-card-title class="font-primary">Datos del estudiante</mat-card-title>
+        <mat-card-content>
+          <form [formGroup]="studentForm">
+            <div class="row">
+              <div class="col-md-6">
+                <input
+                  hidden
+                  type="file"
+                  #file
+                  (change)="fileChange($event)"
+                  formControlName="picture"
+                >
+                <button mat-raised-button type="button" (click)="file.click()" color="primary">Escoger foto</button>
+                <br>
+                <label class="font-primary">Nombre del archivo: {{ fileName }}</label>
+                <div *ngIf="!fileFormatValid" class="text-danger">Los formatos permitidos son SVG, PNG, JPG, JPEG</div>
+                <div *ngIf="!fileSelected" class="text-danger">Necesitas escoger una foto</div>
+              </div>
+
+              <div class="col-md-6">
+                <mat-form-field>
+                  <input type="number" formControlName="studentID" matInput placeholder="Carné">
+                  <mat-error *ngIf="studentForm.hasError('required', 'studentID')">Este campo es obligatorio</mat-error>
+                  <mat-error *ngIf="studentForm.hasError('min', 'studentID') || studentForm.hasError('max', 'studentID')">El carné tiene que ser de 10 dígitos</mat-error>
+                </mat-form-field>
+              </div>
+
+              <div class="col-md-4">
+               <mat-form-field>
+                 <mat-select formControlName="semester" placeholder="Semestre">
+                 </mat-select>
+                 <mat-error *ngIf="studentForm.hasError('required', 'semester')">Este campo es obligatorio</mat-error>
+               </mat-form-field>
+
+              </div><div class="col-md-4">
+               <mat-form-field>
+                 <mat-select formControlName="place" placeholder="Sede">
+
+                 </mat-select>
+                 <mat-error *ngIf="studentForm.hasError('required', 'place')">Este campo es obligatorio</mat-error>
+               </mat-form-field>
+
+              </div><div class="col-md-4">
+               <mat-form-field>
+                 <mat-select formControlName="career" placeholder="Carrera">
+
+                 </mat-select>
+                 <mat-error *ngIf="studentForm.hasError('required', 'career')">Este campo es obligatorio</mat-error>
+               </mat-form-field>
+
+              </div>
+
+            </div>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</section>
