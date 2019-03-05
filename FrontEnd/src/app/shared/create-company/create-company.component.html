@@ -1,0 +1,30 @@
+<section>
+  <div class="row">
+    <div class="col-md-12">
+      <mat-card>
+        <mat-card-title class="font-primary">Datos empresa</mat-card-title>
+        <mat-card-content>
+          <form [formGroup]="companyForm">
+            <div class="row">
+              <div class="col-md-6">
+                <mat-form-field>
+                  <input formControlName="name" matInput placeholder="Nombre de la empresa">
+                  <mat-error *ngIf="companyForm.hasError('required','name')">Este campo es obligatorio</mat-error>
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field>
+                  <input formControlName="legalID" matInput placeholder="Cédula jurídica">
+                  <mat-error *ngIf="companyForm.hasError('required','legalID')">Este campo es obligatorio</mat-error>
+                  <mat-error *ngIf="companyForm.hasError('required','legalID')">La cédula jurídica tiene que ser de 10 dígitos</mat-error>
+                </mat-form-field>
+              </div>
+
+            </div>
+
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</section>

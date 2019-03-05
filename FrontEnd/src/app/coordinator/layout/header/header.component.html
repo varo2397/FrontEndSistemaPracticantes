@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+  <div>
+    <button mat-icon-button="" (click)="onToggleSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <div>
+    <h2>
+      <button mat-button routerLink="/coordinador">
+        Sistema de practicantes
+      </button>
+    </h2>
+
+  </div>
+  <div fxFlex fxLayoutAlign="end">
+    <button mat-button [matMenuTriggerFor]="menu">
+      <mat-icon>person</mat-icon>
+      Información de usuario
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Información personal</button>
+      <button mat-menu-item>Cerrar sesión</button>
+
+    </mat-menu>
+  </div>
+</mat-toolbar>

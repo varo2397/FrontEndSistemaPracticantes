@@ -1,0 +1,44 @@
+<mat-nav-list>
+  <mat-accordion mat-list-item>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon matPrefix>person</mat-icon>
+          <span class="sidenav-element">Estudiantes</span>
+
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <button mat-menu-item routerLink="estudiantes/aprobar-estudiantes">
+        <mat-icon >person_add</mat-icon>
+        Aprobar estudiantes
+      </button>
+      <button mat-menu-item routerLink="estudiantes">
+        <mat-icon>person_outline</mat-icon>
+        Estudiantes en el sistema
+      </button>
+
+    </mat-expansion-panel>
+  </mat-accordion>
+
+
+  <mat-accordion mat-list-item>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon>calendar_today</mat-icon>
+          <span class="sidenav-element">Eventos</span>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <button mat-menu-item routerLink="eventos/crear-evento">
+        <mat-icon>insert_invitation</mat-icon>
+        Crear evento
+      </button>
+      <button mat-menu-item routerLink="eventos">
+        <mat-icon>date_range</mat-icon>
+        Eventos
+      </button>
+
+    </mat-expansion-panel>
+  </mat-accordion>
+
+</mat-nav-list>

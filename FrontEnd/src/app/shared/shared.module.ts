@@ -5,13 +5,15 @@ import { MaterialModule } from '../material/material.module';
 import { CreatePersonComponent } from './create-person/create-person.component';
 import { CreateStudentComponent } from './create-student/create-student.component';
 import { CreateUserComponent } from './create-user/create-user.component';
+import { CreateCompanyComponent } from './create-company/create-company.component';
 
 
 @NgModule({
   declarations: [
     CreatePersonComponent,
     CreateStudentComponent,
-    CreateUserComponent
+    CreateUserComponent,
+    CreateCompanyComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +23,8 @@ import { CreateUserComponent } from './create-user/create-user.component';
   exports: [
     CreatePersonComponent,
     CreateStudentComponent,
-    CreateUserComponent
+    CreateUserComponent,
+    CreateCompanyComponent
   ]
 
 })

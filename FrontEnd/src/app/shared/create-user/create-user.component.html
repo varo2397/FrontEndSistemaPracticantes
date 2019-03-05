@@ -1,3 +1,29 @@
-<p>
-  create-user works!
-</p>
+<section>
+  <div class="row">
+    <div class="col-md-12">
+      <mat-card>
+        <mat-card-title class="font-primary">Datos de usuario</mat-card-title>
+        <mat-card-content>
+          <form [formGroup]="userForm">
+            <div class="row">
+              <div class="col-md-6">
+                <mat-form-field>
+                  <input type="password" matInput placeholder="Contraseña" formControlName="password">
+                  <mat-error *ngIf="userForm.hasError('required', 'password')">Este campo es obligatorio</mat-error>
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field>
+                  <input type="password" matInput placeholder="Confirmar contraseña" formControlName="confirmPassword">
+                  <mat-error *ngIf="userForm.hasError('required', 'confirmPassword')">Este campo es obligatorio</mat-error>
+                  <mat-error *ngIf="userForm.hasError('passwordInvalid', 'confirmPassword')">Las contraseñas no son iguales</mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</section>

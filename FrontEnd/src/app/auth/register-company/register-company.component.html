@@ -5,26 +5,23 @@
   <br>
   <div class="col-md-8 offset-md-2">
     <h2 class="font-primary">
-      Registro de estudiantes
+      Registro de empresas
     </h2>
     <mat-horizontal-stepper #stepper>
+      <mat-step>
+        <app-create-company></app-create-company>
+        <br>
+        <div fxLayout fxLayoutGap="10px">
+          <button mat-raised-button routerLink=".." color="warn" matStepperPrevious>Cancelar</button>
+          <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+        </div>
+      </mat-step>
       <mat-step>
         <app-create-person></app-create-person>
         <br>
         <div fxLayout fxLayoutGap="10px">
-          <button mat-raised-button routerLink=".." color="warn">Cancelar</button>
+          <button mat-raised-button matStepperPrevious color="warn">Atras</button>
           <button mat-raised-button matStepperNext color="primary">Siguiente</button>
-        </div>
-      </mat-step>
-      <mat-step>
-          <app-create-student></app-create-student>
-        <div>
-          <br>
-          <div fxLayout fxLayoutGap="10px">
-            <button mat-raised-button color="warn" matStepperPrevious>Atras</button>
-            <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
-          </div>
-
         </div>
       </mat-step>
       <mat-step>

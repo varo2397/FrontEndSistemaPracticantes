@@ -14,3 +14,19 @@ body {
 mat-form-field {
   width: 100%;
 }
+mat-sidenav, mat-sidenav-content, mat-sidenav-container {
+  height: 100%;
+}
+
+mat-sidenav {
+  width: 300px;
+}
+
+.sidenav-element {
+  display: inline-block;
+  padding-left: 15px;
+}
+
+table {
+  width: 100%;
+}

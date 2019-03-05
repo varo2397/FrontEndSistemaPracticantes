@@ -27,7 +27,7 @@
             <mat-form-field>
               <input type="password"  formControlName="password"  matInput placeholder="Contraseña">
               <mat-icon matSuffix color="primary">lock</mat-icon>
-              <mat-error *ngIf="loginForm.hasError('required', 'password')">Password is required</mat-error>
+              <mat-error *ngIf="loginForm.hasError('required', 'password')">Este campo es obligatorio</mat-error>
             </mat-form-field>
           </div>
           <br>
