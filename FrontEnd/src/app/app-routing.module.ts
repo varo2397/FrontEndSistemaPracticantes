@@ -3,7 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   { path: '', loadChildren: './auth/auth.module#AuthModule' },
-  { path: 'coordinador', loadChildren: './coordinator/coordinator.module#CoordinatorModule' }
+  { path: 'coordinador', loadChildren: './coordinator/coordinator.module#CoordinatorModule' },
+  { path: 'empresa', loadChildren: './company/company.module#CompanyModule' }
 ];
 
 @NgModule({
