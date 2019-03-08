@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-md-6">
+    <div cdkDropList
+         [cdkDropListData]="companies"
+         [cdkDropListConnectedTo]="secondList"
+         #firstList="cdkDropList"
+         (cdkDropListDropped)="drop($event)"
+    >
+      <div *ngFor="let company of companies">
+        <div cdkDrag >
+          <app-company-event-info [ejemplo]="company"></app-company-event-info>
+        </div>
+        <br>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div cdkDropList
+         [cdkDropListData]="companiesSchedule"
+         [cdkDropListConnectedTo]="firstList"
+         #secondList="cdkDropList"
+         (cdkDropListDropped)="drop($event)"
+    >
+      <div *ngFor="let company of companiesSchedule">
+        <div cdkDrag >
+          <app-company-event-info [ejemplo]="company"></app-company-event-info>
+        </div>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>
+

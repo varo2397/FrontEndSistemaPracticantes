@@ -7,6 +7,8 @@ import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./create-event.component.scss']
 })
 export class CreateEventComponent implements OnInit {
+  static ActivityStartTimeControl = 'start';
+  static ActivityEndTimeControl = 'end';
 
   eventForm: FormGroup;
 
@@ -59,7 +61,6 @@ export class CreateEventComponent implements OnInit {
       controlStart.removeAt(index);
       controlEnd.removeAt(index);
     }
-
   }
 
   checkEventEndTimeValidator(control: FormControl) {

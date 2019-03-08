@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-md-10 offset-md-1">
+    <mat-card>
+      <mat-card-title class="font-primary">Información charla</mat-card-title>
+      <mat-card-content>
+
+        <form [formGroup]="talkEventForm">
+          <div class="row">
+
+            <div class="col-md-6">
+              <mat-form-field>
+                <input matInput placeholder="Nombre de la charla" formControlName="talkName">
+                <mat-error *ngIf="talkEventForm.hasError('required', 'talkName')">Este campo es obligatorio</mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-6">
+              <mat-form-field>
+                <input matInput placeholder="Nombre del charlista" formControlName="speaker">
+                <mat-error *ngIf="talkEventForm.hasError('required', 'speaker')">Este campo es obligatorio</mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-6">
+              <mat-form-field>
+                <input type="time" matInput placeholder="Duración de la charla" formControlName="time">
+                <mat-error *ngIf="talkEventForm.hasError('required', 'time')">Este campo es obligatorio</mat-error>
+              </mat-form-field>
+
+
+            </div>
+
+            <div class="col-md-6">
+              <mat-form-field>
+                <textarea matInput placeholder="Observaciones adicionales" formControlName="observations"></textarea>
+                <mat-error *ngIf="talkEventForm.hasError('required', 'observations')">Este campo es obligatorio</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col-md-4">
+              <button mat-raised-button color="primary">Enviar solicitud de charla</button>
+            </div>
+
+
+          </div>
+        </form>
+
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
