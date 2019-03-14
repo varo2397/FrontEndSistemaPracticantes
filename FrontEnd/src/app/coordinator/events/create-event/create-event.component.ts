@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import { EventTypeService } from '../../../core/http/eventType/event-type.service';
+import { EventType } from '../../../interfaces/eventType';
+import { Event } from '../../../interfaces/event';
+import { Activity } from '../../../interfaces/activity';
 
 @Component({
   selector: 'app-create-event',
@@ -7,16 +11,17 @@ import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./create-event.component.scss']
 })
 export class CreateEventComponent implements OnInit {
-  static ActivityStartTimeControl = 'start';
-  static ActivityEndTimeControl = 'end';
 
   eventForm: FormGroup;
+
+  eventTypes: EventType[];
 
   validFileFormats = ['jpg', 'jpeg', 'png' , 'svg'];
   fileName: string;
   fileFormatValid: boolean;
+  selectedFile: File;
 
-  constructor() { }
+  constructor(private _eventType: EventTypeService) { }
 
   ngOnInit() {
     const [ activityStartTime, activityEndTime ] = this.formControlBuilder();
@@ -33,6 +38,8 @@ export class CreateEventComponent implements OnInit {
       'activitiesStart': new FormArray([activityStartTime]),
       'activitiesEnd': new FormArray([activityEndTime])
     });
+
+    this.getEventTypes();
   }
 
   formControlBuilder(): FormControl[] {
@@ -76,8 +83,8 @@ export class CreateEventComponent implements OnInit {
   }
 
   fileChange(event) {
-    const selectedFile = event.target.files[0];
-    this.fileName = selectedFile.name;
+    this.selectedFile = event.target.files[0];
+    this.fileName = this.selectedFile.name;
     const fileFormat = this.fileName.split('.')[1].toLocaleLowerCase();
     console.log(fileFormat);
     if ( this.validFileFormats.indexOf(fileFormat) === -1 ) {
@@ -85,6 +92,38 @@ export class CreateEventComponent implements OnInit {
 
     } else {
       this.fileFormatValid = true;
+    }
+  }
+
+  getEventTypes() {
+    this._eventType.getEventTypes().subscribe(data => {
+      this.eventTypes = <EventType[]>data.data;
+    });
+  }
+
+  onSubmit() {
+    if (this.eventForm.valid && this.eventForm.touched) {
+
+      const activities: Activity[] = [];
+      for (let i = 0; i < this.eventForm.get('activitiesStart').length; i++) {
+        const activityStart = this.eventForm.get('activitiesStart').at(i).value;
+        const activityEnd = this.eventForm.get('activitiesEnd').at(i).value;
+        const activity: Activity = <Activity> {
+          start: activityStart,
+          finish: activityEnd
+        };
+        activities.push(activity);
+      }
+      const event: Event = <Event>{
+        name: this.eventForm.get('eventTitle').value,
+        eventDate: this.eventForm.get('eventDate').value,
+        start: this.eventForm.get('eventStartTime').value,
+        finish: this.eventForm.get('eventEndTime').value,
+        image: this.selectedFile,
+        type_id: this.eventForm.get('eventType').value,
+        activities: activities
+      };
+      console.log(event);
     }
   }
 

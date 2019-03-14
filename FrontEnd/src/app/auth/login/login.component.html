@@ -10,7 +10,7 @@
     <mat-card class="col-md-4 offset-md-4">
       <mat-card-title class="text-center font-primary">Inicio de sesión</mat-card-title>
       <mat-card-content class="col-md-12">
-        <form class="text-center"  [formGroup]="loginForm" (ngSubmit) = "submitForm()">
+        <form class="text-center"  [formGroup]="loginForm" (ngSubmit) = "onSubmit()">
 
           <div class="col-md-10 offset-md-1">
             <mat-form-field>
@@ -32,7 +32,7 @@
           </div>
           <br>
           <br>
-
+          <p *ngIf="error !== undefined" class="text-danger">{{error}}</p>
           <button type="submit" mat-raised-button color="primary" >Iniciar sesión</button>
         </form>
         <br>
@@ -46,12 +46,12 @@
     <div class="col-md-12 ">
       <mat-card class="col-md-4 offset-md-4 ">
         <mat-card-content >
-          <div class="col-md-12 ">
+          <div class="col-md-12 col-sm-12">
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-6 col-sm-12">
                 <a mat-raised-button routerLink="/registro-estudiante" color="primary">Registro de estudiantes</a>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-6 col-sm-12">
                 <a mat-raised-button routerLink="/registro-empresa" color="primary">Registro de empresa</a>
               </div>
             </div>
