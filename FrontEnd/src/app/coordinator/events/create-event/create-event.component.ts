@@ -110,7 +110,8 @@ export class CreateEventComponent implements OnInit {
         const activityEnd = this.eventForm.get('activitiesEnd').at(i).value;
         const activity: Activity = <Activity> {
           start: activityStart,
-          finish: activityEnd
+          finish: activityEnd,
+          id: 0
         };
         activities.push(activity);
       }

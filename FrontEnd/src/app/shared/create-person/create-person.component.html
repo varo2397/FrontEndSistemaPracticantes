@@ -27,7 +27,7 @@
                 </mat-form-field>
               </div>
 
-              <div class="col-md-4">
+              <div class="col-md-6">
                 <mat-form-field>
                   <input formControlName="id" type="number" matInput placeholder="Número de cédula">
                   <mat-error *ngIf="personForm.hasError('required', 'id')">Este campo es obligatorio</mat-error>
@@ -35,7 +35,7 @@
                 </mat-form-field>
               </div>
 
-              <div class="col-md-4">
+              <div class="col-md-6">
                 <mat-form-field>
                   <mat-select formControlName="gender" placeholder="Género">
                     <mat-option value="0">Masculino</mat-option>
@@ -45,7 +45,7 @@
                 </mat-form-field>
               </div>
 
-              <div class="col-md-4">
+              <div class="col-md-6">
                 <mat-form-field>
                   <input matInput [matDatepicker]="picker"  formControlName="birthdate" placeholder="Fecha de nacimiento">
                   <mat-error *ngIf="personForm.hasError('required','birthdate')">Este campo es obligatorio</mat-error>
@@ -53,50 +53,16 @@
                   <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
               </div>
+
+              <div class="col-md-6">
+                <mat-form-field>
+                  <input matInput  formControlName="phoneNumber" placeholder="Número de teléfono">
+                  <mat-error *ngIf="personForm.hasError('required','phoneNumber')">Este campo es obligatorio</mat-error>
+                </mat-form-field>
+              </div>
               
-              <div class="col-md-6" formArrayName="phoneNumbers">
-                <h5>
-                  <label class="font-primary">Números de teléfono</label>
-                  <button (click)="addFormControl('phoneNumbers')" type="button" mat-icon-button>
-                    <mat-icon color="primary">add</mat-icon>
-                  </button>
-                </h5>
 
-                <div *ngFor="let phoneNumber of personForm.get('phoneNumbers').controls; let i = index;" >
-                  <mat-form-field>
-                    <input type="number" formControlName="{{ i }}" matInput placeholder="Número de teléfono">
-                    <mat-error *ngIf="phoneNumber.hasError('required')">Este campo es obligatorio</mat-error>
-                    <mat-error *ngIf="phoneNumber.hasError('duplicated')">Este número de telefono está repetido</mat-error>
-                    <mat-error *ngIf="phoneNumber.hasError('max') || phoneNumber.hasError('min')">El número tiene que ser de 8 dígitos</mat-error>
-                    <button (click)="deleteFormControl('phoneNumbers', i)" color="warn" type="button" mat-button matSuffix mat-icon-button >
-                      <mat-icon>close</mat-icon>
-                    </button>
-                  </mat-form-field>
-                </div>
 
-              </div>
-
-              <div class="col-md-6" formArrayName="emails">
-                <h5>
-                  <label class="font-primary">Correos electronicos</label>
-                  <button (click)="addFormControl('emails')" type="button" mat-icon-button>
-                    <mat-icon color="primary">add</mat-icon>
-                  </button>
-                </h5>
-
-                <div *ngFor="let email of personForm.get('emails').controls; let i = index;" >
-                  <mat-form-field>
-                    <input type="email" formControlName="{{ i }}" matInput placeholder="Correo electronico">
-                    <mat-error *ngIf="email.hasError('required')">Este campo es obligatorio</mat-error>
-                    <mat-error *ngIf="email.hasError('duplicated')">Este correo electronico está repetido</mat-error>
-                    <mat-error *ngIf="email.hasError('email')">Ingresa una dirección de correo electronico valida</mat-error>
-                    <button (click)="deleteFormControl('emails', i)" color="warn" type="button" mat-button matSuffix mat-icon-button >
-                      <mat-icon>close</mat-icon>
-                    </button>
-                  </mat-form-field>
-                </div>
-
-              </div>
               
             </div>
           </form>
