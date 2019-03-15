@@ -2,11 +2,11 @@ import { Activity } from './activity';
 
 export interface Event {
   name: string;
-  eventDate: Date;
+  eventDate: string;
   start: string;
   finish: string;
   id: number;
-  image: string;
+  image: File;
   type_id: number;
   activities: Activity[];
 }

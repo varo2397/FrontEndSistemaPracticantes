@@ -104,10 +104,13 @@ export class CreateEventComponent implements OnInit {
   onSubmit() {
     if (this.eventForm.valid && this.eventForm.touched) {
 
+      const arrayStart = <FormArray>this.eventForm.get('activitiesStart');
+      const arrayEnd = <FormArray>this.eventForm.get('activitiesEnd');
+      const arrayLength = arrayStart.length;
       const activities: Activity[] = [];
-      for (let i = 0; i < this.eventForm.get('activitiesStart').length; i++) {
-        const activityStart = this.eventForm.get('activitiesStart').at(i).value;
-        const activityEnd = this.eventForm.get('activitiesEnd').at(i).value;
+      for (let i = 0; i < arrayLength; i++) {
+        const activityStart = arrayStart.at(i).value;
+        const activityEnd = arrayEnd.at(i).value;
         const activity: Activity = <Activity> {
           start: activityStart,
           finish: activityEnd,
@@ -122,7 +125,8 @@ export class CreateEventComponent implements OnInit {
         finish: this.eventForm.get('eventEndTime').value,
         image: this.selectedFile,
         type_id: this.eventForm.get('eventType').value,
-        activities: activities
+        activities: activities,
+        id: 0
       };
       console.log(event);
     }
