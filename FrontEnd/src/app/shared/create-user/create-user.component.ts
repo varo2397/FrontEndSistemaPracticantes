@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import {User} from "../../interfaces/user";
 
 @Component({
   selector: 'app-create-user',
@@ -33,6 +34,14 @@ export class CreateUserComponent implements OnInit {
       }
       return null;
     }
+  }
+
+  getFormValues(): User {
+    const user: User = <User> {
+      email: this.userForm.get('email').value,
+      password: this.userForm.get('password').value
+    };
+    return user;
   }
 
 }

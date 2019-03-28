@@ -19,6 +19,13 @@
                   <mat-error *ngIf="companyForm.hasError('required','legalID')">La cédula jurídica tiene que ser de 10 dígitos</mat-error>
                 </mat-form-field>
               </div>
+              <div class="col-md-12">
+                <mat-form-field>
+                  <textarea matInput formControlName="direction" placeholder="Dirección"></textarea>
+                  <mat-error *ngIf="companyForm.hasError('required','direction')">Este campo es obligatorio</mat-error>
+                </mat-form-field>
+
+              </div>
 
             </div>
 

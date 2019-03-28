@@ -32,13 +32,15 @@
               <div class="col-md-4">
                <mat-form-field>
                  <mat-select formControlName="semester" placeholder="Semestre">
+                   <mat-option [value]="1">Semestre I 2019</mat-option>
                  </mat-select>
                  <mat-error *ngIf="studentForm.hasError('required', 'semester')">Este campo es obligatorio</mat-error>
                </mat-form-field>
 
               </div><div class="col-md-4">
                <mat-form-field>
-                 <mat-select formControlName="place" placeholder="Sede">
+                 <mat-select formControlName="place" placeholder="Sede" (selectionChange)="getCareers($event.value)">
+                   <mat-option *ngFor="let site of sites" [value]="site.id">{{site.site}}</mat-option>
 
                  </mat-select>
                  <mat-error *ngIf="studentForm.hasError('required', 'place')">Este campo es obligatorio</mat-error>
@@ -47,7 +49,9 @@
               </div><div class="col-md-4">
                <mat-form-field>
                  <mat-select formControlName="career" placeholder="Carrera">
-
+                   <!--<div *ngIf="careers !== undefined">-->
+                     <mat-option *ngFor="let career of careers" [value]="career.id">{{career.career}}</mat-option>
+                   <!--</div>-->
                  </mat-select>
                  <mat-error *ngIf="studentForm.hasError('required', 'career')">Este campo es obligatorio</mat-error>
                </mat-form-field>

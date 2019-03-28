@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
-import { EventTypeService } from '../../../core/http/eventType/event-type.service';
+import { EventTypesService } from '../../../core/http/eventTypes/event-types.service';
 import { EventType } from '../../../interfaces/eventType';
 import { Event } from '../../../interfaces/event';
 import { Activity } from '../../../interfaces/activity';
@@ -21,7 +21,7 @@ export class CreateEventComponent implements OnInit {
   fileFormatValid: boolean;
   selectedFile: File;
 
-  constructor(private _eventType: EventTypeService) { }
+  constructor(private _eventType: EventTypesService) { }
 
   ngOnInit() {
     const [ activityStartTime, activityEndTime ] = this.formControlBuilder();

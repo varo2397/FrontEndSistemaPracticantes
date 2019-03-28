@@ -6,7 +6,7 @@ import { Response } from '../../../interfaces/response';
 @Injectable({
   providedIn: 'root'
 })
-export class EventTypeService {
+export class EventTypesService {
 
   apiURL = environment.apiURL;
 

@@ -32,7 +32,7 @@
         <br>
         <div fxLayout fxLayoutGap="10px">
           <button mat-raised-button color="warn" matStepperPrevious>Atras</button>
-          <button mat-raised-button color="primary" type="submit">Completar registro</button>
+          <button mat-raised-button color="primary" (click)="onSubmit()" type="submit">Completar registro</button>
         </div>
       </mat-step>
     </mat-horizontal-stepper>

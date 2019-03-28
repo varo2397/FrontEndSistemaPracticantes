@@ -20,4 +20,8 @@ export class RegisterCompanyComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSubmit() {
+
+  }
+
 }
