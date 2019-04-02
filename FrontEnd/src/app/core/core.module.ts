@@ -8,6 +8,7 @@ import {RegisterService} from './http/auth/register.service';
 import {ImageConverterService} from './general/imageConverter.service';
 import {SemestersService} from './http/semesters/semesters.service';
 import {GendersService} from './http/genders/genders.service';
+import {EventsService} from './http/events/events.service';
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import {GendersService} from './http/genders/genders.service';
     RegisterService,
     ImageConverterService,
     SemestersService,
-    GendersService
+    GendersService,
+    EventsService
   ]
 })
 

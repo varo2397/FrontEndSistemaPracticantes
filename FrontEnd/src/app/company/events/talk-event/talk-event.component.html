@@ -10,21 +10,21 @@
             <div class="col-md-6">
               <mat-form-field>
                 <input matInput placeholder="Nombre de la charla" formControlName="talkName">
-                <mat-error *ngIf="talkEventForm.hasError('required', 'talkName')">Este campo es obligatorio</mat-error>
+                <mat-error *ngIf="talkEventForm.hasError('required', ['talkName'])">Este campo es obligatorio</mat-error>
               </mat-form-field>
             </div>
 
             <div class="col-md-6">
               <mat-form-field>
                 <input matInput placeholder="Nombre del charlista" formControlName="speaker">
-                <mat-error *ngIf="talkEventForm.hasError('required', 'speaker')">Este campo es obligatorio</mat-error>
+                <mat-error *ngIf="talkEventForm.hasError('required', ['speaker'])">Este campo es obligatorio</mat-error>
               </mat-form-field>
             </div>
 
             <div class="col-md-6">
               <mat-form-field>
                 <input type="time" matInput placeholder="Duración de la charla" formControlName="time">
-                <mat-error *ngIf="talkEventForm.hasError('required', 'time')">Este campo es obligatorio</mat-error>
+                <mat-error *ngIf="talkEventForm.hasError('required', ['time'])">Este campo es obligatorio</mat-error>
               </mat-form-field>
 
 
@@ -34,7 +34,7 @@
               <mat-form-field>
                 <textarea matInput placeholder="Observaciones adicionales" formControlName="observations"></textarea>
                 <mat-hint>Debería indicar los horarios que prefiere</mat-hint>
-                <mat-error *ngIf="talkEventForm.hasError('required', 'observations')">Este campo es obligatorio</mat-error>
+                <mat-error *ngIf="talkEventForm.hasError('required', ['observations'])">Este campo es obligatorio</mat-error>
               </mat-form-field>
             </div>
             <div class="col-md-4">

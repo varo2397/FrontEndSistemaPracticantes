@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import {People} from "../../interfaces/people";
+import {GendersService} from '../../core/http/genders/genders.service';
+import {Gender} from '../../interfaces/gender';
 
 @Component({
   selector: 'app-create-person',
@@ -10,7 +12,8 @@ import {People} from "../../interfaces/people";
 export class CreatePersonComponent implements OnInit {
 
   personForm: FormGroup;
-  constructor() { }
+  genders: Gender[];
+  constructor(private gendersService: GendersService) { }
 
   ngOnInit() {
     this.personForm = new FormGroup({
@@ -22,9 +25,16 @@ export class CreatePersonComponent implements OnInit {
       'birthdate': new FormControl(null, Validators.required),
       'phoneNumber': new FormControl(null, [Validators.required, Validators.max(99999999), Validators.min(10000000)])
     });
+    this.getGenders();
   }
 
   getFormValues(): People {
+
+    const date = this.personForm.get('birthdate').value;
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
+    const year = date.getFullYear();
+    const parsedDate = year + '-' + month + '-' + day;
 
     const person: People = <People> {
       name: this.personForm.get('name').value,
@@ -33,10 +43,16 @@ export class CreatePersonComponent implements OnInit {
       id: this.personForm.get('id').value,
       gender_id: this.personForm.get('gender').value,
       telephone: this.personForm.get('phoneNumber').value,
-      birthday: this.personForm.get('birthdate').value.toString()
+      birthday:parsedDate
     };
 
     return person;
+  }
+
+  getGenders() {
+    this.gendersService.getGenders().subscribe(response => {
+      this.genders = <Gender[]>response;
+    });
   }
 
 }

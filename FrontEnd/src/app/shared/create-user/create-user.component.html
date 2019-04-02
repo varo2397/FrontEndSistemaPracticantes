@@ -10,22 +10,22 @@
               <div class="col-md-4">
                 <mat-form-field>
                   <input type="email" matInput placeholder="Correo electrónico" formControlName="email">
-                  <mat-error *ngIf="userForm.hasError('required', 'email')">Este campo es obligatorio</mat-error>
-                  <mat-error *ngIf="userForm.hasError('email', 'email')">Ingrese un correo electrónico validom </mat-error>
+                  <mat-error *ngIf="userForm.hasError('required', ['email'])">Este campo es obligatorio</mat-error>
+                  <mat-error *ngIf="userForm.hasError('email', ['email'])">Ingrese un correo electrónico validom </mat-error>
                 </mat-form-field>
               </div>
 
               <div class="col-md-4">
                 <mat-form-field>
                   <input type="password" matInput placeholder="Contraseña" formControlName="password">
-                  <mat-error *ngIf="userForm.hasError('required', 'password')">Este campo es obligatorio</mat-error>
+                  <mat-error *ngIf="userForm.hasError('required', ['password'])">Este campo es obligatorio</mat-error>
                 </mat-form-field>
               </div>
               <div class="col-md-4">
                 <mat-form-field>
                   <input type="password" matInput placeholder="Confirmar contraseña" formControlName="confirmPassword">
-                  <mat-error *ngIf="userForm.hasError('required', 'confirmPassword')">Este campo es obligatorio</mat-error>
-                  <mat-error *ngIf="userForm.hasError('passwordInvalid', 'confirmPassword')">Las contraseñas no son iguales</mat-error>
+                  <mat-error *ngIf="userForm.hasError('required', ['confirmPassword'])">Este campo es obligatorio</mat-error>
+                  <mat-error *ngIf="userForm.hasError('passwordInvalid', ['confirmPassword'])">Las contraseñas no son iguales</mat-error>
                 </mat-form-field>
               </div>
             </div>

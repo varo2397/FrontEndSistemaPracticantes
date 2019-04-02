@@ -6,6 +6,7 @@ import { Student } from '../../interfaces/student';
 import { User } from '../../interfaces/user';
 import { People } from '../../interfaces/people';
 import {RegisterService} from '../../core/http/auth/register.service';
+import {ImageConverterService} from '../../core/general/imageConverter.service';
 
 @Component({
   selector: 'app-register-student',
@@ -17,7 +18,7 @@ export class RegisterStudentComponent implements OnInit {
   @ViewChild(CreatePersonComponent) createPerson: CreatePersonComponent;
   @ViewChild(CreateUserComponent) createUser: CreateUserComponent;
   @ViewChild(CreateStudentComponent) createStudent: CreateStudentComponent;
-  constructor(private register: RegisterService) { }
+  constructor(private register: RegisterService, private imageConverter: ImageConverterService) { }
 
   ngOnInit() {
   }

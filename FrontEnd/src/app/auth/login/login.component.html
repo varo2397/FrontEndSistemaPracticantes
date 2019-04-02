@@ -17,8 +17,8 @@
 
               <input type="email" formControlName="email"  matInput placeholder="Correo electronico">
               <mat-icon matSuffix color="primary">mail</mat-icon>
-              <mat-error *ngIf="loginForm.hasError('required', 'email')">Este campo es obligatorio</mat-error>
-              <mat-error *ngIf="loginForm.hasError('email', 'email')">Ingresa un correo electrónico valido</mat-error>
+              <mat-error *ngIf="loginForm.hasError('required', ['email'])">Este campo es obligatorio</mat-error>
+              <mat-error *ngIf="loginForm.hasError('email', ['email'])">Ingresa un correo electrónico valido</mat-error>
 
             </mat-form-field>
           </div>
@@ -27,7 +27,7 @@
             <mat-form-field>
               <input type="password"  formControlName="password"  matInput placeholder="Contraseña">
               <mat-icon matSuffix color="primary">lock</mat-icon>
-              <mat-error *ngIf="loginForm.hasError('required', 'password')">Este campo es obligatorio</mat-error>
+              <mat-error *ngIf="loginForm.hasError('required', ['password'])">Este campo es obligatorio</mat-error>
             </mat-form-field>
           </div>
           <br>
@@ -60,5 +60,6 @@
       </mat-card>
     </div>
   </div>
+
 
 </section>

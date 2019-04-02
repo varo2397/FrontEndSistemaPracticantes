@@ -14,14 +14,14 @@
                   <div class="col-md-4">
                     <mat-form-field>
                       <input matInput placeholder="Título evento" formControlName="eventTitle" >
-                      <mat-error *ngIf="eventForm.hasError('required', 'eventTitle')">Este campo es obligatorio</mat-error>
+                      <mat-error *ngIf="eventForm.hasError('required', ['eventTitle'])">Este campo es obligatorio</mat-error>
                     </mat-form-field>
                   </div>
 
                   <div class="col-md-4">
                     <mat-form-field>
                       <input matInput [matDatepicker]="picker"  formControlName="eventDate" placeholder="Fecha del evento">
-                      <mat-error *ngIf="eventForm.hasError('required','eventDate')">Este campo es obligatorio</mat-error>
+                      <mat-error *ngIf="eventForm.hasError('required',['eventDate'])">Este campo es obligatorio</mat-error>
                       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                       <mat-datepicker #picker></mat-datepicker>
                     </mat-form-field>
@@ -35,22 +35,22 @@
                         </mat-option>
 
                       </mat-select>
-                      <mat-error *ngIf="eventForm.hasError('required', 'eventType')">Este campo es obligatorio</mat-error>
+                      <mat-error *ngIf="eventForm.hasError('required', ['eventType'])">Este campo es obligatorio</mat-error>
                     </mat-form-field>
                   </div>
 
                   <div class="col-md-4">
                     <mat-form-field>
                       <input type="time" matInput placeholder="Inicio del evento" formControlName="eventStartTime" >
-                      <mat-error *ngIf="eventForm.hasError('required', 'eventStartTime')">Este campo es obligatorio</mat-error>
+                      <mat-error *ngIf="eventForm.hasError('required', ['eventStartTime'])">Este campo es obligatorio</mat-error>
                     </mat-form-field>
                   </div>
 
                   <div class="col-md-4">
                     <mat-form-field>
                       <input type="time" matInput placeholder="Fin del evento" formControlName="eventEndTime" >
-                      <mat-error *ngIf="eventForm.hasError('required', 'eventEndTime')">Este campo es obligatorio</mat-error>
-                      <mat-error *ngIf="eventForm.hasError('eventEndWrong', 'eventEndTime')">La hora de finalización del evento tiene que ser después del inicio del evento</mat-error>
+                      <mat-error *ngIf="eventForm.hasError('required', ['eventEndTime'])">Este campo es obligatorio</mat-error>
+                      <mat-error *ngIf="eventForm.hasError('eventEndWrong', ['eventEndTime'])">La hora de finalización del evento tiene que ser después del inicio del evento</mat-error>
                     </mat-form-field>
                   </div>
 
@@ -81,7 +81,7 @@
                   <div class="col-md-6">
                     <div class="row">
                       <div formArrayName="activitiesStart" style="width:100%;">
-                        <div *ngFor="let activity of eventForm.get('activitiesStart').controls; let i = index;" class="col-md-12">
+                        <div *ngFor="let activity of eventForm.get('activitiesStart')['controls']; let i = index;" class="col-md-12">
                           <mat-form-field>
                             <input type="time" matInput formControlName="{{ i }}" placeholder="Hora de inicio" >
                             <mat-error *ngIf="activity.hasError('required')">Este campo es obligatorio</mat-error>
@@ -94,7 +94,7 @@
                   <div class="col-md-6">
                     <div class="row">
                       <div formArrayName="activitiesEnd" style="width:100%;">
-                        <div *ngFor="let activity of eventForm.get('activitiesEnd').controls; let i = index;" class="col-md-12">
+                        <div *ngFor="let activity of eventForm.get('activitiesEnd')['controls']; let i = index;" class="col-md-12">
                           <mat-form-field>
                             <input type="time" matInput formControlName="{{ i }}" placeholder="Hora de finalización" >
                             <mat-error *ngIf="activity.hasError('required')">Este campo es obligatorio</mat-error>

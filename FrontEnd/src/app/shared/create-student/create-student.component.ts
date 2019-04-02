@@ -4,6 +4,8 @@ import {SitesService} from '../../core/http/sites/sites.service';
 import {Sites} from '../../interfaces/sites';
 import {Career} from '../../interfaces/career';
 import {Student} from '../../interfaces/student';
+import {Semester} from '../../interfaces/semester';
+import {SemestersService} from '../../core/http/semesters/semesters.service';
 
 @Component({
   selector: 'app-create-student',
@@ -20,8 +22,9 @@ export class CreateStudentComponent implements OnInit {
   studentForm: FormGroup;
   sites: Sites[];
   careers: Career[];
+  semesters: Semester[];
 
-  constructor(private _sitesService: SitesService) { }
+  constructor(private sitesService: SitesService, private semestersService: SemestersService) { }
 
   ngOnInit() {
     this.fileFormatValid = true;
@@ -38,7 +41,7 @@ export class CreateStudentComponent implements OnInit {
       'career': new FormControl(null, [Validators.required]),
       'place': new FormControl(null, [Validators.required])
     });
-
+    this.getSemesters();
     this.getSites();
   }
 
@@ -57,7 +60,7 @@ export class CreateStudentComponent implements OnInit {
   }
 
   getSites() {
-    this._sitesService.getSites().subscribe(response => {
+    this.sitesService.getSites().subscribe(response => {
       this.sites = <Sites[]>response.data;
     });
   }
@@ -67,6 +70,12 @@ export class CreateStudentComponent implements OnInit {
       if (site.id === siteID) {
         this.careers = site.careers;
       }
+    });
+  }
+
+  getSemesters() {
+    this.semestersService.getSemesters().subscribe(response => {
+      this.semesters = <Semester[]>response;
     });
   }
 

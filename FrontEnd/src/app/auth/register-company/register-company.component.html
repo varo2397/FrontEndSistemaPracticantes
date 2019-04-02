@@ -28,8 +28,12 @@
         <app-create-user></app-create-user>
         <br>
         <div fxLayout fxLayoutGap="10px">
+          <span *ngIf="errors !== null" class="text-danger">{{errors}}</span>
+        </div>
+
+        <div fxLayout fxLayoutGap="10px">
           <button mat-raised-button color="warn" matStepperPrevious>Atras</button>
-          <button mat-raised-button color="primary" type="submit">Completar registro</button>
+          <button mat-raised-button color="primary" (click)="onSubmit()" type="submit">Completar registro</button>
         </div>
       </mat-step>
     </mat-horizontal-stepper>

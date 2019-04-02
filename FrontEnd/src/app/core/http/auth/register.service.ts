@@ -27,8 +27,12 @@ export class RegisterService {
   }
 
   registerCompany(person: People, user: User, company: Company) {
-    // const json = {
-    //
-    // }
+    const json = {
+      company: company,
+      user: user,
+      person: person
+    };
+    console.log(json);
+    return this.http.post<Response>(this.apiURL + 'companies', json);
   }
 }
