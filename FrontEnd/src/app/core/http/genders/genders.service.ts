@@ -13,6 +13,6 @@ export class GendersService {
   constructor(private http: HttpClient) {}
 
   getGenders() {
-    return this.http.get<Response>(this.apiURL + 'catalog/gender');
+    return this.http.get(this.apiURL + 'catalog/gender');
   }
 }

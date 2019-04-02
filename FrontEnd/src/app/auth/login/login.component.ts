@@ -1,22 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from '../../core/http/auth/login.service';
 import { Router } from '@angular/router';
 import { Login } from '../../interfaces/login';
 import { LoginToken } from '../../interfaces/loginToken';
+import { Store } from '@ngrx/store';
+import * as Auth from '../../store/auth/auth.actions';
+import * as fromAuth from '../../store/auth/auth.reducer';
+import {Observable} from 'rxjs';
+
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
 
   loginForm: FormGroup;
   login: LoginToken;
   error: string;
+  httpObserver;
 
-  constructor(private _login: LoginService, private _router: Router) { }
+  constructor(private loginService: LoginService,
+              private router: Router,
+              private store: Store<fromAuth.State>) { }
 
   ngOnInit() {
     this.loginForm = new FormGroup({
@@ -31,24 +39,25 @@ export class LoginComponent implements OnInit {
         email: this.loginForm.get('email').value,
         password: this.loginForm.get('password').value
       };
-      this._login.login(loginInfo).subscribe(data => {
-        console.log(data);
-        // if (data.error !== null) {
-          this.login = <LoginToken>data.data;
+      this.httpObserver = this.loginService.login(loginInfo).subscribe(response => {
+        console.log(response);
 
-          switch (this.login.person_type) {
-            case 'student':
-              this._router.navigate(['estudiante']);
-              break;
-            case 'coordinator':
-              this._router.navigate(['coordinador']);
-              break;
-            case 'company':
-              this._router.navigate(['empresa']);
-              break;
-            default:
-              return null;
-          }
+        this.login = <LoginToken>response.data;
+        this.store.dispatch(new Auth.SetLoginToken(this.login));
+
+        switch (this.login.person_type) {
+          case 'student':
+            this.router.navigate(['estudiante']);
+            break;
+          case 'coordinator':
+            this.router.navigate(['coordinador']);
+            break;
+          case 'company':
+            this.router.navigate(['empresa']);
+            break;
+          default:
+            return null;
+        }
         // }
         // else {
         //   this.error = 'Correo o contraseña incorrectos';
@@ -56,6 +65,10 @@ export class LoginComponent implements OnInit {
       });
 
     }
+  }
+
+  ngOnDestroy(): void {
+    this.httpObserver.unsubscribe();
   }
 
 }

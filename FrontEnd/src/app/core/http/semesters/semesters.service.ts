@@ -13,6 +13,6 @@ export class SemestersService {
   constructor(private http: HttpClient) {}
 
   getSemesters() {
-    return this.http.get<Response>(this.apiURL + 'catalog/semester');
+    return this.http.get(this.apiURL + 'catalog/semester');
   }
 }

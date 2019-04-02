@@ -9,6 +9,8 @@ import {ImageConverterService} from './general/imageConverter.service';
 import {SemestersService} from './http/semesters/semesters.service';
 import {GendersService} from './http/genders/genders.service';
 import {EventsService} from './http/events/events.service';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import {AuthInterceptor} from './http/interceptors/auth.interceptor';
 
 @NgModule({
   imports: [
@@ -24,7 +26,8 @@ import {EventsService} from './http/events/events.service';
     ImageConverterService,
     SemestersService,
     GendersService,
-    EventsService
+    EventsService,
+    {provide:  HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
   ]
 })
 
