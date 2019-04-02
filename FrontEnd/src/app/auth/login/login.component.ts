@@ -7,8 +7,6 @@ import { LoginToken } from '../../interfaces/loginToken';
 import { Store } from '@ngrx/store';
 import * as Auth from '../../store/auth/auth.actions';
 import * as fromAuth from '../../store/auth/auth.reducer';
-import {Observable} from 'rxjs';
-
 
 @Component({
   selector: 'app-login',

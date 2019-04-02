@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col-md-10 offset-md-1">
           <mat-card>
-            <mat-card-title class="font-primary">Titulo evento</mat-card-title>
+            <mat-card-title class="font-primary">Titulo evento: {{event.name}}</mat-card-title>
             <mat-card-content>
               <div class="row">
                 <div class="col-md-4">
@@ -14,12 +14,17 @@
                 <div class="col-md-4">
                   <h5>
                     <label class="font-primary">Fecha del evento</label>
+                    <br>
+                    <label class="font-primary">{{event.eventDate}}</label>
                   </h5>
 
                 </div>
                 <div class="col-md-4">
                   <h5>
                     <label class="font-primary">Tipo del evento</label>
+                    <br>
+                    <label class="font-primary">Vinculación con la empresa</label>
+
                   </h5>
                 </div>
                 <div class="col-md-4">
@@ -27,11 +32,15 @@
                 <div class="col-md-4">
                   <h5>
                     <label class="font-primary">Hora de inicio del evento</label>
+                    <br>
+                    <label class="font-primary">{{ event.start }}</label>
                   </h5>
                 </div>
                 <div class="col-md-4">
                   <h5>
                     <label class="font-primary">Hora de finalización del evento</label>
+                    <br>
+                    <label class="font-primary">{{ event.finish }}</label>
                   </h5>
                 </div>
 

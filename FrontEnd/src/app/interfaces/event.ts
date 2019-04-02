@@ -1,5 +1,3 @@
-import { Activity } from './activity';
-
 export interface Event {
   name: string;
   eventDate: string;
@@ -8,5 +6,4 @@ export interface Event {
   id: number;
   image: File;
   type_id: number;
-  activities: Activity[];
 }

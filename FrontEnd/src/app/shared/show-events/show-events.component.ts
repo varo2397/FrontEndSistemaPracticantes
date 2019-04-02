@@ -1,25 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort, MatTableDataSource } from '@angular/material';
+import { Event } from '../../interfaces/event';
+import {EventsService} from '../../core/http/events/events.service';
 
-const EVENTS = [
-  {
-    eventTitle: 'Vinculación con la empresa en San José',
-    eventDate: '04-02-19',
-    eventStartTime: '08:30',
-    eventEndTime: '16:30',
-    eventType: 'Vinculación con la empresa',
-    id: 1
-  },
-  {
-    eventTitle: 'Charla informativa',
-    eventDate: '20-03-19',
-    eventStartTime: '09:30',
-    eventEndTime: '17:30',
-    eventType: 'Charla',
-    id: 2
-  },
-
-];
 @Component({
   selector: 'app-show-events',
   templateUrl: './show-events.component.html',
@@ -35,13 +18,22 @@ export class ShowEventsComponent implements OnInit {
     'eventType',
     'actions'
   ];
-  dataSource = new MatTableDataSource(EVENTS);
+  events: Event[];
+  dataSource: MatTableDataSource<Event>; // new MatTableDataSource(this.events);
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor() { }
+  constructor(private eventsService: EventsService) { }
 
   ngOnInit() {
-    this.dataSource.sort = this.sort;
+    this.getEvents();
+  }
+
+  getEvents() {
+    this.eventsService.getEvents().subscribe(response => {
+      this.events = <Event[]>response.data;
+      this.dataSource = new MatTableDataSource(this.events);
+      this.dataSource.sort = this.sort;
+    });
   }
 
 }

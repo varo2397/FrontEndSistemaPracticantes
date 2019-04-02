@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-event',
@@ -8,11 +9,14 @@ import { Component, OnInit } from '@angular/core';
 export class EventComponent implements OnInit {
 
   talkEvent: boolean;
-
-  constructor() { }
+  eventID: number;
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.talkEvent = false;
+    this.route.params.subscribe(params => {
+      this.eventID = params['id'];
+    });
   }
 
   showTalkEvent() {
