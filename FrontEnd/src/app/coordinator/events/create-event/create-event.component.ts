@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import {Router} from '@angular/router';
 import { EventTypesService } from '../../../core/http/eventTypes/event-types.service';
+import {EventsService} from '../../../core/http/events/events.service';
 import { EventType } from '../../../interfaces/eventType';
 import { Event } from '../../../interfaces/event';
 import { Activity } from '../../../interfaces/activity';
@@ -21,14 +23,17 @@ export class CreateEventComponent implements OnInit {
   fileFormatValid: boolean;
   selectedFile: File;
 
-  constructor(private _eventType: EventTypesService) { }
+  constructor(private eventsTypeService: EventTypesService,
+              private eventsService: EventsService,
+              private router: Router) { }
 
   ngOnInit() {
     const [ activityStartTime, activityEndTime ] = this.formControlBuilder();
     this.fileFormatValid = true;
     this.eventForm = new FormGroup({
-      'eventTitle': new FormControl(null, [Validators.required]),
+      'name': new FormControl(null, [Validators.required]),
       'eventDate': new FormControl(null, [Validators.required]),
+      'eventInscriptionLimit': new FormControl(null, [Validators.required, this.checkEventLimitInscription.bind(this)]),
       'eventType': new FormControl(null, [Validators.required]),
       'eventStartTime': new FormControl(null, [Validators.required]),
       'eventEndTime': new FormControl(null, [
@@ -96,13 +101,31 @@ export class CreateEventComponent implements OnInit {
   }
 
   getEventTypes() {
-    this._eventType.getEventTypes().subscribe(data => {
+    this.eventsTypeService.getEventTypes().subscribe(data => {
       this.eventTypes = <EventType[]>data.data;
     });
   }
 
+  checkEventLimitInscription(control: FormControl) {
+    if (this.eventForm !== undefined) {
+      const eventDate = this.eventForm.get('eventDate').value;
+      const eventInscriptionLimit = control.value;
+
+      if (eventDate <= eventInscriptionLimit) {
+        return { 'inscriptionLimit': true };
+      }
+    }
+    return null;
+  }
+
   onSubmit() {
     if (this.eventForm.valid && this.eventForm.touched) {
+
+      const date = this.eventForm.get('eventDate').value;
+      const day = date.getDate();
+      const month = date.getMonth() + 1;
+      const year = date.getFullYear();
+      const parsedDate = year + '-' + month + '-' + day;
 
       const arrayStart = <FormArray>this.eventForm.get('activitiesStart');
       const arrayEnd = <FormArray>this.eventForm.get('activitiesEnd');
@@ -111,24 +134,23 @@ export class CreateEventComponent implements OnInit {
       for (let i = 0; i < arrayLength; i++) {
         const activityStart = arrayStart.at(i).value;
         const activityEnd = arrayEnd.at(i).value;
-        const activity: Activity = <Activity> {
-          start: activityStart,
-          finish: activityEnd,
-          id: 0
-        };
-        activities.push(activity);
+        activities.push(activityStart, activityEnd);
       }
       const event: Event = <Event>{
-        name: this.eventForm.get('eventTitle').value,
-        eventDate: this.eventForm.get('eventDate').value,
+        name: this.eventForm.get('name').value,
+        eventDate: parsedDate,
         start: this.eventForm.get('eventStartTime').value,
         finish: this.eventForm.get('eventEndTime').value,
-        image: this.selectedFile,
+        image: null,
         type_id: this.eventForm.get('eventType').value,
         activities: activities,
-        id: 0
       };
-      console.log(event);
+      this.eventsService.createEvent(event).subscribe(response => {
+        console.log(response);
+        if (response.data === 'success') {
+          this.router.navigate(['coordinador/eventos']);
+        }
+      });
     }
   }
 

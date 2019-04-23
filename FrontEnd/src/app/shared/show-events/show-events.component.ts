@@ -11,10 +11,10 @@ import {EventsService} from '../../core/http/events/events.service';
 export class ShowEventsComponent implements OnInit {
 
   displayedColumns: string[] = [
-    'eventTitle',
+    'name',
     'eventDate',
-    'eventStartTime',
-    'eventEndTime',
+    'start',
+    'finish',
     'eventType',
     'actions'
   ];

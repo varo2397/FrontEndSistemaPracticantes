@@ -3,7 +3,7 @@ export interface Event {
   eventDate: string;
   start: string;
   finish: string;
-  id: number;
-  image: File;
+  id?: number;
+  image?: File;
   type_id: number;
 }

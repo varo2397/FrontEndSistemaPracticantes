@@ -11,31 +11,41 @@
             <mat-card-content>
               <form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
                 <div class="row">
-                  <div class="col-md-4">
+                  <div class="col-md-6">
                     <mat-form-field>
-                      <input matInput placeholder="Título evento" formControlName="eventTitle" >
-                      <mat-error *ngIf="eventForm.hasError('required', ['eventTitle'])">Este campo es obligatorio</mat-error>
+                      <input matInput placeholder="Título evento" formControlName="name" >
+                      <mat-error *ngIf="eventForm.hasError('required', ['name'])">Este campo es obligatorio</mat-error>
                     </mat-form-field>
                   </div>
 
-                  <div class="col-md-4">
-                    <mat-form-field>
-                      <input matInput [matDatepicker]="picker"  formControlName="eventDate" placeholder="Fecha del evento">
-                      <mat-error *ngIf="eventForm.hasError('required',['eventDate'])">Este campo es obligatorio</mat-error>
-                      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                      <mat-datepicker #picker></mat-datepicker>
-                    </mat-form-field>
-                  </div>
-
-                  <div class="col-md-4">
+                  <div class="col-md-6">
                     <mat-form-field>
                       <mat-select formControlName="eventType" placeholder="Tipo de evento">
                         <mat-option *ngFor="let eventType of eventTypes" [value]="eventType.id">
-                          {{ eventType.name }}
+                          {{ eventType.name | titlecase}}
                         </mat-option>
 
                       </mat-select>
                       <mat-error *ngIf="eventForm.hasError('required', ['eventType'])">Este campo es obligatorio</mat-error>
+                    </mat-form-field>
+                  </div>
+
+                  <div class="col-md-6">
+                    <mat-form-field>
+                      <input matInput [matDatepicker]="eventDate"  formControlName="eventDate" placeholder="Fecha del evento">
+                      <mat-error *ngIf="eventForm.hasError('required',['eventDate'])">Este campo es obligatorio</mat-error>
+                      <mat-datepicker-toggle matSuffix [for]="eventDate"></mat-datepicker-toggle>
+                      <mat-datepicker #eventDate></mat-datepicker>
+                    </mat-form-field>
+                  </div>
+
+                  <div class="col-md-6">
+                    <mat-form-field>
+                      <input matInput [matDatepicker]="eventInscriptionLimit"  formControlName="eventInscriptionLimit" placeholder="Fecha límite inscripción al evento evento">
+                      <mat-error *ngIf="eventForm.hasError('required',['eventInscriptionLimit'])">Este campo es obligatorio</mat-error>
+                      <mat-error *ngIf="eventForm.hasError('inscriptionLimit',['eventInscriptionLimit'])">La fecha límite tiene que ser antes del evento</mat-error>
+                      <mat-datepicker-toggle matSuffix [for]="eventInscriptionLimit"></mat-datepicker-toggle>
+                      <mat-datepicker #eventInscriptionLimit></mat-datepicker>
                     </mat-form-field>
                   </div>
 

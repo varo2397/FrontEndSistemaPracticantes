@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   loginForm: FormGroup;
   login: LoginToken;
-  error: string;
+  errors: string;
   httpObserver;
 
   constructor(private loginService: LoginService,
@@ -38,8 +38,6 @@ export class LoginComponent implements OnInit, OnDestroy {
         password: this.loginForm.get('password').value
       };
       this.httpObserver = this.loginService.login(loginInfo).subscribe(response => {
-        console.log(response);
-
         this.login = <LoginToken>response.data;
         this.store.dispatch(new Auth.SetLoginToken(this.login));
 
@@ -66,7 +64,9 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.httpObserver.unsubscribe();
+    if (this.httpObserver !== undefined) {
+      this.httpObserver.unsubscribe();
+    }
   }
 
 }

@@ -7,6 +7,7 @@ import { User } from '../../interfaces/user';
 import { People } from '../../interfaces/people';
 import {RegisterService} from '../../core/http/auth/register.service';
 import {ImageConverterService} from '../../core/general/imageConverter.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-register-student',
@@ -15,10 +16,14 @@ import {ImageConverterService} from '../../core/general/imageConverter.service';
 })
 export class RegisterStudentComponent implements OnInit {
 
+  errors: string;
+
   @ViewChild(CreatePersonComponent) createPerson: CreatePersonComponent;
   @ViewChild(CreateUserComponent) createUser: CreateUserComponent;
   @ViewChild(CreateStudentComponent) createStudent: CreateStudentComponent;
-  constructor(private register: RegisterService, private imageConverter: ImageConverterService) { }
+  constructor(private register: RegisterService,
+              private imageConverter: ImageConverterService,
+              private router: Router) { }
 
   ngOnInit() {
   }
@@ -30,7 +35,12 @@ export class RegisterStudentComponent implements OnInit {
       const student: Student = this.createStudent.getFormValues();
       const image = this.createStudent.file;
       this.register.registerStudent(person, user, student, image).subscribe(response => {
-        console.log(response);
+        if (response.data === 'Success') {
+          this.router.navigate(['']);
+        }
+        else {
+          this.errors = response.error;
+        }
       });
     }
   }

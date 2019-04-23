@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../../environments/environment';
 import { Response } from '../../../interfaces/response';
+import { Event } from '../../../interfaces/event';
 
 @Injectable({
   providedIn: 'root'
@@ -20,5 +21,9 @@ export class EventsService {
 
   getEvent(eventID: number) {
     return this.http.get<Response>(this.apiURL + 'events/' + eventID );
+  }
+
+  createEvent(event: Event) {
+    return this.http.post<Response>(this.apiURL + 'events', event);
   }
 }

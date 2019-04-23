@@ -30,6 +30,9 @@
       <mat-step>
         <app-create-user></app-create-user>
         <br>
+        <div class="row">
+          <span *ngIf="errors !== null" class="text-danger">{{errors}}</span>
+        </div>
         <div fxLayout fxLayoutGap="10px">
           <button mat-raised-button color="warn" matStepperPrevious>Atras</button>
           <button mat-raised-button color="primary" (click)="onSubmit()" type="submit">Completar registro</button>

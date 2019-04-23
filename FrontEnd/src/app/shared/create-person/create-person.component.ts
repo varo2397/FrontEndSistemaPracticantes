@@ -43,7 +43,7 @@ export class CreatePersonComponent implements OnInit {
       id: this.personForm.get('id').value,
       gender_id: this.personForm.get('gender').value,
       telephone: this.personForm.get('phoneNumber').value,
-      birthday:parsedDate
+      birthday: parsedDate
     };
 
     return person;
