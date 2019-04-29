@@ -11,7 +11,7 @@
                 <mat-form-field>
                   <input type="email" matInput placeholder="Correo electrónico" formControlName="email">
                   <mat-error *ngIf="userForm.hasError('required', ['email'])">Este campo es obligatorio</mat-error>
-                  <mat-error *ngIf="userForm.hasError('email', ['email'])">Ingrese un correo electrónico validom </mat-error>
+                  <mat-error *ngIf="userForm.hasError('email', ['email'])">Ingrese un correo electrónico valido</mat-error>
                 </mat-form-field>
               </div>
 
