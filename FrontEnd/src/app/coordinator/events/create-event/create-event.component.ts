@@ -7,6 +7,13 @@ import { EventType } from '../../../interfaces/eventType';
 import { Event } from '../../../interfaces/event';
 import { Activity } from '../../../interfaces/activity';
 
+enum ControlType {
+  Start = 'activitiesStart',
+  End = 'activitiesEnd'
+}
+
+
+
 @Component({
   selector: 'app-create-event',
   templateUrl: './create-event.component.html',
@@ -50,10 +57,17 @@ export class CreateEventComponent implements OnInit {
   formControlBuilder(): FormControl[] {
     const arrayControl = [];
     arrayControl.push(
-      new FormControl(null, [Validators.required]),
-      new FormControl(null, [Validators.required])
+      new FormControl(null, [
+        Validators.required,
+        this.checkActvitiesStartTime.bind(this),
+        this.checkPreviousActivityTime.bind(this, 'activitiesStart')
+      ]),
+      new FormControl(null, [
+        Validators.required,
+        this.checkActvitiesEndTime.bind(this),
+        this.checkPreviousActivityTime.bind(this, 'activitiesEnd')
+      ])
     );
-
     return arrayControl;
   }
 
@@ -76,6 +90,9 @@ export class CreateEventComponent implements OnInit {
   }
 
   checkEventEndTimeValidator(control: FormControl) {
+
+    // checks if the event end time is after the event start time
+
     if (this.eventForm !== undefined) {
       const eventStartTime = this.eventForm.get('eventStartTime').value;
       const eventEndTime = control.value;
@@ -91,7 +108,6 @@ export class CreateEventComponent implements OnInit {
     this.selectedFile = event.target.files[0];
     this.fileName = this.selectedFile.name;
     const fileFormat = this.fileName.split('.')[1].toLocaleLowerCase();
-    console.log(fileFormat);
     if ( this.validFileFormats.indexOf(fileFormat) === -1 ) {
       this.fileFormatValid = false;
 
@@ -107,6 +123,9 @@ export class CreateEventComponent implements OnInit {
   }
 
   checkEventLimitInscription(control: FormControl) {
+
+    // checks if the event limit description is before the date of the event
+
     if (this.eventForm !== undefined) {
       const eventDate = this.eventForm.get('eventDate').value;
       const eventInscriptionLimit = control.value;
@@ -116,6 +135,87 @@ export class CreateEventComponent implements OnInit {
       }
     }
     return null;
+  }
+
+  checkActvitiesStartTime(control: FormControl) {
+
+    // checks if the first activity is at a minimum the event start time
+    // and its before the event end time
+
+    if (this.eventForm !== undefined) {
+      const activityStartArray = <FormArray>this.eventForm.get('activitiesStart');
+      const controlIndex = this.getIndex(control, activityStartArray);
+
+      if (controlIndex === 0) {
+        const eventStartTime = this.eventForm.get('eventStartTime').value;
+        const eventEndTime = this.eventForm.get('eventEndTime').value;
+        const firstActivityStartTime = control.value;
+
+        if (eventStartTime > firstActivityStartTime) {
+          return { 'activityStartTimeBeforeEvent' : true };
+        } else if (firstActivityStartTime > eventEndTime) {
+          return { 'activityStartTimeAfterEvent' : true };
+        }
+      }
+
+    }
+    return null;
+  }
+
+  checkActvitiesEndTime(control: FormControl) {
+
+    // checks if the first activity is at a minimum the event start time
+    // and its before the event end time
+
+    if (this.eventForm !== undefined) {
+      const activityEndArray = <FormArray>this.eventForm.get('activitiesEnd');
+      const controlIndex = this.getIndex(control, activityEndArray);
+
+      if (controlIndex === activityEndArray.length - 1) {
+        const eventEndTime = this.eventForm.get('eventEndTime').value;
+        const lastActivityEndTime = control.value;
+
+        if (eventEndTime < lastActivityEndTime) {
+          return { 'activityEndTimeAfterEvent' : true };
+        }
+      }
+
+    }
+    return null;
+  }
+
+  checkPreviousActivityTime(controlType: string, control: FormControl) {
+
+    if (this.eventForm !== undefined) {
+      const controlArray = <FormArray>this.eventForm.get(controlType);
+
+      const controlIndex = this.getIndex(control, controlArray);
+      if (controlIndex > 0 && controlType === ControlType.Start) {
+        const previousActivity = (<FormArray>this.eventForm.get(ControlType.End)).at(controlIndex - 1).value;
+        if (previousActivity > control.value) {
+          return {'previousActivity': true };
+        }
+      } else if (controlType === ControlType.End && controlIndex !== -1) {
+        console.log(controlIndex);
+        const previousActivity = (<FormArray>this.eventForm.get(ControlType.Start)).at(controlIndex).value;
+        console.log(previousActivity)
+        if (previousActivity > control.value) {
+          return {'previousActivity': true };
+        }
+      }
+    }
+
+    return null;
+  }
+
+  getIndex(control: FormControl, controlArray: FormArray): number {
+    for ( let i = 0; i < controlArray.length; i++) {
+      if (controlArray.at(i) === control) {
+        return i;
+      }
+    }
+
+    return -1;
   }
 
   onSubmit() {
@@ -146,7 +246,6 @@ export class CreateEventComponent implements OnInit {
         activities: activities,
       };
       this.eventsService.createEvent(event).subscribe(response => {
-        console.log(response);
         if (response.data === 'success') {
           this.router.navigate(['coordinador/eventos']);
         }
