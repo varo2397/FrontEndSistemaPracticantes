@@ -57,7 +57,7 @@
                 <mat-form-field>
                   <input matInput  formControlName="phoneNumber" placeholder="Número de teléfono">
                   <mat-error *ngIf="personForm.hasError('required',['phoneNumber'])">Este campo es obligatorio</mat-error>
-                  <mat-error *ngIf="personForm.hasError('max',['phoneNumber']) || personForm.hasError('min',['phoneNumber'])">El número de télefono tiene que ser de 8 dígitos</mat-error>
+                  <mat-error *ngIf="personForm.hasError('max',['phoneNumber']) || personForm.hasError('min',['phoneNumber'])">El número de teléfono tiene que ser de 8 dígitos</mat-error>
                 </mat-form-field>
               </div>
               
