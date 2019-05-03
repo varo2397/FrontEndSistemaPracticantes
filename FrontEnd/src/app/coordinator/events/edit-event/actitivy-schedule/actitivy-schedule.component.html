@@ -1,0 +1,29 @@
+<div class="row"  cdkDropListGroup>
+    <div class="col-md-6 " >
+      <div cdkDropList
+           [ngClass]="companies.length == 0 ? 'placeholder' : ''"
+           [cdkDropListData]="companies"
+           (cdkDropListDropped)="drop($event)"
+  
+      >
+        <div *ngFor="let company of companies">
+            <app-company-event-info cdkDrag [ejemplo]="company"></app-company-event-info>
+          <br>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 "  >
+      <div cdkDropList
+           [ngClass]="companiesSchedule.length == 0 ? 'placeholder' : ''"
+           [cdkDropListData]="companiesSchedule"
+           (cdkDropListDropped)="drop($event)"
+      >
+        <div *ngFor="let company of companiesSchedule">
+            <app-company-event-info cdkDrag [ejemplo]="company"></app-company-event-info>
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  

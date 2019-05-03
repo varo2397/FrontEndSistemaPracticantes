@@ -16,6 +16,7 @@ import { CreateEventComponent } from './events/create-event/create-event.compone
 import { EventComponent } from './events/event/event.component';
 import { EditEventComponent } from './events/edit-event/edit-event.component';
 import { CompanyEventInfoComponent } from './events/company-event-info/company-event-info.component';
+import { ActitivyScheduleComponent } from './events/edit-event/actitivy-schedule/actitivy-schedule.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { CompanyEventInfoComponent } from './events/company-event-info/company-e
     EventComponent,
     EditEventComponent,
     CompanyEventInfoComponent,
+    ActitivyScheduleComponent,
   ],
   imports: [
     MaterialModule,

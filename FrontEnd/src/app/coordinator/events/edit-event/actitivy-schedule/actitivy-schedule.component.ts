@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 
-
 @Component({
-  selector: 'app-edit-event',
-  templateUrl: './edit-event.component.html',
-  styleUrls: ['./edit-event.component.scss']
+  selector: 'app-actitivy-schedule',
+  templateUrl: './actitivy-schedule.component.html',
+  styleUrls: ['./actitivy-schedule.component.scss']
 })
-export class EditEventComponent implements OnInit {
+export class ActitivyScheduleComponent implements OnInit {
 
   companies: any[] = [
     { name: 'Nombre1', contact: 'Alguien1'},
@@ -20,7 +19,6 @@ export class EditEventComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    
   }
 
   drop(event: CdkDragDrop<any[]>) {

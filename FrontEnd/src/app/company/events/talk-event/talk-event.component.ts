@@ -18,7 +18,6 @@ export class TalkEventComponent implements OnInit {
     this.talkEventForm = new FormGroup({
       'talkName': new FormControl(null, Validators.required),
       'speaker': new FormControl(null, Validators.required),
-      'time': new FormControl(null, Validators.required),
       'observations': new FormControl(null, Validators.required)
     });
   }
@@ -28,7 +27,6 @@ export class TalkEventComponent implements OnInit {
       const sugestion: Sugestion = <Sugestion> {
         name: this.talkEventForm.get('talkName').value,
         charlista: this.talkEventForm.get('speaker').value,
-        duration: this.talkEventForm.get('time').value,
         remarks: this.talkEventForm.get('observations').value
       };
 

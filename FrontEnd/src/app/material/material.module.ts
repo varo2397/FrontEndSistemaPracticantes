@@ -16,8 +16,26 @@ import {
   MatMenuModule,
   MatTableModule,
   MatPaginatorModule,
-  MatSortModule, MatExpansionModule
+  MatSortModule, 
+  MatExpansionModule,
+  DateAdapter, 
+  MAT_DATE_FORMATS, 
+  MAT_DATE_LOCALE
 } from '@angular/material';
+
+import { MomentDateModule, MomentDateAdapter } from '@angular/material-moment-adapter';
+
+export const MY_FORMATS = {
+  parse: {
+    dateInput: 'DD/MM/YYYY',
+  },
+  display: {
+    dateInput: 'DD/MM/YYYY',
+    monthYearLabel: 'MM YYYY',
+    dateA11yLabel: 'DD/MM/YYYY',
+    monthYearA11yLabel: 'MM YYYY',
+  },
+};
 
 @NgModule({
   imports: [
@@ -38,7 +56,7 @@ import {
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatExpansionModule
+    MatExpansionModule,
   ],
   exports: [
     MatCardModule,
@@ -59,6 +77,11 @@ import {
     MatPaginatorModule,
     MatSortModule,
     MatExpansionModule
+  ],
+  providers: [
+    { provide: MAT_DATE_LOCALE, useValue: 'es' }, //you can change useValue
+    { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
+    { provide: MAT_DATE_FORMATS, useValue: MY_FORMATS }
   ]
 })
 

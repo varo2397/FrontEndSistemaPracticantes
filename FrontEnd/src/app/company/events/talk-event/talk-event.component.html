@@ -21,16 +21,7 @@
               </mat-form-field>
             </div>
 
-            <div class="col-md-6">
-              <mat-form-field>
-                <input type="time" matInput placeholder="Duración de la charla" formControlName="time">
-                <mat-error *ngIf="talkEventForm.hasError('required', ['time'])">Este campo es obligatorio</mat-error>
-              </mat-form-field>
-
-
-            </div>
-
-            <div class="col-md-6">
+            <div class="col-md-12">
               <mat-form-field>
                 <textarea matInput placeholder="Observaciones adicionales" formControlName="observations"></textarea>
                 <mat-hint>Debería indicar los horarios que prefiere</mat-hint>
