@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80f20777-4554-4a3d-a366-b9e180499be3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/core/routing/auth-guard.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/company/events/event/event.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/company/events/event/event.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/company/layout/layout.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/company/layout/layout.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/coordinator/events/create-event/create-event.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/coordinator/events/create-event/create-event.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/coordinator/events/edit-event/actitivy-schedule/actitivy-schedule.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/coordinator/events/edit-event/actitivy-schedule/actitivy-schedule.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/coordinator/events/edit-event/actitivy-schedule/actitivy-schedule.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/coordinator/events/edit-event/actitivy-schedule/actitivy-schedule.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/coordinator/events/edit-event/edit-event.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/coordinator/events/edit-event/edit-event.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/coordinator/events/edit-event/edit-event.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/coordinator/events/edit-event/edit-event.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/coordinator/events/event/event.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/coordinator/events/event/event.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/coordinator/layout/layout.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/coordinator/layout/layout.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/student/layout/layout.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/student/layout/layout.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/app-routing.module.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -29,19 +21,76 @@
         <entry file="file://$PROJECT_DIR$/FrontEnd/src/app/company/events/event/event.component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="88">
-              <caret line="4" column="36" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="36" />
+              <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FrontEnd/src/app/company/events/event/event.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="215">
+              <caret line="43" column="27" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#50#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/FrontEnd/src/app/company/events/event/event.component.ts">
+        <entry file="file://$PROJECT_DIR$/FrontEnd/src/app/core/routing/auth-guard.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="16" column="39" lean-forward="true" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+            <state relative-caret-position="258">
+              <caret line="33" column="6" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
               <folding>
-                <element signature="e#0#50#0" expanded="true" />
+                <element signature="e#0#99#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FrontEnd/src/app/core/http/interceptors/auth.interceptor.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="14" column="19" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#103#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FrontEnd/src/app/app-routing.module.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FrontEnd/src/app/store/app.reducer.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+              <folding>
+                <element signature="e#0#86#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FrontEnd/src/app/store/auth/auth.reducer.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="748">
+              <caret line="35" column="73" selection-start-line="35" selection-start-column="58" selection-end-line="35" selection-end-column="73" />
             </state>
           </provider>
         </entry>
@@ -74,8 +123,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/FrontEnd/src/app/shared/create-company/create-company.component.html" />
-        <option value="$PROJECT_DIR$/FrontEnd/src/app/auth/register-company/register-company.component.ts" />
         <option value="$PROJECT_DIR$/FrontEnd/src/app/auth/register-company/register-company.component.html" />
         <option value="$PROJECT_DIR$/FrontEnd/src/app/core/http/semesters/semesters.service.ts" />
         <option value="$PROJECT_DIR$/FrontEnd/src/app/interfaces/loginToken.ts" />
@@ -93,7 +140,6 @@
         <option value="$PROJECT_DIR$/FrontEnd/src/app/student/events/event/event.component.html" />
         <option value="$PROJECT_DIR$/FrontEnd/src/app/shared/show-event/show-event.component.ts" />
         <option value="$PROJECT_DIR$/FrontEnd/src/app/shared/show-event/show-event.component.html" />
-        <option value="$PROJECT_DIR$/FrontEnd/src/app/company/events/event/event.component.html" />
         <option value="$PROJECT_DIR$/FrontEnd/src/app/coordinator/events/event/event.component.ts" />
         <option value="$PROJECT_DIR$/FrontEnd/src/app/shared/show-events/show-events.component.html" />
         <option value="$PROJECT_DIR$/FrontEnd/src/app/shared/show-events/show-events.component.ts" />
@@ -125,6 +171,9 @@
         <option value="$PROJECT_DIR$/FrontEnd/src/app/coordinator/events/edit-event/actitivy-schedule/actitivy-schedule.component.html" />
         <option value="$PROJECT_DIR$/FrontEnd/src/app/coordinator/events/edit-event/edit-event.component.html" />
         <option value="$PROJECT_DIR$/FrontEnd/src/app/company/events/event/event.component.ts" />
+        <option value="$PROJECT_DIR$/FrontEnd/src/app/company/events/event/event.component.html" />
+        <option value="$PROJECT_DIR$/FrontEnd/src/app/app-routing.module.ts" />
+        <option value="$PROJECT_DIR$/FrontEnd/src/app/core/routing/auth-guard.service.ts" />
       </list>
     </option>
   </component>
@@ -188,7 +237,7 @@
               <item name="FrontEnd" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="company" type="462c0819:PsiDirectoryNode" />
+              <item name="store" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="FrontEndSistemaPracticantes" type="b2602c69:ProjectViewProjectNode" />
@@ -196,18 +245,8 @@
               <item name="FrontEnd" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="company" type="462c0819:PsiDirectoryNode" />
-              <item name="events" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FrontEndSistemaPracticantes" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FrontEndSistemaPracticantes" type="462c0819:PsiDirectoryNode" />
-              <item name="FrontEnd" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="company" type="462c0819:PsiDirectoryNode" />
-              <item name="events" type="462c0819:PsiDirectoryNode" />
-              <item name="event" type="462c0819:PsiDirectoryNode" />
+              <item name="store" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -302,12 +341,12 @@
       <workItem from="1556064698879" duration="5492000" />
       <workItem from="1556599564814" duration="3898000" />
       <workItem from="1556925243101" duration="33000" />
-      <workItem from="1556992994333" duration="2882000" />
+      <workItem from="1556992994333" duration="7017000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="201721000" />
+    <option name="totallyTimeSpent" value="205856000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -322,7 +361,7 @@
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24966975" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24966975" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -335,7 +374,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="9" weight="0.32916668" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3253012" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3253012" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -366,52 +405,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/FrontEnd/src/app/student/events/events.component.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FrontEnd/src/app/company/events/events.component.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FrontEnd/src/app/student/events/events.component.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FrontEnd/src/app/coordinator/events/event/event.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FrontEnd/src/app/student/events/event/event.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="17" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FrontEnd/src/app/student/events/event/event.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FrontEnd/src/app/shared/show-events/show-events.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#61#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FrontEnd/src/app/shared/show-events/show-events.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="616">
@@ -595,16 +588,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FrontEnd/src/app/auth/login/login.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="30" column="7" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FrontEnd/src/app/interfaces/event.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
@@ -715,19 +698,95 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FrontEnd/src/app/company/events/event/event.component.html">
+    <entry file="file://$PROJECT_DIR$/FrontEnd/src/app/company/events/event/event.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="36" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="36" />
+        <state relative-caret-position="215">
+          <caret line="43" column="27" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FrontEnd/src/app/company/events/event/event.component.ts">
+    <entry file="file://$PROJECT_DIR$/FrontEnd/src/app/store/auth/auth.actions.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="16" column="39" lean-forward="true" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+        <state>
           <folding>
-            <element signature="e#0#50#0" expanded="true" />
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FrontEnd/src/app/company/events/event/event.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FrontEnd/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FrontEnd/src/app/auth/login/login.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="41" column="27" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FrontEnd/src/app/store/auth/auth.reducer.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="35" column="73" selection-start-line="35" selection-start-column="58" selection-end-line="35" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FrontEnd/src/app/store/app.reducer.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#0#86#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FrontEnd/src/app/core/http/interceptors/auth.interceptor.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="14" column="19" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#103#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FrontEnd/src/app/app-routing.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FrontEnd/src/app/core/routing/auth-guard.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="33" column="6" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#99#0" expanded="true" />
           </folding>
         </state>
       </provider>
