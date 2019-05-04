@@ -1,29 +1,47 @@
+<div>
+  <button mat-raised-button routerLink=".." color="warn">Atras</button>
+  <button class="float-right" mat-raised-button routerLink=".." color="primary">Guardar</button>
+</div>
+
 <div class="row"  cdkDropListGroup>
-    <div class="col-md-6 " >
-      <div cdkDropList
-           [ngClass]="companies.length == 0 ? 'placeholder' : ''"
-           [cdkDropListData]="companies"
-           (cdkDropListDropped)="drop($event)"
-  
-      >
-        <div *ngFor="let company of companies">
-            <app-company-event-info cdkDrag [ejemplo]="company"></app-company-event-info>
-          <br>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6 "  >
-      <div cdkDropList
-           [ngClass]="companiesSchedule.length == 0 ? 'placeholder' : ''"
-           [cdkDropListData]="companiesSchedule"
-           (cdkDropListDropped)="drop($event)"
-      >
-        <div *ngFor="let company of companiesSchedule">
-            <app-company-event-info cdkDrag [ejemplo]="company"></app-company-event-info>
-          <br>
-        </div>
+  <div class="col-md-4 " >
+    <h4>Empresas disponibles</h4>
+    <div cdkDropList
+         [ngClass]="companies.length == 0 ? 'placeholder' : ''"
+         [cdkDropListData]="companies"
+         (cdkDropListDropped)="drop($event)"
+
+    >
+      <div *ngFor="let company of companies">
+        <app-company-event-info cdkDrag [ejemplo]="company"></app-company-event-info>
+        <br>
       </div>
     </div>
   </div>
-  
+
+  <div class="col-md-2">
+    <h4>Hora inicio</h4>
+
+  </div>
+
+  <div class="col-md-2">
+    <h4>Hora fin</h4>
+
+  </div>
+
+
+  <div class="col-md-4 "  >
+    <h4>Empresa asociada a la actividad</h4>
+    <div cdkDropList
+         [ngClass]="companiesSchedule.length == 0 ? 'placeholder' : ''"
+         [cdkDropListData]="companiesSchedule"
+         (cdkDropListDropped)="drop($event)"
+    >
+      <div *ngFor="let company of companiesSchedule">
+        <app-company-event-info cdkDrag [ejemplo]="company"></app-company-event-info>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>
   

@@ -1,0 +1,147 @@
+<section>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-10 offset-md-1">
+          <mat-card>
+            <mat-card-title class="font-primary">
+              Crear evento
+            </mat-card-title>
+            <mat-card-content>
+              <form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
+                <div class="row">
+                  <div class="col-md-6">
+                    <mat-form-field>
+                      <input matInput placeholder="Título evento" formControlName="name" >
+                      <mat-error *ngIf="eventForm.hasError('required', ['name'])">Este campo es obligatorio</mat-error>
+                    </mat-form-field>
+                  </div>
+
+                  <div class="col-md-6">
+                    <mat-form-field>
+                      <mat-select formControlName="eventType" placeholder="Tipo de evento">
+                        <mat-option *ngFor="let eventType of eventTypes" [value]="eventType.id">
+                          {{ eventType.name | titlecase}}
+                        </mat-option>
+
+                      </mat-select>
+                      <mat-error *ngIf="eventForm.hasError('required', ['eventType'])">Este campo es obligatorio</mat-error>
+                    </mat-form-field>
+                  </div>
+
+                  <div class="col-md-6">
+                    <mat-form-field>
+                      <input matInput [matDatepicker]="eventDate"  formControlName="eventDate" placeholder="Fecha del evento">
+                      <mat-error *ngIf="eventForm.hasError('required',['eventDate'])">Este campo es obligatorio</mat-error>
+                      <mat-datepicker-toggle matSuffix [for]="eventDate"></mat-datepicker-toggle>
+                      <mat-datepicker #eventDate></mat-datepicker>
+                    </mat-form-field>
+                  </div>
+
+                  <div class="col-md-6">
+                    <mat-form-field>
+                      <input matInput [matDatepicker]="eventInscriptionLimit"  formControlName="eventInscriptionLimit" placeholder="Fecha límite inscripción al evento evento">
+                      <mat-error *ngIf="eventForm.hasError('required',['eventInscriptionLimit'])">Este campo es obligatorio</mat-error>
+                      <mat-error *ngIf="eventForm.hasError('inscriptionLimit',['eventInscriptionLimit'])">La fecha límite tiene que ser antes del evento</mat-error>
+                      <mat-datepicker-toggle matSuffix [for]="eventInscriptionLimit"></mat-datepicker-toggle>
+                      <mat-datepicker #eventInscriptionLimit></mat-datepicker>
+                    </mat-form-field>
+                  </div>
+
+                  <div class="col-md-4">
+                    <mat-form-field>
+                      <input type="time" matInput placeholder="Inicio del evento" formControlName="eventStartTime" >
+                      <mat-error *ngIf="eventForm.hasError('required', ['eventStartTime'])">Este campo es obligatorio</mat-error>
+                    </mat-form-field>
+                  </div>
+
+                  <div class="col-md-4">
+                    <mat-form-field>
+                      <input type="time" matInput placeholder="Fin del evento" formControlName="eventEndTime" >
+                      <mat-error *ngIf="eventForm.hasError('required', ['eventEndTime'])">Este campo es obligatorio</mat-error>
+                      <mat-error *ngIf="eventForm.hasError('eventEndWrong', ['eventEndTime'])">La hora de finalización del evento tiene que ser después del inicio del evento</mat-error>
+                    </mat-form-field>
+                  </div>
+
+                  <div class="col-md-4">
+                    <input
+                      hidden
+                      type="file"
+                      #file
+                      (change)="fileChange($event)"
+                    >
+                    <button mat-raised-button type="button" (click)="file.click()" color="primary">Escoger foto</button>
+                    <br>
+                    <label class="font-primary">Nombre del archivo: {{ fileName }}</label>
+                    <div *ngIf="!fileFormatValid" class="text-danger">Los formatos permitidos son SVG, PNG, JPG, JPEG</div>
+                  </div>
+
+
+
+                  <div class="col-md-12" >
+                    <h5>
+                      <label class="font-primary">Horario de actividades</label>
+                      <button (click)="addFormControl()" type="button" mat-icon-button>
+                        <mat-icon color="primary">add</mat-icon>
+                      </button>
+                    </h5>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="row">
+                      <div formArrayName="activitiesStart" style="width:100%;">
+                        <div *ngFor="let activity of eventForm.get('activitiesStart')['controls']; let i = index;" class="col-md-12">
+                          <mat-form-field>
+                            <input type="time" matInput formControlName="{{ i }}" placeholder="Hora de inicio" >
+
+                            <mat-error *ngIf="activity.hasError('required')">Este campo es obligatorio</mat-error>
+                            <mat-error *ngIf="activity.hasError('activityStartTimeBeforeEvent')">La actividad tiene que empezar por lo menos al mismo tiempo que el evento</mat-error>
+                            <mat-error *ngIf="activity.hasError('activityStartTimeAfterEvent')">La actividad tiene que terminar por lo menos al mismo tiempo que el evento</mat-error>
+                            <mat-error *ngIf="activity.hasError('previousActivity')">La actividad tiene que empezar por lo menos despues de la actividad anterior </mat-error>
+                          </mat-form-field>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="row">
+                      <div formArrayName="activitiesEnd" style="width:100%;">
+                        <div *ngFor="let activity of eventForm.get('activitiesEnd')['controls']; let i = index;" class="col-md-12">
+                          <mat-form-field>
+                            <input type="time" matInput formControlName="{{ i }}" placeholder="Hora de finalización" >
+                            <mat-error *ngIf="activity.hasError('required')">Este campo es obligatorio</mat-error>
+                            <mat-error *ngIf="activity.hasError('activityEndTimeAfterEvent')">La actividad tiene que terminar por lo menos al mismo tiempo que el evento</mat-error>
+                            <mat-error *ngIf="activity.hasError('previousActivity')">La actividad tiene que terminar por lo menos al mismo tiempo que inicia</mat-error>
+                            <button
+                              (click)="deleteFormControl(i)"
+                              color="warn"
+                              type="button"
+                              mat-button
+                              matSuffix
+                              mat-icon-button >
+                              <mat-icon>close</mat-icon>
+                            </button>
+                          </mat-form-field>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+
+                <div fxLayout fxLayoutGap="10px">
+                  <button mat-raised-button color="warn" routerLink=".." type="button">Cancelar</button>
+                  <button mat-raised-button color="primary"  type="submit" (click)="onSubmit()">Crear evento</button>
+                </div>
+
+              </form>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

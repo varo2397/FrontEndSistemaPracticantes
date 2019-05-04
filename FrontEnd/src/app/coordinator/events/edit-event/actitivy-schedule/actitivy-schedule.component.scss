@@ -1,0 +1,21 @@
+.placeholder {
+  border: solid 4px #ccc;
+  height: 48px;
+  background: '#D1D1D1';
+  border-radius: 4px;
+  overflow: hidden;
+  display: block;
+  border-style: dotted;
+}
+
+.container {
+  width: 400px;
+  max-width: 100%;
+  margin: 0 25px 25px 0;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.hidden {
+  visibility: hidden;
+}
