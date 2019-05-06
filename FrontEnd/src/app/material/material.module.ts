@@ -22,7 +22,7 @@ import {
   MAT_DATE_FORMATS,
   MAT_DATE_LOCALE,
   MatDialogModule,
-  MatCheckboxModule
+  MatCheckboxModule, MatDividerModule
 
 } from '@angular/material';
 
@@ -61,7 +61,8 @@ export const MY_FORMATS = {
     MatSortModule,
     MatExpansionModule,
     MatDialogModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatDividerModule
   ],
   exports: [
     MatCardModule,
@@ -83,7 +84,8 @@ export const MY_FORMATS = {
     MatSortModule,
     MatExpansionModule,
     MatDialogModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatDividerModule
   ],
   providers: [
     { provide: MAT_DATE_LOCALE, useValue: 'es' }, // you can change useValue
