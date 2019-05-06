@@ -16,11 +16,14 @@ import {
   MatMenuModule,
   MatTableModule,
   MatPaginatorModule,
-  MatSortModule, 
+  MatSortModule,
   MatExpansionModule,
-  DateAdapter, 
-  MAT_DATE_FORMATS, 
-  MAT_DATE_LOCALE
+  DateAdapter,
+  MAT_DATE_FORMATS,
+  MAT_DATE_LOCALE,
+  MatDialogModule,
+  MatCheckboxModule
+
 } from '@angular/material';
 
 import { MomentDateModule, MomentDateAdapter } from '@angular/material-moment-adapter';
@@ -57,6 +60,8 @@ export const MY_FORMATS = {
     MatPaginatorModule,
     MatSortModule,
     MatExpansionModule,
+    MatDialogModule,
+    MatCheckboxModule
   ],
   exports: [
     MatCardModule,
@@ -76,10 +81,12 @@ export const MY_FORMATS = {
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatDialogModule,
+    MatCheckboxModule
   ],
   providers: [
-    { provide: MAT_DATE_LOCALE, useValue: 'es' }, //you can change useValue
+    { provide: MAT_DATE_LOCALE, useValue: 'es' }, // you can change useValue
     { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
     { provide: MAT_DATE_FORMATS, useValue: MY_FORMATS }
   ]

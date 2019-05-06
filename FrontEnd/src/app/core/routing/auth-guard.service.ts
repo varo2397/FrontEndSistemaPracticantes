@@ -5,25 +5,25 @@ import { from, Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { map, take } from 'rxjs/operators';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+  }
+)
 export class AuthGuard implements CanActivate, CanLoad {
 
   constructor(private store: Store<fromRoot.State>, private router: Router) {}
 
   canActivate(route: ActivatedRouteSnapshot, routerState: RouterStateSnapshot): Observable<boolean> {
-    return this.store.pipe(
-      select(fromRoot.getIsAuthenticated),
-      map(isAuthenticated => {
-        console.log(isAuthenticated)
-        if (!isAuthenticated) {
-          this.router.navigate(['/']);
-          return false;
-        }
-
+    return this.store.select(fromRoot.getIsAuthenticated).pipe(map((isAuthenticated) => {
+      console.log(isAuthenticated)
+      if (isAuthenticated) {
         return true;
-      }),
-      take(1)
-    );
+      }
+      else {
+        this.router.navigate(['/']);
+        return false;
+      }
+    }));
   }
 
   canLoad(route: Route): Observable<boolean> | boolean {

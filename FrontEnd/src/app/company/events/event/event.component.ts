@@ -1,59 +1,36 @@
-import {
-  Component,
-  ViewChild,
-  TemplateRef,
-  AfterViewInit,
-  ViewContainerRef,
-  OnDestroy,
-  OnInit
-} from '@angular/core';
-import {Overlay, OverlayRef} from '@angular/cdk/overlay';
-import {TemplatePortal} from '@angular/cdk/portal';
+import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import {MatDialog, MatDialogConfig} from '@angular/material';
+import { TalkEventComponent } from '../talk-event/talk-event.component';
+
 
 @Component({
   selector: 'app-event',
   templateUrl: './event.component.html',
   styleUrls: ['./event.component.scss']
 })
-export class EventComponent implements OnInit, AfterViewInit, OnDestroy {
+export class EventComponent implements OnInit {
 
-  talkEvent: boolean;
   eventID: number;
-  @ViewChild(TemplateRef) _dialogTemplate: TemplateRef<any>;
-  private _overlayRef: OverlayRef;
-  private _portal: TemplatePortal;
 
-  constructor(private _overlay: Overlay,
-              private _viewContainerRef: ViewContainerRef,
-              private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private dialog: MatDialog) {}
 
   ngOnInit() {
-    this.talkEvent = false;
     this.route.params.subscribe(params => {
       this.eventID = params['id'];
     });
   }
 
-  showTalkEvent() {
-    this.talkEvent = !this.talkEvent;
-  }
-
-  ngAfterViewInit() {
-    this._portal = new TemplatePortal(this._dialogTemplate, this._viewContainerRef);
-    this._overlayRef = this._overlay.create({
-      positionStrategy: this._overlay.position().global().centerHorizontally().centerVertically(),
-      hasBackdrop: true
-    });
-    this._overlayRef.backdropClick().subscribe(() => this._overlayRef.detach());
-  }
-
-  ngOnDestroy() {
-    this._overlayRef.dispose();
-  }
-
   openDialog() {
-    this._overlayRef.attach(this._portal);
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = '700px';
+    dialogConfig.height = '350px';
+
+    this.dialog.open(TalkEventComponent, dialogConfig);
   }
+
+
 
 }

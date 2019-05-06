@@ -1,8 +1,14 @@
-<div class="row">
-  <div class="col-md-10 offset-md-1">
-    <mat-card>
-      <mat-card-title class="font-primary">Información charla</mat-card-title>
-      <mat-card-content>
+
+<h2 mat-dialog-title cdkDrag cdkDragRootElement=".cdk-overlay-pane" cdkDragHandle>Información charla</h2>
+
+<mat-dialog-content >
+
+  <mat-checkbox [(ngModel)]="showForm" color="primary">¿Desea dar una charla?</mat-checkbox>
+
+
+  <ng-container *ngIf="showForm">
+    <div class="row" >
+      <div class="col-md-12">
 
         <form [formGroup]="talkEventForm">
           <div class="row">
@@ -28,15 +34,17 @@
                 <mat-error *ngIf="talkEventForm.hasError('required', ['observations'])">Este campo es obligatorio</mat-error>
               </mat-form-field>
             </div>
-            <div class="col-md-4">
-              <button mat-raised-button color="primary">Enviar solicitud de charla</button>
-            </div>
-
 
           </div>
         </form>
+      </div>
+    </div>
+  </ng-container>
 
-      </mat-card-content>
-    </mat-card>
-  </div>
-</div>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-raised-button color="warn"  (click)="close()">Cerrar</button>
+  <button mat-raised-button color="primary" (click)="onSubmit()">Enviar solicitud</button>
+</mat-dialog-actions>

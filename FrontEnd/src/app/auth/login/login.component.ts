@@ -7,6 +7,7 @@ import { LoginToken } from '../../interfaces/loginToken';
 import { Store } from '@ngrx/store';
 import * as Auth from '../../store/auth/auth.actions';
 import * as fromAuth from '../../store/auth/auth.reducer';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-login',
@@ -37,7 +38,7 @@ export class LoginComponent implements OnInit, OnDestroy {
         email: this.loginForm.get('email').value,
         password: this.loginForm.get('password').value
       };
-      this.httpObserver = this.loginService.login(loginInfo).subscribe(response => {
+      this.httpObserver = this.loginService.login(loginInfo).pipe(take(1)).subscribe(response => {
         this.login = <LoginToken>response.data;
         this.store.dispatch(new Auth.SetLoginToken(this.login));
 
@@ -54,6 +55,7 @@ export class LoginComponent implements OnInit, OnDestroy {
           default:
             return null;
         }
+        this.httpObserver.unsubscribe();
         // }
         // else {
         //   this.error = 'Correo o contraseña incorrectos';

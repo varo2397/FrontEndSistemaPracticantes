@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {Sugestion} from '../../../interfaces/sugestion';
 import {SugestionsService} from '../../../core/http/sugestions/sugestions.service';
+import {MatDialogRef} from '@angular/material';
 
 @Component({
   selector: 'app-talk-event',
@@ -11,15 +12,21 @@ import {SugestionsService} from '../../../core/http/sugestions/sugestions.servic
 export class TalkEventComponent implements OnInit {
 
   talkEventForm: FormGroup;
+  showForm: boolean;
 
-  constructor(private sugestionService: SugestionsService) { }
+  constructor(private sugestionService: SugestionsService, private dialogRef: MatDialogRef<TalkEventComponent>) { }
 
   ngOnInit() {
+    this.showForm = false;
     this.talkEventForm = new FormGroup({
       'talkName': new FormControl(null, Validators.required),
       'speaker': new FormControl(null, Validators.required),
       'observations': new FormControl(null, Validators.required)
     });
+  }
+
+  close() {
+    this.dialogRef.close();
   }
 
   onSubmit() {
@@ -36,6 +43,7 @@ export class TalkEventComponent implements OnInit {
         }
       });
     }
+    this.dialogRef.close();
   }
 
 }
