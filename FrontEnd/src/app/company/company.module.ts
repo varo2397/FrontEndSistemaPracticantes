@@ -10,6 +10,9 @@ import { SharedModule } from '../shared/shared.module';
 import { EventComponent } from './events/event/event.component';
 import { TalkEventComponent } from './events/talk-event/talk-event.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { SitesComponent } from './sites/sites.component';
+import { SendCareerRequestComponent } from './sites/send-career-request/send-career-request.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   imports: [
@@ -19,14 +22,17 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     CompanyRoutingModule,
     SharedModule,
     DragDropModule,
-    FormsModule
+    FormsModule,
+    FlexLayoutModule
   ],
   declarations: [
     LayoutComponent,
     SidenavComponent,
     EventsComponent,
     EventComponent,
-    TalkEventComponent
+    TalkEventComponent,
+    SitesComponent,
+    SendCareerRequestComponent
   ],
   entryComponents: [
     TalkEventComponent
