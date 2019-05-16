@@ -15,7 +15,6 @@ export class AuthGuard implements CanActivate, CanLoad {
 
   canActivate(route: ActivatedRouteSnapshot, routerState: RouterStateSnapshot): Observable<boolean> {
     return this.store.select(fromRoot.getIsAuthenticated).pipe(map((isAuthenticated) => {
-      console.log(isAuthenticated)
       if (isAuthenticated) {
         return true;
       }
