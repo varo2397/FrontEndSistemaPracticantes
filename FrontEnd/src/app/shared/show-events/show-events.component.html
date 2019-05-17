@@ -5,6 +5,15 @@
       <h2>Eventos disponibles</h2>
       <table mat-table [dataSource]="dataSource" matSort>
 
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="image">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Imagen </th>
+            <td mat-cell *matCellDef="let element"> 
+
+                <img src="https://via.placeholder.com/20"></td>
+          </ng-container>
+
         <!-- Position Column -->
         <ng-container matColumnDef="name">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Título </th>

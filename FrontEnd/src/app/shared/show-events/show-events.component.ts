@@ -11,6 +11,7 @@ import {EventsService} from '../../core/http/events/events.service';
 export class ShowEventsComponent implements OnInit {
 
   displayedColumns: string[] = [
+    'image',
     'name',
     'eventDate',
     'start',
