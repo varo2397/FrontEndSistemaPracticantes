@@ -41,4 +41,24 @@
     </mat-expansion-panel>
   </mat-accordion>
 
+  <mat-accordion mat-list-item>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon>work</mat-icon>
+          <span class="sidenav-element">Empresas</span>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <button mat-menu-item routerLink="empresas/aprobar-empresas">
+        <mat-icon>library_add</mat-icon>
+        Aprobar empresas
+      </button>
+      <button mat-menu-item routerLink="eventos">
+        <mat-icon>date_range</mat-icon>
+        Eventos
+      </button>
+
+    </mat-expansion-panel>
+  </mat-accordion>
+
 </mat-nav-list>

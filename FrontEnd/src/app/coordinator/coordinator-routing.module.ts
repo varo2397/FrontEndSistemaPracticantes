@@ -9,25 +9,39 @@ import { CreateEventComponent } from './events/create-event/create-event.compone
 import { EventComponent } from './events/event/event.component';
 import { EditEventComponent } from './events/edit-event/edit-event.component';
 import { ActitivyScheduleComponent } from './events/edit-event/actitivy-schedule/actitivy-schedule.component';
+import { CompaniesComponent } from './companies/companies.component';
+import { ApproveCompaniesComponent } from './companies/approve-companies/approve-companies.component';
 
 const routes: Routes = [
-  { path: '', component: LayoutComponent , children: [
-      { path: 'estudiantes', children: [
+  {
+    path: '', component: LayoutComponent, children: [
+      {
+        path: 'estudiantes', children: [
           { path: '', component: StudentsComponent },
           { path: 'aprobar-estudiantes', component: ApproveStudentsComponent }
-        ] },
-      { path: 'eventos', children: [
+        ]
+      },
+      {
+        path: 'eventos', children: [
           { path: '', component: EventsComponent },
           { path: 'crear-evento', component: CreateEventComponent },
           { path: ':id', component: EventComponent },
           { path: ':id/editar', component: EditEventComponent },
           { path: ':id/editar/horarioActividades', component: ActitivyScheduleComponent }
-        ]}
-    ] }
+        ]
+      },
+      {
+        path: 'empresas', children: [
+          { path: '', component: CompaniesComponent },
+          { path: 'aprobar-empresas', component: ApproveCompaniesComponent },
+        ]
+      }
+    ]
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class CoordinatorRoutingModule {}
+export class CoordinatorRoutingModule { }
