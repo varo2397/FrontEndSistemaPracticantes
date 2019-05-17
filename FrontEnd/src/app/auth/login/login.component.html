@@ -1,4 +1,4 @@
-<section >
+<section>
   <br>
   <br>
   <br>
@@ -10,12 +10,12 @@
     <mat-card class="col-md-4 offset-md-4">
       <mat-card-title class="text-center font-primary">Inicio de sesión</mat-card-title>
       <mat-card-content class="col-md-12">
-        <form class="text-center"  [formGroup]="loginForm" (ngSubmit) = "onSubmit()">
+        <form class="text-center" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
 
           <div class="col-md-10 offset-md-1">
             <mat-form-field>
 
-              <input type="email" formControlName="email"  matInput placeholder="Correo electronico">
+              <input type="email" formControlName="email" matInput placeholder="Correo electronico">
               <mat-icon matSuffix color="primary">mail</mat-icon>
               <mat-error *ngIf="loginForm.hasError('required', ['email'])">Este campo es obligatorio</mat-error>
               <mat-error *ngIf="loginForm.hasError('email', ['email'])">Ingresa un correo electrónico válido</mat-error>
@@ -25,15 +25,16 @@
 
           <div class="col-md-10 offset-md-1">
             <mat-form-field>
-              <input type="password"  formControlName="password"  matInput placeholder="Contraseña">
+              <input type="password" formControlName="password" matInput placeholder="Contraseña">
               <mat-icon matSuffix color="primary">lock</mat-icon>
               <mat-error *ngIf="loginForm.hasError('required', ['password'])">Este campo es obligatorio</mat-error>
             </mat-form-field>
+            <a class="font-primary text-right" routerLink="/cambiar-contraseña">¿Olvidaste tu contraseña?</a>
           </div>
           <br>
           <br>
           <p *ngIf="errors !== undefined" class="text-danger">{{errors}}</p>
-          <button type="submit" mat-raised-button color="primary" >Iniciar sesión</button>
+          <button type="submit" mat-raised-button color="primary">Iniciar sesión</button>
         </form>
         <br>
       </mat-card-content>
@@ -45,7 +46,7 @@
   <div class="row">
     <div class="col-md-12 ">
       <mat-card class="col-md-4 offset-md-4 ">
-        <mat-card-content >
+        <mat-card-content>
           <div class="col-md-12 col-sm-12">
             <div class="row">
               <div class="col-md-6 col-sm-12">

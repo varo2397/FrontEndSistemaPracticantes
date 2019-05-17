@@ -9,12 +9,14 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { LoginComponent } from './login/login.component';
 import { RegisterStudentComponent } from './register-student/register-student.component';
 import { RegisterCompanyComponent } from './register-company/register-company.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
     LoginComponent,
     RegisterStudentComponent,
-    RegisterCompanyComponent
+    RegisterCompanyComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     CommonModule,
