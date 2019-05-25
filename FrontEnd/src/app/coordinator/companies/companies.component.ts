@@ -1,4 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatTableDataSource, MatSort } from '@angular/material';
+import { Company } from 'src/app/interfaces/company';
+
+
+const COMPANIES: Company[] = [
+  {
+    name: 'Intel',
+    legal_id: 1023048290,
+    address: 'Belen, Heredia'
+  },
+  {
+    name: 'Equifax',
+    legal_id: 1023048290,
+    address: 'La Rivera, Heredia'
+  }
+];
+
 
 @Component({
   selector: 'app-companies',
@@ -7,9 +24,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CompaniesComponent implements OnInit {
 
+  displayedColumns: string[] = [
+    'name',
+    'legal_id',
+    'address',
+    'actions'
+  ];
+  dataSource = new MatTableDataSource(COMPANIES);
+  @ViewChild(MatSort) sort: MatSort;
   constructor() { }
 
   ngOnInit() {
+    this.dataSource.sort = this.sort;
   }
 
 }
