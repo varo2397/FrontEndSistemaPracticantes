@@ -61,4 +61,25 @@
     </mat-expansion-panel>
   </mat-accordion>
 
+  
+  <mat-accordion mat-list-item>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <mat-icon>work</mat-icon>
+            <span class="sidenav-element">Profesores</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <button mat-menu-item routerLink="profesores/crear-profesor">
+          <mat-icon>library_add</mat-icon>
+          Crear profesor asesor
+        </button>
+        <button mat-menu-item routerLink="profesores">
+          <mat-icon>business_center</mat-icon>
+          Profesores asesores
+        </button>
+  
+      </mat-expansion-panel>
+    </mat-accordion>
+
 </mat-nav-list>

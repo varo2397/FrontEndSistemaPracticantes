@@ -11,6 +11,8 @@ import { EditEventComponent } from './events/edit-event/edit-event.component';
 import { ActitivyScheduleComponent } from './events/edit-event/actitivy-schedule/actitivy-schedule.component';
 import { CompaniesComponent } from './companies/companies.component';
 import { ApproveCompaniesComponent } from './companies/approve-companies/approve-companies.component';
+import { TeachersComponent } from './teachers/teachers.component';
+import { CreateTeacherComponent } from './teachers/create-teacher/create-teacher.component';
 
 const routes: Routes = [
   {
@@ -34,6 +36,12 @@ const routes: Routes = [
         path: 'empresas', children: [
           { path: '', component: CompaniesComponent },
           { path: 'aprobar-empresas', component: ApproveCompaniesComponent },
+        ]
+      },
+      {
+        path: 'profesores', children: [
+          { path: '', component: TeachersComponent },
+          { path: 'crear-profesor', component: CreateTeacherComponent }
         ]
       }
     ]

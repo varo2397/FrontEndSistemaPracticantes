@@ -19,6 +19,8 @@ import { CompanyEventInfoComponent } from './events/company-event-info/company-e
 import { ActitivyScheduleComponent } from './events/edit-event/actitivy-schedule/actitivy-schedule.component';
 import { CompaniesComponent } from './companies/companies.component';
 import { ApproveCompaniesComponent } from './companies/approve-companies/approve-companies.component';
+import { TeachersComponent } from './teachers/teachers.component';
+import { CreateTeacherComponent } from './teachers/create-teacher/create-teacher.component';
 
 
 @NgModule({
@@ -35,6 +37,8 @@ import { ApproveCompaniesComponent } from './companies/approve-companies/approve
     ActitivyScheduleComponent,
     CompaniesComponent,
     ApproveCompaniesComponent,
+    TeachersComponent,
+    CreateTeacherComponent,
   ],
   imports: [
     MaterialModule,

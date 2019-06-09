@@ -9,7 +9,8 @@ const routes: Routes = [
   // { path: 'empresa', loadChildren: './company/company.module#CompanyModule', canActivate: [AuthGuard] },
   { path: 'empresa', loadChildren: './company/company.module#CompanyModule' },
   // { path: 'estudiante', loadChildren: './student/student.module#StudentModule', canActivate: [AuthGuard]  }
-  { path: 'estudiante', loadChildren: './student/student.module#StudentModule'  }
+  { path: 'estudiante', loadChildren: './student/student.module#StudentModule'  },
+  { path: 'administrador', loadChildren: './administrator/administrator.module#AdministratorModule' }
 ];
 
 @NgModule({

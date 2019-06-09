@@ -1,0 +1,16 @@
+<mat-sidenav-container >
+  <mat-sidenav mode="side" #sidenav role="navigation">
+    <app-sidenav></app-sidenav>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
+    <main>
+      <div class="container-fluid">
+        <br>
+        <router-outlet></router-outlet>
+      </div>
+
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
