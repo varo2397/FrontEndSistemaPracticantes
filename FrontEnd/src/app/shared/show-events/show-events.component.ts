@@ -21,7 +21,7 @@ export class ShowEventsComponent implements OnInit {
   ];
   events: Event[];
   dataSource: MatTableDataSource<Event>; // new MatTableDataSource(this.events);
-  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
 
   constructor(private eventsService: EventsService) { }
 

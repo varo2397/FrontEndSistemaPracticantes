@@ -29,7 +29,7 @@ export class ApproveCompaniesComponent implements OnInit {
     'actions'
   ];
   dataSource = new MatTableDataSource(COMPANIES);
-  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
   constructor() { }
 
   ngOnInit() {

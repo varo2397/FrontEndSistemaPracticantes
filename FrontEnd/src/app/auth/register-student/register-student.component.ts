@@ -18,9 +18,9 @@ export class RegisterStudentComponent implements OnInit {
 
   errors: string;
 
-  @ViewChild(CreatePersonComponent) createPerson: CreatePersonComponent;
-  @ViewChild(CreateUserComponent) createUser: CreateUserComponent;
-  @ViewChild(CreateStudentComponent) createStudent: CreateStudentComponent;
+  @ViewChild(CreatePersonComponent, { static: true }) createPerson: CreatePersonComponent;
+  @ViewChild(CreateUserComponent, { static: true }) createUser: CreateUserComponent;
+  @ViewChild(CreateStudentComponent, { static: true }) createStudent: CreateStudentComponent;
   constructor(private register: RegisterService,
               private imageConverter: ImageConverterService,
               private router: Router) { }

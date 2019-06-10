@@ -15,9 +15,9 @@ import {Router} from '@angular/router';
 })
 export class RegisterCompanyComponent implements OnInit {
 
-  @ViewChild(CreatePersonComponent) createPerson: CreatePersonComponent;
-  @ViewChild(CreateCompanyComponent) createCompany: CreateCompanyComponent;
-  @ViewChild(CreateUserComponent) createUser: CreateUserComponent;
+  @ViewChild(CreatePersonComponent, { static: true }) createPerson: CreatePersonComponent;
+  @ViewChild(CreateCompanyComponent, { static: true }) createCompany: CreateCompanyComponent;
+  @ViewChild(CreateUserComponent, { static: true }) createUser: CreateUserComponent;
   errors: string = null;
 
   constructor(private registerService: RegisterService, private router: Router) { }

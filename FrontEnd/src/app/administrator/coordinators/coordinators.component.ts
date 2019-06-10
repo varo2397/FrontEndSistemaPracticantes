@@ -21,7 +21,7 @@ export class CoordinatorsComponent implements OnInit {
   ];
   events: Event[];
   dataSource: MatTableDataSource<Coordinator>; // new MatTableDataSource(this.events);
-  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
 
   ngOnInit() {
     this.getCoordinators();

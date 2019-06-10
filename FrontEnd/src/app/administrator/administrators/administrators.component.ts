@@ -20,7 +20,7 @@ export class AdministratorsComponent implements OnInit {
   ];
   events: Event[];
   dataSource: MatTableDataSource<Administrator>; // new MatTableDataSource(this.events);
-  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
 
   constructor() { }
 
