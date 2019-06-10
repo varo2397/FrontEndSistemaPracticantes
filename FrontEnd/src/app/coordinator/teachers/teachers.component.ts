@@ -18,7 +18,7 @@ export class TeachersComponent implements OnInit {
   ];
   events: Event[];
   dataSource: MatTableDataSource<Teacher>; // new MatTableDataSource(this.events);
-  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
 
 
   constructor() { }

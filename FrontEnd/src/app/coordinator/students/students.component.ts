@@ -35,7 +35,7 @@ export class StudentsComponent implements OnInit {
     'actions'
   ];
   dataSource = new MatTableDataSource(STUDENTS);
-  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
   constructor() { }
 
   ngOnInit() {
