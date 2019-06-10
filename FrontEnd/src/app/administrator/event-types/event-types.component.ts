@@ -10,6 +10,8 @@ export class EventTypesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+
   }
 
 }

@@ -4,7 +4,7 @@ import { AdministratorRoutingModule } from './administrator-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from '../material/material.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SemestersComponent } from './semesters/semesters.component';
 import { CreateSemesterComponent } from './semesters/create-semester/create-semester.component';
 import { EditSemesterComponent } from './semesters/edit-semester/edit-semester.component';
@@ -33,6 +33,7 @@ import { SidenavComponent } from './layout/sidenav/sidenav.component';
     FlexLayoutModule,
     MaterialModule,
     ReactiveFormsModule,
+    FormsModule
   ],
   declarations: [
     SemestersComponent,

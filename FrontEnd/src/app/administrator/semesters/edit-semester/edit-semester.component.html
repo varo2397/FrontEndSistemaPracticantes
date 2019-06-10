@@ -1,3 +1,51 @@
-<p>
-  edit-semester works!
-</p>
+<div class="col-md-10 offset-md-1">
+  <mat-card>
+    <mat-card-title>Agregar semestre</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="editEventTypeForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+
+          <div class="col-md-4">
+
+            <mat-form-field>
+              <mat-select matInput formControlName="semester" placeholder="Semestre del año" >
+                <mat-option [value]="1">1</mat-option>
+                <mat-option [value]="2">2</mat-option>
+              </mat-select>
+              <mat-error *ngIf="editEventTypeForm.hasError('required', ['semester'])">Este campo es obligatorio</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-4">
+
+            <mat-form-field>
+              <input matInput [matDatepicker]="start"  formControlName="start" placeholder="Fecha inicio del semestre">
+              <mat-error *ngIf="editEventTypeForm.hasError('required',['start'])">Este campo es obligatorio</mat-error>
+              <mat-datepicker-toggle matSuffix [for]="start"></mat-datepicker-toggle>
+              <mat-datepicker #start></mat-datepicker>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-4">
+
+            <mat-form-field>
+              <input matInput [matDatepicker]="end"  formControlName="end" placeholder="Fecha fin del semestre">
+              <mat-error *ngIf="editEventTypeForm.hasError('required',['end'])">Este campo es obligatorio</mat-error>
+              <mat-error *ngIf="editEventTypeForm.hasError('endSemesterWrong',['end'])">El semestre tiene que terminar antes del inicio</mat-error>
+              <mat-datepicker-toggle matSuffix [for]="end"></mat-datepicker-toggle>
+              <mat-datepicker #end></mat-datepicker>
+            </mat-form-field>
+          </div>
+
+
+        </div>
+
+        <div fxLayout fxLayoutGap="10px">
+          <button mat-raised-button color="warn" routerLink=".." type="button">Cancelar</button>
+          <button mat-raised-button color="primary"  type="submit" (click)="onSubmit()">Crear carrera</button>
+        </div>
+
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

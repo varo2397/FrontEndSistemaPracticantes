@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import {User} from "../../interfaces/user";
+import {User} from '../../interfaces/user';
 
 @Component({
   selector: 'app-create-user',
