@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatSort, MatTableDataSource } from '@angular/material';
+import { Administrator } from '../../interfaces/administrator';
+
 
 @Component({
   selector: 'app-administrators',
@@ -7,9 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdministratorsComponent implements OnInit {
 
+  displayedColumns: string[] = [
+    'name',
+    'lastName',
+    'secondLastName',
+    'gender',
+    'email',
+    'actions'
+  ];
+  events: Event[];
+  dataSource: MatTableDataSource<Administrator>; // new MatTableDataSource(this.events);
+  @ViewChild(MatSort) sort: MatSort;
+
   constructor() { }
 
   ngOnInit() {
+    this.getAdministrators();
+  }
+
+  getAdministrators() {
+    this.dataSource = new MatTableDataSource([]);
+    this.dataSource.sort = this.sort;
   }
 
 }
