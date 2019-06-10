@@ -13,7 +13,6 @@ export class ShowEventComponent implements OnInit {
   constructor(private eventsService: EventsService) { }
 
   ngOnInit() {
-    console.log(this.eventID);
     this.getEvent();
   }
 
