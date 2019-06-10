@@ -22,6 +22,9 @@ import { ApproveCompaniesComponent } from './companies/approve-companies/approve
 import { TeachersComponent } from './teachers/teachers.component';
 import { CreateTeacherComponent } from './teachers/create-teacher/create-teacher.component';
 import { StatisticsComponent } from './statistics/statistics.component';
+import { DocumentsComponent } from './documents/documents.component';
+import { CreateDocumentComponent } from './documents/create-document/create-document.component';
+import { EditDocumentComponent } from './documents/edit-document/edit-document.component';
 
 
 @NgModule({
@@ -41,6 +44,9 @@ import { StatisticsComponent } from './statistics/statistics.component';
     TeachersComponent,
     CreateTeacherComponent,
     StatisticsComponent,
+    DocumentsComponent,
+    CreateDocumentComponent,
+    EditDocumentComponent,
   ],
   imports: [
     MaterialModule,

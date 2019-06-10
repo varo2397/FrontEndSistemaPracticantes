@@ -88,6 +88,26 @@
       </mat-expansion-panel>
     </mat-accordion>
 
+  <mat-accordion mat-list-item>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon>folder</mat-icon>
+          <span class="sidenav-element">Documentos</span>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <button mat-menu-item routerLink="documentos/crear-documento">
+        <mat-icon>create_new_folder</mat-icon>
+        Crear documento
+      </button>
+      <button mat-menu-item routerLink="documentos">
+        <mat-icon>folder_shared</mat-icon>
+        Documentos de práctica
+      </button>
+
+    </mat-expansion-panel>
+  </mat-accordion>
+
 
 
 </mat-nav-list>
