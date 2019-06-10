@@ -31,6 +31,7 @@ export class ShowEventsComponent implements OnInit {
 
   getEvents() {
     this.eventsService.getEvents().subscribe(response => {
+      console.log(response);
       this.events = <Event[]>response.data;
       this.dataSource = new MatTableDataSource(this.events);
       this.dataSource.sort = this.sort;

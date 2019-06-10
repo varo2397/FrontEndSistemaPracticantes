@@ -6,6 +6,8 @@ import {EventsService} from '../../../core/http/events/events.service';
 import { EventType } from '../../../interfaces/eventType';
 import { Event } from '../../../interfaces/event';
 import { Activity } from '../../../interfaces/activity';
+// @ts-ignore
+import moment from 'moment';
 
 enum ControlType {
   Start = 'activitiesStart',
@@ -222,10 +224,11 @@ export class CreateEventComponent implements OnInit {
     if (this.eventForm.valid && this.eventForm.touched) {
 
       const date = this.eventForm.get('eventDate').value;
-      const day = date.getDate();
-      const month = date.getMonth() + 1;
-      const year = date.getFullYear();
-      const parsedDate = year + '-' + month + '-' + day;
+      const parsedDate = moment(date).format('YYYY/MM/DD');
+      // const day = date.getDate();
+      // const month = date.getMonth() + 1;
+      // const year = date.getFullYear();
+      // const parsedDate = year + '-' + month + '-' + day;
 
       const arrayStart = <FormArray>this.eventForm.get('activitiesStart');
       const arrayEnd = <FormArray>this.eventForm.get('activitiesEnd');
