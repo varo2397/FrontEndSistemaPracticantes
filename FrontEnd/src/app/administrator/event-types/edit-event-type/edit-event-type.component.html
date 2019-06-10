@@ -1,3 +1,34 @@
-<p>
-  edit-event-type works!
-</p>
+<div class="col-md-8 offset-md-2">
+  <mat-card>
+    <mat-card-title>Agregar tipo de evento</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="editEventTypeForm" (ngSubmit)="onSubmit()">
+
+        <div class="row">
+
+          <div class="col-md-6">
+            <mat-form-field>
+              <input matInput placeholder="Nombre del tipo de evento" formControlName="name">
+              <mat-error *ngIf="editEventTypeForm.hasError('required', ['name'])">Este campo es obligatorio</mat-error>
+            </mat-form-field>
+
+          </div>
+
+          <div class="col-md-6">
+            <mat-form-field>
+              <textarea matInput placeholder="Nombre del tipo de evento" formControlName="description"></textarea>
+              <mat-error *ngIf="editEventTypeForm.hasError('required', ['description'])">Este campo es obligatorio</mat-error>
+            </mat-form-field>
+
+          </div>
+
+        </div>
+
+      </form>
+      <div fxLayout fxLayoutGap="10px">
+        <button mat-raised-button color="warn" routerLink=".." type="button">Cancelar</button>
+        <button mat-raised-button color="primary"  type="submit" (click)="onSubmit()">Crear carrera</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

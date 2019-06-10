@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-edit-event-type',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditEventTypeComponent implements OnInit {
 
-  constructor() { }
+  editEventTypeForm: FormGroup;
+  eventTypeID: string;
+
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.eventTypeID = this.route.snapshot.paramMap.get('id');
+    this.createForm();
+  }
+
+  onSubmit() {
+
+  }
+
+  createForm() {
+    this.editEventTypeForm = new FormGroup({
+      'name': new FormControl('algo', Validators.required),
+      'description': new FormControl('algo1', Validators.required)
+    });
   }
 
 }

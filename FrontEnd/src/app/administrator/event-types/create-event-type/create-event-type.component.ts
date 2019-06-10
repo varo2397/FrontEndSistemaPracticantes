@@ -14,26 +14,13 @@ export class CreateEventTypeComponent implements OnInit {
 
   ngOnInit() {
     this.eventTypeForm = new FormGroup({
-      'semester': new FormControl(null, Validators.required),
-      'start': new FormControl(null, Validators.required),
-      'end': new FormControl(null, [Validators.required, this.endSemesterValidator.bind(this)])
+      'name': new FormControl(null, Validators.required),
+      'description': new FormControl(null, Validators.required)
     });
   }
 
   onSubmit() {
 
-  }
-
-  endSemesterValidator(control: FormControl) {
-    if (this.eventTypeForm !== undefined) {
-      const startSemester = this.eventTypeForm.get('start').value;
-      const endSemester = control.value;
-
-      if (startSemester > endSemester) {
-        return { 'endSemesterWrong': true };
-      }
-    }
-    return null;
   }
 
 }
