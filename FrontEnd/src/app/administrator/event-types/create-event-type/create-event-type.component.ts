@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { EventTypesService } from '../../../core/http/eventTypes/event-types.service';
+import { EventType } from '../../../interfaces/eventType';
 
 @Component({
   selector: 'app-create-event-type',
@@ -10,7 +13,8 @@ export class CreateEventTypeComponent implements OnInit {
 
   eventTypeForm: FormGroup;
 
-  constructor() { }
+  constructor(private router: Router,
+              private eventTypeService: EventTypesService) { }
 
   ngOnInit() {
     this.eventTypeForm = new FormGroup({
@@ -20,7 +24,15 @@ export class CreateEventTypeComponent implements OnInit {
   }
 
   onSubmit() {
-
+    if (this.eventTypeForm.valid && this.eventTypeForm.touched) {
+      const eventType: EventType = <EventType> {
+        name: this.eventTypeForm.controls['name'].value,
+        description: this.eventTypeForm.controls['description'].value
+      };
+      this.eventTypeService.createEventType(eventType).subscribe(response => {
+        this.router.navigate(['/administrador/tipos-evento']);
+      });
+    }
   }
 
 }

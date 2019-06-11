@@ -1,20 +1,20 @@
 <div class="col-md-12 ">
 
   <div class="row">
-    <div class="col-md-4">
-
-      <mat-card class="col-md-12 ">
-        <mat-card-title class="font-primary">Vinculación con la empresa</mat-card-title>
-        <mat-card-content>
-          Descripción: Algo extremadamente largo
-          <div fxLayout fxLayoutGap="10px">
-            <button mat-raised-button color="warn" routerLink=".." type="button">Eliminar</button>
-            <button mat-raised-button color="primary"  type="submit" >Editar</button>
-          </div>
-        </mat-card-content>
-      </mat-card>
-    </div>
-
+    <ng-container *ngFor="let eventType of eventTypes">
+      <div class="col-md-4 mb-2">
+        <mat-card class="col-md-12 ">
+          <mat-card-title class="font-primary">{{ eventType.name }}</mat-card-title>
+          <mat-card-content>
+            Descripción: {{ eventType.description }}
+            <div fxLayout fxLayoutGap="10px">
+              <button mat-raised-button color="warn" (click)="deleteEventType(eventType.id)" type="button">Eliminar</button>
+              <button mat-raised-button color="primary" [routerLink]="eventType.id + '/editar'"  type="submit" >Editar</button>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </ng-container>
   </div>
 </div>
 

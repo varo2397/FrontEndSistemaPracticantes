@@ -24,7 +24,6 @@ export class CreateCareerComponent implements OnInit {
 
   onSubmit() {
     if (this.careerForm.valid && this.careerForm.touched) {
-      console.log('hola');
       const career: Career = <Career> {
         career: this.careerForm.controls['career'].value
       };
