@@ -1,18 +1,20 @@
 <div class="col-md-12 ">
 
   <div class="row">
-    <div class="col-md-4">
+    <ng-container *ngFor="let site of sites">
+      <div class="col-md-4 mb-2">
+        <mat-card class="col-md-12 ">
+          <mat-card-title class="font-primary">{{ site.site }}</mat-card-title>
+          <mat-card-content>
+            <div fxLayout fxLayoutGap="10px">
+              <button mat-raised-button color="warn" (click)="deleteSite(site.id)" type="button">Eliminar</button>
+              <button mat-raised-button color="primary" [routerLink]="site.id + '/editar'"  type="submit" >Editar</button>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </ng-container>
 
-      <mat-card class="col-md-12 ">
-        <mat-card-title class="font-primary">Centro Academico San José</mat-card-title>
-        <mat-card-content>
-          <div fxLayout fxLayoutGap="10px">
-            <button mat-raised-button color="warn" routerLink=".." type="button">Eliminar</button>
-            <button mat-raised-button color="primary"  type="submit" >Editar</button>
-          </div>
-        </mat-card-content>
-      </mat-card>
-    </div>
 
   </div>
 </div>
