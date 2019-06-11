@@ -6,9 +6,17 @@
   <br>
   <app-create-user></app-create-user>
   <br>
+  <app-coordinator-info></app-coordinator-info>
+  {{ error }}
+  <br>
+
+
   <div fxLayout fxLayoutGap="10px">
     <button mat-raised-button routerLink=".." color="warn">Cancelar</button>
-    <button mat-raised-button color="primary">Siguiente</button>
+    <button mat-raised-button (click)="onSubmit()" color="primary">Crear coordinador</button>
   </div>
 
 </div>
+
+<br>
+<br>

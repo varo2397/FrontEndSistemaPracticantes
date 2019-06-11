@@ -5,4 +5,5 @@ export interface Coordinator {
   secondLastName: string;
   gender: string;
   email: string;
+  telephone: number;
 }

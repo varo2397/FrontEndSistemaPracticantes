@@ -1,0 +1,43 @@
+<section>
+  <div class="row">
+    <div class="col-md-12">
+      <mat-card>
+        <mat-card-title class="font-primary">
+          Información de coordinador
+        </mat-card-title>
+        <mat-card-content>
+          <form [formGroup]="coordinatorForm">
+            <div class="row">
+              <div class="col-md-6">
+                <mat-form-field>
+                  <mat-select matInput placeholder="Sede" formControlName="site" (selectionChange)="getCareers($event.value)">
+                    <mat-option *ngFor="let site of sites" [value]="site.id">
+                      {{ site.site }}
+                    </mat-option>
+
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field>
+                  <mat-select matInput placeholder="Carrera" formControlName="career">
+                    <mat-option *ngFor="let career of careers" [value]="career.id">
+                      {{ career.career }}
+                    </mat-option>
+
+                  </mat-select>
+                </mat-form-field>
+              </div>
+
+            </div>
+
+          </form>
+        </mat-card-content>
+
+      </mat-card>
+
+    </div>
+
+  </div>
+
+</section>

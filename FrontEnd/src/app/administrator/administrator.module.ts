@@ -23,6 +23,7 @@ import { AdministratorsComponent } from './administrators/administrators.compone
 import { CreateAdministratorComponent } from './administrators/create-administrator/create-administrator.component';
 import { LayoutComponent } from './layout/layout.component';
 import { SidenavComponent } from './layout/sidenav/sidenav.component';
+import { CoordinatorInfoComponent } from './coordinators/create-coordinator/coordinator-info/coordinator-info.component';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { SidenavComponent } from './layout/sidenav/sidenav.component';
     AdministratorsComponent,
     CreateAdministratorComponent,
     LayoutComponent,
-    SidenavComponent
+    SidenavComponent,
+    CoordinatorInfoComponent
   ]
 })
 

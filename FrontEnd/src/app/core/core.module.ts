@@ -12,6 +12,7 @@ import { EventsService } from './http/events/events.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './http/interceptors/auth.interceptor';
 import { CareersService } from './http/careers/careers.service';
+import { CoordinatorsService } from './http/coordinators/coordinators.service';
 
 @NgModule({
   imports: [
@@ -29,6 +30,7 @@ import { CareersService } from './http/careers/careers.service';
     GendersService,
     EventsService,
     CareersService,
+    CoordinatorsService,
     {provide:  HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
   ]
 })
