@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
-import {People} from "../../interfaces/people";
+import {People} from '../../interfaces/people';
 import {GendersService} from '../../core/http/genders/genders.service';
 import {Gender} from '../../interfaces/gender';
+// @ts-ignore
+import moment from 'moment';
 
 @Component({
   selector: 'app-create-person',
@@ -31,10 +33,7 @@ export class CreatePersonComponent implements OnInit {
   getFormValues(): People {
 
     const date = this.personForm.get('birthdate').value;
-    const day = date.getDate();
-    const month = date.getMonth() + 1;
-    const year = date.getFullYear();
-    const parsedDate = year + '-' + month + '-' + day;
+    const parsedDate = moment(date).format('YYYY/MM/DD');
 
     const person: People = <People> {
       name: this.personForm.get('name').value,
