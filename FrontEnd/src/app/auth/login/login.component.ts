@@ -52,6 +52,9 @@ export class LoginComponent implements OnInit, OnDestroy {
           case 'company':
             this.router.navigate(['empresa']);
             break;
+          case 'super-user':
+            this.router.navigate(['administrador']);
+            break;
           default:
             return null;
         }

@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Event } from '../../interfaces/event';
-import {EventsService} from '../../core/http/events/events.service';
+import { EventsService } from '../../core/http/events/events.service';
 
 @Component({
   selector: 'app-show-events',
@@ -32,7 +32,6 @@ export class ShowEventsComponent implements OnInit {
 
   getEvents() {
     this.eventsService.getEvents().subscribe(response => {
-      console.log(response);
       this.events = <Event[]>response.data;
       this.dataSource = new MatTableDataSource(this.events);
       this.dataSource.sort = this.sort;

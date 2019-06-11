@@ -22,6 +22,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { MomentDateModule, MomentDateAdapter } from '@angular/material-moment-adapter';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 export const MY_FORMATS = {
   parse: {
@@ -57,7 +58,8 @@ export const MY_FORMATS = {
     MatExpansionModule,
     MatDialogModule,
     MatCheckboxModule,
-    MatDividerModule
+    MatDividerModule,
+    MatSnackBarModule
   ],
   exports: [
     MatCardModule,

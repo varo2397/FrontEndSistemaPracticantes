@@ -3,14 +3,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginService } from './http/auth/login.service';
 import { AuthService } from './http/auth/auth.service';
 import { EventTypesService } from './http/eventTypes/event-types.service';
-import {SitesService} from './http/sites/sites.service';
-import {RegisterService} from './http/auth/register.service';
-import {ImageConverterService} from './general/imageConverter.service';
-import {SemestersService} from './http/semesters/semesters.service';
-import {GendersService} from './http/genders/genders.service';
-import {EventsService} from './http/events/events.service';
+import { SitesService } from './http/sites/sites.service';
+import { RegisterService } from './http/auth/register.service';
+import { ImageConverterService } from './general/imageConverter.service';
+import { SemestersService } from './http/semesters/semesters.service';
+import { GendersService } from './http/genders/genders.service';
+import { EventsService } from './http/events/events.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import {AuthInterceptor} from './http/interceptors/auth.interceptor';
+import { AuthInterceptor } from './http/interceptors/auth.interceptor';
+import { CareersService } from './http/careers/careers.service';
 
 @NgModule({
   imports: [
@@ -27,6 +28,7 @@ import {AuthInterceptor} from './http/interceptors/auth.interceptor';
     SemestersService,
     GendersService,
     EventsService,
+    CareersService,
     {provide:  HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
   ]
 })

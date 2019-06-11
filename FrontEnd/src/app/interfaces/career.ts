@@ -1,5 +1,5 @@
 export interface Career {
-  id: number;
+  id?: number;
   career: string;
   created_at?: string;
   updated_at?: string;

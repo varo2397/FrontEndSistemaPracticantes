@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { CareersService } from '../../../core/http/careers/careers.service';
+import { Career } from '../../../interfaces/career';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-career',
@@ -10,7 +13,8 @@ export class CreateCareerComponent implements OnInit {
 
   careerForm: FormGroup;
 
-  constructor() { }
+  constructor(private careerService: CareersService,
+              private router: Router) { }
 
   ngOnInit() {
     this.careerForm = new FormGroup({
@@ -19,7 +23,15 @@ export class CreateCareerComponent implements OnInit {
   }
 
   onSubmit() {
-
+    if (this.careerForm.valid && this.careerForm.touched) {
+      console.log('hola');
+      const career: Career = <Career> {
+        career: this.careerForm.controls['career'].value
+      };
+      this.careerService.createCareer(career).subscribe(response => {
+        this.router.navigate(['/administrador/carreras']);
+      });
+    }
   }
 
 }
