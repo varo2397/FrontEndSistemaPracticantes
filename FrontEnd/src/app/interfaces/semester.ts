@@ -1,5 +1,5 @@
 export interface Semester {
-  id?: string;
+  id?: number;
   semester: number;
   start: string;
   end: string;

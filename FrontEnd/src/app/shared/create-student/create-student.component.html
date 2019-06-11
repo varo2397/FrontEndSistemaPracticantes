@@ -31,7 +31,9 @@
               <div class="col-md-4">
                <mat-form-field>
                  <mat-select formControlName="semester" placeholder="Semestre">
-                   <mat-option *ngFor="let semester of semesters" [value]="semester.id">Semestre I 2019</mat-option>
+                   <ng-container *ngFor="let semester of semesters">
+                     <mat-option  [value]="semester.id">Semestre {{ semester.semester == 1 ? 'I' : 'II' }}</mat-option>
+                   </ng-container>
                  </mat-select>
                  <mat-error *ngIf="studentForm.hasError('required', ['semester'])">Este campo es obligatorio</mat-error>
                </mat-form-field>

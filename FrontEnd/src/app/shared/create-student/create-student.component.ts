@@ -75,7 +75,7 @@ export class CreateStudentComponent implements OnInit {
 
   getSemesters() {
     this.semestersService.getSemesters().subscribe(response => {
-      this.semesters = <Semester[]>response;
+      this.semesters = <Semester[]>response.data;
     });
   }
 
