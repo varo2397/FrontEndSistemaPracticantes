@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Teacher } from '../../interfaces/teacher';
+import { TeacherService } from '../../core/http/teacher/teacher.service';
 
 @Component({
   selector: 'app-teachers',
@@ -14,7 +15,8 @@ export class TeachersComponent implements OnInit {
     'name',
     'lastName',
     'secondLastName',
-    'gender',
+    'telephone',
+    'email',
     'actions'
   ];
   events: Event[];
@@ -22,15 +24,17 @@ export class TeachersComponent implements OnInit {
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
 
-  constructor() { }
+  constructor(private teachersService: TeacherService) { }
 
   ngOnInit() {
     this.getTeachers();
   }
 
   getTeachers() {
-    this.dataSource = new MatTableDataSource([]);
-    this.dataSource.sort = this.sort;
+    this.teachersService.getTeachers().subscribe(response => {
+      this.dataSource = new MatTableDataSource(response.data);
+      this.dataSource.sort = this.sort;
+    });
   }
 
 }

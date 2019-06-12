@@ -13,6 +13,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './http/interceptors/auth.interceptor';
 import { CareersService } from './http/careers/careers.service';
 import { CoordinatorsService } from './http/coordinators/coordinators.service';
+import { TeacherService } from './http/teacher/teacher.service';
 
 @NgModule({
   imports: [
@@ -31,6 +32,7 @@ import { CoordinatorsService } from './http/coordinators/coordinators.service';
     EventsService,
     CareersService,
     CoordinatorsService,
+    TeacherService,
     {provide:  HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
   ]
 })

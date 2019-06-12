@@ -27,16 +27,22 @@
         </ng-container>
 
         <!-- Weight Column -->
-        <ng-container matColumnDef="gender">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Género </th>
-          <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
+        <ng-container matColumnDef="telephone">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Teléfono </th>
+          <td mat-cell *matCellDef="let element"> {{element.telephone}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Correo eléctronico </th>
+          <td mat-cell *matCellDef="let element"> {{element.email}} </td>
         </ng-container>
 
         <ng-container matColumnDef="actions">
           <th mat-header-cell *matHeaderCellDef > Acciones </th>
           <td mat-cell *matCellDef="let element">
             <div fxLayout fxLayoutGap="10px">
-              <button mat-raised-button [routerLink]="element.id" color="primary">Seleccionar</button>
+              <button mat-raised-button color="primary">Seleccionar</button>
             </div>
           </td>
         </ng-container>

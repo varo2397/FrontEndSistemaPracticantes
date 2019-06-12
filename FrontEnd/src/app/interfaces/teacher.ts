@@ -3,5 +3,7 @@ export interface Teacher {
   name: string;
   lastName: string;
   secondLastName: string;
-  gender: string;
+  gender?: string;
+  email: string;
+  telephone: number;
 }

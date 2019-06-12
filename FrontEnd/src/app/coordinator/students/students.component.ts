@@ -2,23 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Person } from './approve-students/approve-students.component';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { StudentsService } from '../../core/http/students/students.service';
 
-const STUDENTS: Person[] = [
-  {
-    name: 'Alvaro',
-    firstLastName: 'Castro',
-    secondLastName: 'Venegas',
-    email: 'alvarocastro74@gmail.com',
-    phoneNumber: 86424112
-  },
-  {
-    name: 'Carlos',
-    firstLastName: 'Aldi',
-    secondLastName: 'Venegas',
-    email: '74@gmail.com',
-    phoneNumber: 86428478
-  }
-];
 
 @Component({
   selector: 'app-students',
@@ -35,12 +20,20 @@ export class StudentsComponent implements OnInit {
     'phoneNumber',
     'actions'
   ];
-  dataSource = new MatTableDataSource(STUDENTS);
+  dataSource = new MatTableDataSource([]);
   @ViewChild(MatSort, { static: true }) sort: MatSort;
-  constructor() { }
+
+  constructor(private studentsService: StudentsService) { }
 
   ngOnInit() {
     this.dataSource.sort = this.sort;
+    this.getAprovedStudents();
+  }
+
+  getAprovedStudents() {
+    this.studentsService.getApprovedStudents().subscribe(response => {
+      console.log(response);
+    });
   }
 
 }

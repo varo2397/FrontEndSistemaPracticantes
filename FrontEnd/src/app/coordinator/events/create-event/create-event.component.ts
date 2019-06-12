@@ -42,7 +42,7 @@ export class CreateEventComponent implements OnInit {
     this.eventForm = new FormGroup({
       'name': new FormControl(null, [Validators.required]),
       'eventDate': new FormControl(null, [Validators.required]),
-      'eventInscriptionLimit': new FormControl(null, [Validators.required, this.checkEventLimitInscription.bind(this)]),
+      // 'eventInscriptionLimit': new FormControl(null, [Validators.required, this.checkEventLimitInscription.bind(this)]),
       'eventType': new FormControl(null, [Validators.required]),
       'eventStartTime': new FormControl(null, [Validators.required]),
       'eventEndTime': new FormControl(null, [
@@ -225,10 +225,6 @@ export class CreateEventComponent implements OnInit {
 
       const date = this.eventForm.get('eventDate').value;
       const parsedDate = moment(date).format('YYYY/MM/DD');
-      // const day = date.getDate();
-      // const month = date.getMonth() + 1;
-      // const year = date.getFullYear();
-      // const parsedDate = year + '-' + month + '-' + day;
 
       const arrayStart = <FormArray>this.eventForm.get('activitiesStart');
       const arrayEnd = <FormArray>this.eventForm.get('activitiesEnd');

@@ -4,9 +4,12 @@
   </h2>
   <app-create-person></app-create-person>
   <br>
+  <app-create-user></app-create-user>
+  <br>
+  {{ error }}
   <div fxLayout fxLayoutGap="10px">
     <button mat-raised-button routerLink=".." color="warn">Cancelar</button>
-    <button mat-raised-button color="primary">Siguiente</button>
+    <button mat-raised-button color="primary" (click)="onSubmit()">Siguiente</button>
   </div>
 
 </div>

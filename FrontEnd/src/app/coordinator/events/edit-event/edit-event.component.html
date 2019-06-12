@@ -39,31 +39,6 @@
                   </div>
 
                   <div class="col-md-6">
-                    <mat-form-field>
-                      <input matInput [matDatepicker]="eventInscriptionLimit"  formControlName="eventInscriptionLimit" placeholder="Fecha límite inscripción al evento evento">
-                      <mat-error *ngIf="eventForm.hasError('required',['eventInscriptionLimit'])">Este campo es obligatorio</mat-error>
-                      <mat-error *ngIf="eventForm.hasError('inscriptionLimit',['eventInscriptionLimit'])">La fecha límite tiene que ser antes del evento</mat-error>
-                      <mat-datepicker-toggle matSuffix [for]="eventInscriptionLimit"></mat-datepicker-toggle>
-                      <mat-datepicker #eventInscriptionLimit></mat-datepicker>
-                    </mat-form-field>
-                  </div>
-
-                  <div class="col-md-4">
-                    <mat-form-field>
-                      <input type="time" matInput placeholder="Inicio del evento" formControlName="eventStartTime" >
-                      <mat-error *ngIf="eventForm.hasError('required', ['eventStartTime'])">Este campo es obligatorio</mat-error>
-                    </mat-form-field>
-                  </div>
-
-                  <div class="col-md-4">
-                    <mat-form-field>
-                      <input type="time" matInput placeholder="Fin del evento" formControlName="eventEndTime" >
-                      <mat-error *ngIf="eventForm.hasError('required', ['eventEndTime'])">Este campo es obligatorio</mat-error>
-                      <mat-error *ngIf="eventForm.hasError('eventEndWrong', ['eventEndTime'])">La hora de finalización del evento tiene que ser después del inicio del evento</mat-error>
-                    </mat-form-field>
-                  </div>
-
-                  <div class="col-md-4">
                     <input
                       hidden
                       type="file"
@@ -76,6 +51,30 @@
                     <div *ngIf="!fileFormatValid" class="text-danger">Los formatos permitidos son SVG, PNG, JPG, JPEG</div>
                   </div>
 
+<!--                  <div class="col-md-6">-->
+<!--                    <mat-form-field>-->
+<!--                      <input matInput [matDatepicker]="eventInscriptionLimit"  formControlName="eventInscriptionLimit" placeholder="Fecha límite inscripción al evento evento">-->
+<!--                      <mat-error *ngIf="eventForm.hasError('required',['eventInscriptionLimit'])">Este campo es obligatorio</mat-error>-->
+<!--                      <mat-error *ngIf="eventForm.hasError('inscriptionLimit',['eventInscriptionLimit'])">La fecha límite tiene que ser antes del evento</mat-error>-->
+<!--                      <mat-datepicker-toggle matSuffix [for]="eventInscriptionLimit"></mat-datepicker-toggle>-->
+<!--                      <mat-datepicker #eventInscriptionLimit></mat-datepicker>-->
+<!--                    </mat-form-field>-->
+<!--                  </div>-->
+
+                  <div class="col-md-6">
+                    <mat-form-field>
+                      <input type="time" matInput placeholder="Inicio del evento" formControlName="eventStartTime" >
+                      <mat-error *ngIf="eventForm.hasError('required', ['eventStartTime'])">Este campo es obligatorio</mat-error>
+                    </mat-form-field>
+                  </div>
+
+                  <div class="col-md-6">
+                    <mat-form-field>
+                      <input type="time" matInput placeholder="Fin del evento" formControlName="eventEndTime" >
+                      <mat-error *ngIf="eventForm.hasError('required', ['eventEndTime'])">Este campo es obligatorio</mat-error>
+                      <mat-error *ngIf="eventForm.hasError('eventEndWrong', ['eventEndTime'])">La hora de finalización del evento tiene que ser después del inicio del evento</mat-error>
+                    </mat-form-field>
+                  </div>
 
                 </div>
 

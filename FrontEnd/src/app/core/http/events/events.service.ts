@@ -19,11 +19,15 @@ export class EventsService {
     return this.http.get<Response>(this.apiURL + 'events');
   }
 
-  getEvent(eventID: number) {
+  getEvent(eventID: string) {
     return this.http.get<Response>(this.apiURL + 'events/' + eventID );
   }
 
   createEvent(event: Event) {
     return this.http.post<Response>(this.apiURL + 'events', event);
+  }
+
+  updateEvent(event: Event) {
+    return this.http.post<Response>(this.apiURL + 'events/' + event.id , event);
   }
 }

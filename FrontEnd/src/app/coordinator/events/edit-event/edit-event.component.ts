@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
-import {Router} from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { EventTypesService } from '../../../core/http/eventTypes/event-types.service';
 import {EventsService} from '../../../core/http/events/events.service';
 import { EventType } from '../../../interfaces/eventType';
 import { Event } from '../../../interfaces/event';
-
+// @ts-ignore
+import moment from 'moment';
 
 @Component({
   selector: 'app-edit-event',
@@ -23,23 +24,26 @@ export class EditEventComponent implements OnInit {
   fileFormatValid: boolean;
   selectedFile: File;
 
+  eventID: string;
+
   constructor(private eventsTypeService: EventTypesService,
               private eventsService: EventsService,
-              private router: Router) { }
+              private router: Router,
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.fileFormatValid = true;
+    this.eventID = this.route.snapshot.paramMap.get('id');
     this.createForm();
-
     this.getEventTypes();
-
+    this.getEvent();
   }
 
   createForm() {
     this.eventForm = new FormGroup({
       'name': new FormControl(null, [Validators.required]),
       'eventDate': new FormControl(null, [Validators.required]),
-      'eventInscriptionLimit': new FormControl(null, [Validators.required, this.checkEventLimitInscription.bind(this)]),
+      // 'eventInscriptionLimit': new FormControl(null, [Validators.required, this.checkEventLimitInscription.bind(this)]),
       'eventType': new FormControl(null, [Validators.required]),
       'eventStartTime': new FormControl(null, [Validators.required]),
       'eventEndTime': new FormControl(null, [
@@ -59,6 +63,16 @@ export class EditEventComponent implements OnInit {
   getEventTypes() {
     this.eventsTypeService.getEventTypes().subscribe(data => {
       this.eventTypes = <EventType[]>data.data;
+    });
+  }
+
+  getEvent() {
+    this.eventsService.getEvent(this.eventID).subscribe(response => {
+      this.eventForm.controls['name'].setValue(response.data.event.name);
+      this.eventForm.controls['eventDate'].setValue(response.data.event.eventDate);
+      this.eventForm.controls['eventType'].setValue(response.data.event.type_id);
+      this.eventForm.controls['eventStartTime'].setValue(response.data.event.start);
+      this.eventForm.controls['eventEndTime'].setValue(response.data.event.finish);
     });
   }
 
@@ -106,9 +120,10 @@ export class EditEventComponent implements OnInit {
         start: this.eventForm.get('eventStartTime').value,
         finish: this.eventForm.get('eventEndTime').value,
         image: null,
-        type_id: this.eventForm.get('eventType').value
+        type_id: this.eventForm.get('eventType').value,
+        id: parseInt(this.eventID, 10)
       };
-      this.eventsService.createEvent(event).subscribe(response => {
+      this.eventsService.updateEvent(event).subscribe(response => {
         if (response.data === 'success') {
           this.router.navigate(['coordinador/eventos']);
         }
