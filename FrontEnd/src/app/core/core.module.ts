@@ -14,6 +14,7 @@ import { AuthInterceptor } from './http/interceptors/auth.interceptor';
 import { CareersService } from './http/careers/careers.service';
 import { CoordinatorsService } from './http/coordinators/coordinators.service';
 import { TeacherService } from './http/teacher/teacher.service';
+import { StatisticsService } from './http/statistics/statistics.service';
 
 @NgModule({
   imports: [
@@ -33,6 +34,7 @@ import { TeacherService } from './http/teacher/teacher.service';
     CareersService,
     CoordinatorsService,
     TeacherService,
+    StatisticsService,
     {provide:  HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
   ]
 })

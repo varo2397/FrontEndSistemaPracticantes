@@ -16,23 +16,23 @@ export class StudentsComponent implements OnInit {
     'name',
     'firstLastName',
     'secondLastName',
-    'email',
     'phoneNumber',
     'actions'
   ];
-  dataSource = new MatTableDataSource([]);
+  dataSource: MatTableDataSource<any>;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
   constructor(private studentsService: StudentsService) { }
 
   ngOnInit() {
-    this.dataSource.sort = this.sort;
+
     this.getAprovedStudents();
   }
 
   getAprovedStudents() {
     this.studentsService.getApprovedStudents().subscribe(response => {
-      console.log(response);
+      this.dataSource = new MatTableDataSource(response.data);
+      this.dataSource.sort = this.sort;
     });
   }
 

@@ -25,5 +25,8 @@ export class CoordinatorsService {
   deleteCoordinator(coordinatorID: number) {
     return this.http.delete<Response>(this.apiURL + 'coordinator/' + coordinatorID);
   }
+
+  // getCompanies
+
 }
 

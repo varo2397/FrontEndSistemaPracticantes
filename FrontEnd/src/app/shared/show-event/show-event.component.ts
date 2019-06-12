@@ -17,7 +17,7 @@ export class ShowEventComponent implements OnInit {
   }
 
   getEvent() {
-    this.eventsService.getEvent(this.eventID).subscribe(response => {
+    this.eventsService.getEvent(this.eventID.toString()).subscribe(response => {
       this.event = <Event>response.data.event;
       console.log(this.event);
     });
