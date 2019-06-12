@@ -4,7 +4,38 @@
       {{ student.person.name + ' ' + student.person.lastName + ' ' + student.person.secondLastName }}
     </mat-card-title>
     <mat-card-content>
+      <div class="col-md-12 mb-2">
+        <div class="row">
 
+          <div class="col-md-6">
+            <mat-form-field>
+              <mat-select placeholder="Seleccionar profesor asesor">
+                <ng-container *ngFor="let teacher of teachers">
+
+                  <mat-option >{{ teacher }}</mat-option>
+                </ng-container>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-6">
+            Fecha de nacimiento: {{ student.person.birthday }}
+          </div>
+
+          <div class="col-md-6">
+            Número de teléfono: {{ student.person.telephone }}
+          </div>
+
+          <div class="col-md-6">
+            Semestre: II 2019
+          </div>
+
+          <div class="col-md-6">
+            Estatus: {{ student.status }}
+          </div>
+
+        </div>
+      </div>
     </mat-card-content>
   </mat-card>
 </div>
