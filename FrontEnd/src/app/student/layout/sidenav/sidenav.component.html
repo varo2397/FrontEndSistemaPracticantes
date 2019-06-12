@@ -1,8 +1,29 @@
 <mat-nav-list>
-  <a mat-list-item routerLink="eventos">
+  <a mat-list-item routerLink="eventos" class="singleElementSideNav">
     <mat-icon>date_range</mat-icon>
     <span class="sidenav-element">Eventos</span>
   </a>
+
+  <mat-accordion mat-list-item>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon matPrefix>person</mat-icon>
+          <span class="sidenav-element">Evaluaciones</span>
+
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <button mat-menu-item routerLink="evaluaciones/fin-practica">
+        <mat-icon >check_circle_outline</mat-icon>
+        Fin de práctica
+      </button>
+      <button mat-menu-item routerLink="evaluaciones/profesor-asesor">
+        <mat-icon>people_outline</mat-icon>
+        Profesor asesor
+      </button>
+
+    </mat-expansion-panel>
+  </mat-accordion>
 
 </mat-nav-list>
 
