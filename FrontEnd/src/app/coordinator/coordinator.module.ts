@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { MaterialModule } from '../material/material.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CommonModule } from '@angular/common';
 import { DragDropModule } from '@angular/cdk/drag-drop';
@@ -55,7 +55,8 @@ import { EditDocumentComponent } from './documents/edit-document/edit-document.c
     ReactiveFormsModule,
     CommonModule,
     SharedModule,
-    DragDropModule
+    DragDropModule,
+    FormsModule
   ]
 })
 
