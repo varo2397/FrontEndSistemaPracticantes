@@ -25,6 +25,7 @@ import { StatisticsComponent } from './statistics/statistics.component';
 import { DocumentsComponent } from './documents/documents.component';
 import { CreateDocumentComponent } from './documents/create-document/create-document.component';
 import { EditDocumentComponent } from './documents/edit-document/edit-document.component';
+import { SelectStudentComponent } from './students/select-student/select-student.component';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { EditDocumentComponent } from './documents/edit-document/edit-document.c
     DocumentsComponent,
     CreateDocumentComponent,
     EditDocumentComponent,
+    SelectStudentComponent,
   ],
   imports: [
     MaterialModule,

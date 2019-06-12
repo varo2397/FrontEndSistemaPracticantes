@@ -13,7 +13,7 @@
         <!-- Name Column -->
         <ng-container matColumnDef="firstLastName">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Primer apellido </th>
-          <td mat-cell *matCellDef="let element"> {{element.firstLastName}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
         </ng-container>
 
         <!-- Weight Column -->
@@ -22,15 +22,10 @@
           <td mat-cell *matCellDef="let element"> {{element.secondLastName}} </td>
         </ng-container>
 
-        <!-- Symbol Column -->
-        <ng-container matColumnDef="email">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Correo electrónico </th>
-          <td mat-cell *matCellDef="let element"> {{element.email}} </td>
-        </ng-container>
 
         <ng-container matColumnDef="phoneNumber">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Número telefónico </th>
-          <td mat-cell *matCellDef="let element"> {{element.phoneNumber}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.telephone}}</td>
         </ng-container>
 
         <ng-container matColumnDef="actions">

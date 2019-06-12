@@ -17,6 +17,7 @@ import { StatisticsComponent } from './statistics/statistics.component';
 import { DocumentsComponent } from './documents/documents.component';
 import { CreateDocumentComponent } from './documents/create-document/create-document.component';
 import { EditDocumentComponent } from './documents/edit-document/edit-document.component';
+import { SelectStudentComponent } from './students/select-student/select-student.component';
 
 const routes: Routes = [
   {
@@ -24,7 +25,8 @@ const routes: Routes = [
       {
         path: 'estudiantes', children: [
           { path: '', component: StudentsComponent },
-          { path: 'aprobar-estudiantes', component: ApproveStudentsComponent }
+          { path: 'aprobar-estudiantes', component: ApproveStudentsComponent },
+          { path: ':id/estudiante', component: SelectStudentComponent }
         ]
       },
       {

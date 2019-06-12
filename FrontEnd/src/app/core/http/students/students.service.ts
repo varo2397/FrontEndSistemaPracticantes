@@ -19,4 +19,8 @@ export class StudentsService {
     return this.http.get<Response>(this.apiURL + 'students/pending');
   }
 
+  getStudent(studentID: string) {
+    return this.http.get<Response>(this.apiURL + 'student/' + studentID);
+  }
+
 }
